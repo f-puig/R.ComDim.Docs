@@ -1,0 +1,222 @@
+```{r include=FALSE, cache=FALSE}
+library(R.ComDim)
+knitr::opts_chunk$set(
+  fig.align = 'center',
+  fig.width = 5,
+  fig.height = 5,
+  message = FALSE
+)
+```
+
+```{r, echo = FALSE, eval = TRUE}
+library(R.ComDim)
+```
+
+# Create a MultiBlock {#create}
+
+## Option 1: for small MultiBlocks {#option1}
+In order to use the ComDim algorithm, the data blocks need to be combined
+into a `MultiBlock` object.
+
+`MultiBlock` has 5 fields: `Samples`, `Data`, `Variables`,
+`Metadata` and `Batch`. The easiest way to create a `MultiBlock` is by using the
+function `MultiBlock()` as below:
+
+```{r create, echo = TRUE, eval = FALSE}
+b1 = matrix(rnorm(500),10,50) # 10 rows and 50 columns
+b2 = as.data.frame(matrix(rnorm(800),10,80)) # 10 rows and 80 columns
+b2[c(2,3,4),c(5,7,8)] <- NA # Making some data missing, just for fun.
+rownames(b2) <- LETTERS[5:14] # Adding some sample names
+b3 = MultiBlock(Samples = 1:10,
+                Data = list(s1 = b1, s2 = b2),
+                Variables = list(s1 = 1:ncol(b1),
+                                s2 = 1:ncol(b2)))
+```
+
+With the code above, a `MultiBlock` containing 2 blocks was built. As shown, the
+provided data blocks support the format `matrix` and `data.frame`.
+
+When building a `MultiBlock`, only the fields `Samples`, `Data`, and `Variables`
+are mandatory.
+
+```{r create2, echo = TRUE, eval = FALSE}
+b4 = MultiBlock(Samples = 1:10,
+                Data = list(s1 = b1, s2 = b2),
+                Variables = list(s1 = 1:ncol(b1),
+                                 s2 = 1:ncol(b2)),
+                Batch = list(s1 = rep('Batch1',10),
+                             s2 = c(rep('Batch2',5),rep('Batch3',5))))
+```
+
+And to create a `MultiBlock` with sample metadata, the easiest way is with the
+function `AddMetadata`:
+
+```{r AddMetadata, echo = TRUE, eval = FALSE}
+b4 <- AddMetadata(newBlock = matrix(rnorm(100),10,10),
+                  metadata = data.frame(x1 = c(rep(0,5),rep(1,5)),
+                                        x2 = c(rep(1,3),rep(2,4),rep(3,3))))
+```
+
+In `AddMetadata`, newBlock can be a matrix, a data.frame, or a MultiBlock 
+object. In the giving example, the metadata contains two variables (`x1` and 
+`x2`).
+
+
+## Option 2: for large MultiBlocks {#option2}
+
+Then, it is possible to create a `MultiBlock` from another preexisting
+`MultiBlock`. In this case, the function `BuildMultiBlock()` comes in handy.
+
+```{r create3, echo = TRUE, eval = FALSE}
+MB <- BuildMultiBlock(b1,b2,b3,ignore.names = TRUE)
+getBlockNames(MB)
+```
+
+
+## Option 3: from SummarizedExperiment or MultiAssayExperiment objects. {#option3}
+
+`MultiBlock`s can also be created from `SummarizedExperiment` or 
+`MultiAssayExperiment` objects, which are pretty common format nowadays in
+ multi-omics studies. In the same way, `MultiBlocks` can be converted back to 
+ `MultiAssayExperiments`.
+
+```{r SummarizedExperiment, echo = TRUE, eval = FALSE}
+library(MultiAssayExperiment)
+data(miniACC)
+library(SummarizedExperiment)
+data(airway, package="airway")
+
+MB1 <- SummarizedExperiment2MultiBlock(airway,
+                                       colData_samplenames = 'Run',
+                                       Batch = NULL)
+MB2 <- MultiAssayExperiment2MultiBlock(miniACC,
+                                       colData_samplenames = 'patientID',
+                                       Batch = NULL)
+se2 <-  MultiBlock2MultiAssayExperiment(MB2, MSEmetadata = NULL)
+```
+
+
+
+## Sample correspondence across blocks {#correspondence}
+
+We define as __sample correspondence across blocks__ to the fact that the sample
+ order is maintained across blocks. That is, the first sample from the first 
+ block has a correspondence sample in the second block at the same position, and
+ so on.
+ 
+To run ComDim **and most multi-omics analysis** in general, sample 
+correspondence across blocks is needed. This is normally verified by the user.
+For `R.ComDim`, we can use `BuildMultiBlock()` to check for the same 
+correspondence and resort samples (and discard) if needed. This process is 
+achieved with the option `ignore.names = FALSE` (the default).
+
+```{r correspondence, echo = TRUE, eval = FALSE}
+c1 = matrix(1:500,10,50) # 10 rows and 50 columns
+c2 = matrix(500:1,10,50) # 10 rows and 50 columns
+c3 = matrix(501:1000,10,50) # 10 rows and 50 columns
+c4 = matrix(1:1000,20,50) # 20 rows and 50 columns
+rownames(c1) <- paste0('c',6:15)
+rownames(c2) <- paste0('c',1:10)
+rownames(c3) <- paste0('c',10:1)
+rownames(c4) <- paste0('c',1:20)
+# With ignore.names = FALSE, only common samples across blocks are kept.
+# Samples will be resorted if needed.
+MB12 <- BuildMultiBlock(c1,c2,ignore.names = FALSE) # 10 samples in common
+MB13 <- BuildMultiBlock(c1,c3,ignore.names = FALSE) # 5 samples in common
+MB13b <- BuildMultiBlock(c1,c3,ignore.names = TRUE) # Blocks were appended
+                                                    # regardless of their sample
+                                                    # names. Sample names were
+                                                    # replaced by integers.
+# (Not run) The following code does not work because block sizes are different
+# and ignore.names = TRUE.
+#MB14 <- BuildMultiBlock(c1,c4,ignore.names = TRUE)
+```
+
+If we don't need to verify the sample correspondence across blocks, we can use
+`ignore.names = TRUE`. However, in case the sample size is different across
+blocks, the `MultiBlock` will not be built (as the sample correspondence does
+not actually exist). It is possible to overrid this situation with 
+`ignore.size = TRUE`, but the resulting `MultiBlock` is **not compatible** for 
+`ComDim` analyses.
+
+```{r MBsize, echo = TRUE, eval = FALSE}
+# Option A (ignore.names = FALSE) : Only common samples across blocks are kept.
+MB14c <- BuildMultiBlock(c1,c4,ignore.names = FALSE)
+# Option B (ignore.names = TRUE, ignore.size = TRUE):
+#    Blocks were appended regardless of their sample names and sizes.
+#    All samples were kept.
+MB14b <- BuildMultiBlock(c1,c4,ignore.names = TRUE, ignore.size = TRUE)
+# MB14b is not compatible with ComDim
+getSampleNames(MB14b)
+# A particularity of this MB14b is that it has one 'Samples' vector per block.
+```
+
+
+## Splitting blocks by the Batch criterion. {#splitRW}
+
+We can consider split one or more blocks according to the Batch criterion, in 
+order to examine whether this factor contains is a relevant source of 
+information in our dataset. This is performed with the `SplitRW()` function.
+We call this split strategy **Replicate-Wise** (RW).
+
+```{r Split, echo = TRUE, eval = FALSE}
+# Build the MultiBlock
+x1 = MultiBlock(Samples = 1:10,
+                Data = list(x1 = matrix(rnorm(500),10,50)),
+                Variables = list(x1 = 1:50),
+                Batch = list(x1 = rep('Batch1',10)))
+x2 = MultiBlock(Samples = c(1:10,1:10,1:10),
+                Data = list(x2 = matrix(rnorm(2400),30,80)),
+                Variables = list(x2 = 1:80),
+                Batch = list(x2 = c(rep('Batch1',10),
+                                    rep('Batch2',10),
+                                    rep('Batch3',10)))
+                )
+x1x2 <- BuildMultiBlock(x1,x2, ignore.names = TRUE, ignore.size = TRUE)
+# Proceed with the split.
+rw <- SplitRW(x1x2) # SplitRW looks specifically to the Batch information.
+```
+
+More information about the reasoning behind this analytical strategy can be 
+consulted here: [**https://doi.org/10.1016/j.chemolab.2021.104422**]
+(https://doi.org/10.1016/j.chemolab.2021.104422).
+
+In case there exist sample correspondence although the sample names do not match
+across blocks, we can force the MultiBlock split with the argument
+`checkSampleCorrespondence = FALSE`.
+
+```{r Split2, echo = TRUE, eval = FALSE}
+# Build the MultiBlock
+x4 = MultiBlock(Samples = c(1:30),
+                Data = list(x4 = matrix(rnorm(2400),30,80)),
+                Variables = list(x4 = 1:80),
+                Batch = list(x4 = c(rep('Batch1',10),
+                                    rep('Batch2',10),
+                                    rep('Batch3',10)))
+)
+x1x4 <- BuildMultiBlock(x1,x4, ignore.names = TRUE, ignore.size = TRUE)
+  # Sample names in block x1 go from 1 to 10.
+  # Sample names in block x4 go from 1 to 10 (batch1), 11 to 20 (batch2),
+  # and 21 to 30 (batch3). Despite the sample names does not batch, samples
+  # have correspondence across blocks. Thus, we need to impose **not to**
+  # check the sample names. This is done with checkSampleCorrespondence = FALSE.
+# Proceed with the split.
+rw2 <- SplitRW(x1x4, checkSampleCorrespondence = FALSE)
+```
+
+With `checkSampleCorrespondence = TRUE`, only the common samples across blocks 
+are kept.
+
+```{r Split3, echo = TRUE, eval = FALSE}
+# Build the MultiBlock
+x5 = MultiBlock(Samples = c(1:10, 5:14, 1:10),
+                Data = list(x5 = matrix(rnorm(2400),30,80)),
+                Variables = list(x5 = 1:80),
+                Batch = list(x5 = c(rep('Batch1',10),
+                                    rep('Batch2',10),
+                                    rep('Batch3',10)))
+)
+x1x5 <- BuildMultiBlock(x1,x5, ignore.size = TRUE, ignore.names = TRUE)
+# Proceed with the split.
+rw3 <- SplitRW(x1x5, checkSampleCorrespondence = TRUE)
+```

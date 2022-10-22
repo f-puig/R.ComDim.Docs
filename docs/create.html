@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Create a MultiBlock | R.ComDim (a tutorial)</title>
+  <meta name="description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
+the chemometric method ComDim.</p>" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Create a MultiBlock | R.ComDim (a tutorial)" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
+the chemometric method ComDim.</p>" />
+  <meta name="github-repo" content="f-puig/R.ComDim.Docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Create a MultiBlock | R.ComDim (a tutorial)" />
+  
+  <meta name="twitter:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
+the chemometric method ComDim.</p>" />
+  
+
+<meta name="author" content="Francesc Puig Castellví" />
+
+
+<meta name="date" content="2022-10-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="handling.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R.ComDim (a tutorial)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>2.1</b> The ComDim method</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>2.2</b> Why should I use ComDim?</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>2.3</b> Functions</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>2.4</b> Install and load R.ComDim package</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>2.5</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>3</b> Create a MultiBlock</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="create.html"><a href="create.html#option1"><i class="fa fa-check"></i><b>3.1</b> Option 1: for small MultiBlocks</a></li>
+<li class="chapter" data-level="3.2" data-path="create.html"><a href="create.html#option2"><i class="fa fa-check"></i><b>3.2</b> Option 2: for large MultiBlocks</a></li>
+<li class="chapter" data-level="3.3" data-path="create.html"><a href="create.html#option3"><i class="fa fa-check"></i><b>3.3</b> Option 3: from SummarizedExperiment or MultiAssayExperiment objects.</a></li>
+<li class="chapter" data-level="3.4" data-path="create.html"><a href="create.html#correspondence"><i class="fa fa-check"></i><b>3.4</b> Sample correspondence across blocks</a></li>
+<li class="chapter" data-level="3.5" data-path="create.html"><a href="create.html#splitRW"><i class="fa fa-check"></i><b>3.5</b> Splitting blocks by the Batch criterion.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i><b>4</b> MultiBlock data handling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="handling.html"><a href="handling.html#inspecting-the-data"><i class="fa fa-check"></i><b>4.1</b> Inspecting the data</a></li>
+<li class="chapter" data-level="4.2" data-path="handling.html"><a href="handling.html#processing"><i class="fa fa-check"></i><b>4.2</b> Data pre-processing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="multi-omics.html"><a href="multi-omics.html"><i class="fa fa-check"></i><b>5</b> Multi-omics amd Multi-blocks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>5.1</b> Data processing</a></li>
+<li class="chapter" data-level="5.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>5.2</b> Data analysis</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="multi-omics.html"><a href="multi-omics.html#Saliences"><i class="fa fa-check"></i><b>5.2.1</b> Saliences</a></li>
+<li class="chapter" data-level="5.2.2" data-path="multi-omics.html"><a href="multi-omics.html#Scores"><i class="fa fa-check"></i><b>5.2.2</b> Scores</a></li>
+<li class="chapter" data-level="5.2.3" data-path="multi-omics.html"><a href="multi-omics.html#Loadings"><i class="fa fa-check"></i><b>5.2.3</b> Loadings</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>5.3</b> Data prediction</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Section5.html"><a href="Section5.html"><i class="fa fa-check"></i><b>6</b> Data from a single omics data are multi-blocks</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Section5.html"><a href="Section5.html#molecular-functions"><i class="fa fa-check"></i><b>6.1</b> Molecular functions</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-patwhays"><i class="fa fa-check"></i><b>6.1.1</b> The molecular patwhays</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>7</b> Data from a single omics data are multi-blocks</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>7.1</b> ComDim-Partial Least Squares (ComDim-PLS)</a></li>
+<li class="chapter" data-level="7.2" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>7.2</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a></li>
+<li class="chapter" data-level="7.3" data-path="Section6.html"><a href="Section6.html#KOPLS"><i class="fa fa-check"></i><b>7.3</b> ComDim-kernel-OPLS</a></li>
+<li class="chapter" data-level="7.4" data-path="Section6.html"><a href="Section6.html#Other"><i class="fa fa-check"></i><b>7.4</b> Other extensions</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="Section6.html"><a href="Section6.html#example-of-comdim-ica"><i class="fa fa-check"></i><b>7.4.1</b> Example of ComDim-ICA</a></li>
+<li class="chapter" data-level="7.4.2" data-path="Section6.html"><a href="Section6.html#example-of-comdim-pls-version-ropls"><i class="fa fa-check"></i><b>7.4.2</b> Example of ComDim-PLS (version ropls)</a></li>
+<li class="chapter" data-level="7.4.3" data-path="Section6.html"><a href="Section6.html#example-of-comdim-plsda-version-ropls"><i class="fa fa-check"></i><b>7.4.3</b> Example of ComDim-PLSDA (version ropls)</a></li>
+<li class="chapter" data-level="7.4.4" data-path="Section6.html"><a href="Section6.html#example-of-comdim-oplsda-version-ropls"><i class="fa fa-check"></i><b>7.4.4</b> Example of ComDim-OPLSDA (version ropls)</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R.ComDim (a tutorial)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="create" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Create a MultiBlock<a href="create.html#create" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="option1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Option 1: for small MultiBlocks<a href="create.html#option1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In order to use the ComDim algorithm, the data blocks need to be combined
+into a <code>MultiBlock</code> object.</p>
+<p><code>MultiBlock</code> has 5 fields: <code>Samples</code>, <code>Data</code>, <code>Variables</code>,
+<code>Metadata</code> and <code>Batch</code>. The easiest way to create a <code>MultiBlock</code> is by using the
+function <code>MultiBlock()</code> as below:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="create.html#cb2-1" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">500</span>),<span class="dv">10</span>,<span class="dv">50</span>) <span class="co"># 10 rows and 50 columns</span></span>
+<span id="cb2-2"><a href="create.html#cb2-2" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">800</span>),<span class="dv">10</span>,<span class="dv">80</span>)) <span class="co"># 10 rows and 80 columns</span></span>
+<span id="cb2-3"><a href="create.html#cb2-3" aria-hidden="true" tabindex="-1"></a>b2[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),<span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># Making some data missing, just for fun.</span></span>
+<span id="cb2-4"><a href="create.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(b2) <span class="ot">&lt;-</span> LETTERS[<span class="dv">5</span><span class="sc">:</span><span class="dv">14</span>] <span class="co"># Adding some sample names</span></span>
+<span id="cb2-5"><a href="create.html#cb2-5" aria-hidden="true" tabindex="-1"></a>b3 <span class="ot">=</span> <span class="fu">MultiBlock</span>(<span class="at">Samples =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb2-6"><a href="create.html#cb2-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">Data =</span> <span class="fu">list</span>(<span class="at">s1 =</span> b1, <span class="at">s2 =</span> b2),</span>
+<span id="cb2-7"><a href="create.html#cb2-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">Variables =</span> <span class="fu">list</span>(<span class="at">s1 =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(b1),</span>
+<span id="cb2-8"><a href="create.html#cb2-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">s2 =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(b2)))</span></code></pre></div>
+<p>With the code above, a <code>MultiBlock</code> containing 2 blocks was built. As shown, the
+provided data blocks support the format <code>matrix</code> and <code>data.frame</code>.</p>
+<p>When building a <code>MultiBlock</code>, only the fields <code>Samples</code>, <code>Data</code>, and <code>Variables</code>
+are mandatory.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="create.html#cb3-1" aria-hidden="true" tabindex="-1"></a>b4 <span class="ot">=</span> <span class="fu">MultiBlock</span>(<span class="at">Samples =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb3-2"><a href="create.html#cb3-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">Data =</span> <span class="fu">list</span>(<span class="at">s1 =</span> b1, <span class="at">s2 =</span> b2),</span>
+<span id="cb3-3"><a href="create.html#cb3-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">Variables =</span> <span class="fu">list</span>(<span class="at">s1 =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(b1),</span>
+<span id="cb3-4"><a href="create.html#cb3-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">s2 =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(b2)),</span>
+<span id="cb3-5"><a href="create.html#cb3-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">Batch =</span> <span class="fu">list</span>(<span class="at">s1 =</span> <span class="fu">rep</span>(<span class="st">&#39;Batch1&#39;</span>,<span class="dv">10</span>),</span>
+<span id="cb3-6"><a href="create.html#cb3-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">s2 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;Batch2&#39;</span>,<span class="dv">5</span>),<span class="fu">rep</span>(<span class="st">&#39;Batch3&#39;</span>,<span class="dv">5</span>))))</span></code></pre></div>
+<p>And to create a <code>MultiBlock</code> with sample metadata, the easiest way is with the
+function <code>AddMetadata</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="create.html#cb4-1" aria-hidden="true" tabindex="-1"></a>b4 <span class="ot">&lt;-</span> <span class="fu">AddMetadata</span>(<span class="at">newBlock =</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>),<span class="dv">10</span>,<span class="dv">10</span>),</span>
+<span id="cb4-2"><a href="create.html#cb4-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">metadata =</span> <span class="fu">data.frame</span>(<span class="at">x1 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">5</span>),<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>)),</span>
+<span id="cb4-3"><a href="create.html#cb4-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">x2 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>),<span class="fu">rep</span>(<span class="dv">2</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">3</span>))))</span></code></pre></div>
+<p>In <code>AddMetadata</code>, newBlock can be a matrix, a data.frame, or a MultiBlock
+object. In the giving example, the metadata contains two variables (<code>x1</code> and
+<code>x2</code>).</p>
+</div>
+<div id="option2" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Option 2: for large MultiBlocks<a href="create.html#option2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Then, it is possible to create a <code>MultiBlock</code> from another preexisting
+<code>MultiBlock</code>. In this case, the function <code>BuildMultiBlock()</code> comes in handy.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="create.html#cb5-1" aria-hidden="true" tabindex="-1"></a>MB <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(b1,b2,b3,<span class="at">ignore.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-2"><a href="create.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getBlockNames</span>(MB)</span></code></pre></div>
+</div>
+<div id="option3" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Option 3: from SummarizedExperiment or MultiAssayExperiment objects.<a href="create.html#option3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>MultiBlock</code>s can also be created from <code>SummarizedExperiment</code> or
+<code>MultiAssayExperiment</code> objects, which are pretty common format nowadays in
+multi-omics studies. In the same way, <code>MultiBlocks</code> can be converted back to
+<code>MultiAssayExperiments</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="create.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MultiAssayExperiment)</span>
+<span id="cb6-2"><a href="create.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(miniACC)</span>
+<span id="cb6-3"><a href="create.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SummarizedExperiment)</span>
+<span id="cb6-4"><a href="create.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(airway, <span class="at">package=</span><span class="st">&quot;airway&quot;</span>)</span>
+<span id="cb6-5"><a href="create.html#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="create.html#cb6-6" aria-hidden="true" tabindex="-1"></a>MB1 <span class="ot">&lt;-</span> <span class="fu">SummarizedExperiment2MultiBlock</span>(airway,</span>
+<span id="cb6-7"><a href="create.html#cb6-7" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">colData_samplenames =</span> <span class="st">&#39;Run&#39;</span>,</span>
+<span id="cb6-8"><a href="create.html#cb6-8" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">Batch =</span> <span class="cn">NULL</span>)</span>
+<span id="cb6-9"><a href="create.html#cb6-9" aria-hidden="true" tabindex="-1"></a>MB2 <span class="ot">&lt;-</span> <span class="fu">MultiAssayExperiment2MultiBlock</span>(miniACC,</span>
+<span id="cb6-10"><a href="create.html#cb6-10" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">colData_samplenames =</span> <span class="st">&#39;patientID&#39;</span>,</span>
+<span id="cb6-11"><a href="create.html#cb6-11" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">Batch =</span> <span class="cn">NULL</span>)</span>
+<span id="cb6-12"><a href="create.html#cb6-12" aria-hidden="true" tabindex="-1"></a>se2 <span class="ot">&lt;-</span>  <span class="fu">MultiBlock2MultiAssayExperiment</span>(MB2, <span class="at">MSEmetadata =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+</div>
+<div id="correspondence" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Sample correspondence across blocks<a href="create.html#correspondence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We define as <strong>sample correspondence across blocks</strong> to the fact that the sample
+order is maintained across blocks. That is, the first sample from the first
+block has a correspondence sample in the second block at the same position, and
+so on.</p>
+<p>To run ComDim <strong>and most multi-omics analysis</strong> in general, sample
+correspondence across blocks is needed. This is normally verified by the user.
+For <code>R.ComDim</code>, we can use <code>BuildMultiBlock()</code> to check for the same
+correspondence and resort samples (and discard) if needed. This process is
+achieved with the option <code>ignore.names = FALSE</code> (the default).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="create.html#cb7-1" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>,<span class="dv">10</span>,<span class="dv">50</span>) <span class="co"># 10 rows and 50 columns</span></span>
+<span id="cb7-2"><a href="create.html#cb7-2" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">500</span><span class="sc">:</span><span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">50</span>) <span class="co"># 10 rows and 50 columns</span></span>
+<span id="cb7-3"><a href="create.html#cb7-3" aria-hidden="true" tabindex="-1"></a>c3 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">501</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">10</span>,<span class="dv">50</span>) <span class="co"># 10 rows and 50 columns</span></span>
+<span id="cb7-4"><a href="create.html#cb7-4" aria-hidden="true" tabindex="-1"></a>c4 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">20</span>,<span class="dv">50</span>) <span class="co"># 20 rows and 50 columns</span></span>
+<span id="cb7-5"><a href="create.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(c1) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;c&#39;</span>,<span class="dv">6</span><span class="sc">:</span><span class="dv">15</span>)</span>
+<span id="cb7-6"><a href="create.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(c2) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;c&#39;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb7-7"><a href="create.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(c3) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;c&#39;</span>,<span class="dv">10</span><span class="sc">:</span><span class="dv">1</span>)</span>
+<span id="cb7-8"><a href="create.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(c4) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;c&#39;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb7-9"><a href="create.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># With ignore.names = FALSE, only common samples across blocks are kept.</span></span>
+<span id="cb7-10"><a href="create.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Samples will be resorted if needed.</span></span>
+<span id="cb7-11"><a href="create.html#cb7-11" aria-hidden="true" tabindex="-1"></a>MB12 <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(c1,c2,<span class="at">ignore.names =</span> <span class="cn">FALSE</span>) <span class="co"># 10 samples in common</span></span>
+<span id="cb7-12"><a href="create.html#cb7-12" aria-hidden="true" tabindex="-1"></a>MB13 <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(c1,c3,<span class="at">ignore.names =</span> <span class="cn">FALSE</span>) <span class="co"># 5 samples in common</span></span>
+<span id="cb7-13"><a href="create.html#cb7-13" aria-hidden="true" tabindex="-1"></a>MB13b <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(c1,c3,<span class="at">ignore.names =</span> <span class="cn">TRUE</span>) <span class="co"># Blocks were appended</span></span>
+<span id="cb7-14"><a href="create.html#cb7-14" aria-hidden="true" tabindex="-1"></a>                                                    <span class="co"># regardless of their sample</span></span>
+<span id="cb7-15"><a href="create.html#cb7-15" aria-hidden="true" tabindex="-1"></a>                                                    <span class="co"># names. Sample names were</span></span>
+<span id="cb7-16"><a href="create.html#cb7-16" aria-hidden="true" tabindex="-1"></a>                                                    <span class="co"># replaced by integers.</span></span>
+<span id="cb7-17"><a href="create.html#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># (Not run) The following code does not work because block sizes are different</span></span>
+<span id="cb7-18"><a href="create.html#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># and ignore.names = TRUE.</span></span>
+<span id="cb7-19"><a href="create.html#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#MB14 &lt;- BuildMultiBlock(c1,c4,ignore.names = TRUE)</span></span></code></pre></div>
+<p>If we don’t need to verify the sample correspondence across blocks, we can use
+<code>ignore.names = TRUE</code>. However, in case the sample size is different across
+blocks, the <code>MultiBlock</code> will not be built (as the sample correspondence does
+not actually exist). It is possible to overrid this situation with
+<code>ignore.size = TRUE</code>, but the resulting <code>MultiBlock</code> is <strong>not compatible</strong> for
+<code>ComDim</code> analyses.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="create.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option A (ignore.names = FALSE) : Only common samples across blocks are kept.</span></span>
+<span id="cb8-2"><a href="create.html#cb8-2" aria-hidden="true" tabindex="-1"></a>MB14c <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(c1,c4,<span class="at">ignore.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-3"><a href="create.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Option B (ignore.names = TRUE, ignore.size = TRUE):</span></span>
+<span id="cb8-4"><a href="create.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#    Blocks were appended regardless of their sample names and sizes.</span></span>
+<span id="cb8-5"><a href="create.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    All samples were kept.</span></span>
+<span id="cb8-6"><a href="create.html#cb8-6" aria-hidden="true" tabindex="-1"></a>MB14b <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(c1,c4,<span class="at">ignore.names =</span> <span class="cn">TRUE</span>, <span class="at">ignore.size =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-7"><a href="create.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># MB14b is not compatible with ComDim</span></span>
+<span id="cb8-8"><a href="create.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">getSampleNames</span>(MB14b)</span>
+<span id="cb8-9"><a href="create.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># A particularity of this MB14b is that it has one &#39;Samples&#39; vector per block.</span></span></code></pre></div>
+</div>
+<div id="splitRW" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Splitting blocks by the Batch criterion.<a href="create.html#splitRW" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can consider split one or more blocks according to the Batch criterion, in
+order to examine whether this factor contains is a relevant source of
+information in our dataset. This is performed with the <code>SplitRW()</code> function.
+We call this split strategy <strong>Replicate-Wise</strong> (RW).</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="create.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the MultiBlock</span></span>
+<span id="cb9-2"><a href="create.html#cb9-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">=</span> <span class="fu">MultiBlock</span>(<span class="at">Samples =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb9-3"><a href="create.html#cb9-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">Data =</span> <span class="fu">list</span>(<span class="at">x1 =</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">500</span>),<span class="dv">10</span>,<span class="dv">50</span>)),</span>
+<span id="cb9-4"><a href="create.html#cb9-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">Variables =</span> <span class="fu">list</span>(<span class="at">x1 =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>),</span>
+<span id="cb9-5"><a href="create.html#cb9-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">Batch =</span> <span class="fu">list</span>(<span class="at">x1 =</span> <span class="fu">rep</span>(<span class="st">&#39;Batch1&#39;</span>,<span class="dv">10</span>)))</span>
+<span id="cb9-6"><a href="create.html#cb9-6" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">=</span> <span class="fu">MultiBlock</span>(<span class="at">Samples =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>),</span>
+<span id="cb9-7"><a href="create.html#cb9-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">Data =</span> <span class="fu">list</span>(<span class="at">x2 =</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2400</span>),<span class="dv">30</span>,<span class="dv">80</span>)),</span>
+<span id="cb9-8"><a href="create.html#cb9-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">Variables =</span> <span class="fu">list</span>(<span class="at">x2 =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">80</span>),</span>
+<span id="cb9-9"><a href="create.html#cb9-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">Batch =</span> <span class="fu">list</span>(<span class="at">x2 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;Batch1&#39;</span>,<span class="dv">10</span>),</span>
+<span id="cb9-10"><a href="create.html#cb9-10" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">rep</span>(<span class="st">&#39;Batch2&#39;</span>,<span class="dv">10</span>),</span>
+<span id="cb9-11"><a href="create.html#cb9-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">rep</span>(<span class="st">&#39;Batch3&#39;</span>,<span class="dv">10</span>)))</span>
+<span id="cb9-12"><a href="create.html#cb9-12" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb9-13"><a href="create.html#cb9-13" aria-hidden="true" tabindex="-1"></a>x1x2 <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(x1,x2, <span class="at">ignore.names =</span> <span class="cn">TRUE</span>, <span class="at">ignore.size =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-14"><a href="create.html#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Proceed with the split.</span></span>
+<span id="cb9-15"><a href="create.html#cb9-15" aria-hidden="true" tabindex="-1"></a>rw <span class="ot">&lt;-</span> <span class="fu">SplitRW</span>(x1x2) <span class="co"># SplitRW looks specifically to the Batch information.</span></span></code></pre></div>
+<p>More information about the reasoning behind this analytical strategy can be
+consulted here: [<strong><a href="https://doi.org/10.1016/j.chemolab.2021.104422" class="uri">https://doi.org/10.1016/j.chemolab.2021.104422</a></strong>]
+(<a href="https://doi.org/10.1016/j.chemolab.2021.104422" class="uri">https://doi.org/10.1016/j.chemolab.2021.104422</a>).</p>
+<p>In case there exist sample correspondence although the sample names do not match
+across blocks, we can force the MultiBlock split with the argument
+<code>checkSampleCorrespondence = FALSE</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="create.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the MultiBlock</span></span>
+<span id="cb10-2"><a href="create.html#cb10-2" aria-hidden="true" tabindex="-1"></a>x4 <span class="ot">=</span> <span class="fu">MultiBlock</span>(<span class="at">Samples =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>),</span>
+<span id="cb10-3"><a href="create.html#cb10-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">Data =</span> <span class="fu">list</span>(<span class="at">x4 =</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2400</span>),<span class="dv">30</span>,<span class="dv">80</span>)),</span>
+<span id="cb10-4"><a href="create.html#cb10-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">Variables =</span> <span class="fu">list</span>(<span class="at">x4 =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">80</span>),</span>
+<span id="cb10-5"><a href="create.html#cb10-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">Batch =</span> <span class="fu">list</span>(<span class="at">x4 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;Batch1&#39;</span>,<span class="dv">10</span>),</span>
+<span id="cb10-6"><a href="create.html#cb10-6" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">rep</span>(<span class="st">&#39;Batch2&#39;</span>,<span class="dv">10</span>),</span>
+<span id="cb10-7"><a href="create.html#cb10-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">rep</span>(<span class="st">&#39;Batch3&#39;</span>,<span class="dv">10</span>)))</span>
+<span id="cb10-8"><a href="create.html#cb10-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-9"><a href="create.html#cb10-9" aria-hidden="true" tabindex="-1"></a>x1x4 <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(x1,x4, <span class="at">ignore.names =</span> <span class="cn">TRUE</span>, <span class="at">ignore.size =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-10"><a href="create.html#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sample names in block x1 go from 1 to 10.</span></span>
+<span id="cb10-11"><a href="create.html#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sample names in block x4 go from 1 to 10 (batch1), 11 to 20 (batch2),</span></span>
+<span id="cb10-12"><a href="create.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># and 21 to 30 (batch3). Despite the sample names does not batch, samples</span></span>
+<span id="cb10-13"><a href="create.html#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># have correspondence across blocks. Thus, we need to impose **not to**</span></span>
+<span id="cb10-14"><a href="create.html#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># check the sample names. This is done with checkSampleCorrespondence = FALSE.</span></span>
+<span id="cb10-15"><a href="create.html#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Proceed with the split.</span></span>
+<span id="cb10-16"><a href="create.html#cb10-16" aria-hidden="true" tabindex="-1"></a>rw2 <span class="ot">&lt;-</span> <span class="fu">SplitRW</span>(x1x4, <span class="at">checkSampleCorrespondence =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>With <code>checkSampleCorrespondence = TRUE</code>, only the common samples across blocks
+are kept.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="create.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the MultiBlock</span></span>
+<span id="cb11-2"><a href="create.html#cb11-2" aria-hidden="true" tabindex="-1"></a>x5 <span class="ot">=</span> <span class="fu">MultiBlock</span>(<span class="at">Samples =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">5</span><span class="sc">:</span><span class="dv">14</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>),</span>
+<span id="cb11-3"><a href="create.html#cb11-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">Data =</span> <span class="fu">list</span>(<span class="at">x5 =</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2400</span>),<span class="dv">30</span>,<span class="dv">80</span>)),</span>
+<span id="cb11-4"><a href="create.html#cb11-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">Variables =</span> <span class="fu">list</span>(<span class="at">x5 =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">80</span>),</span>
+<span id="cb11-5"><a href="create.html#cb11-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">Batch =</span> <span class="fu">list</span>(<span class="at">x5 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;Batch1&#39;</span>,<span class="dv">10</span>),</span>
+<span id="cb11-6"><a href="create.html#cb11-6" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">rep</span>(<span class="st">&#39;Batch2&#39;</span>,<span class="dv">10</span>),</span>
+<span id="cb11-7"><a href="create.html#cb11-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">rep</span>(<span class="st">&#39;Batch3&#39;</span>,<span class="dv">10</span>)))</span>
+<span id="cb11-8"><a href="create.html#cb11-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-9"><a href="create.html#cb11-9" aria-hidden="true" tabindex="-1"></a>x1x5 <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(x1,x5, <span class="at">ignore.size =</span> <span class="cn">TRUE</span>, <span class="at">ignore.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-10"><a href="create.html#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Proceed with the split.</span></span>
+<span id="cb11-11"><a href="create.html#cb11-11" aria-hidden="true" tabindex="-1"></a>rw3 <span class="ot">&lt;-</span> <span class="fu">SplitRW</span>(x1x5, <span class="at">checkSampleCorrespondence =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="handling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/f-puig/R.ComDim.Docs/edit/master/02-Create-MultiBlock.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+```{r include=FALSE, cache=FALSE}
+library(R.ComDim)
+knitr::opts_chunk$set(
+  fig.align = 'center',
+  fig.width = 5,
+  fig.height = 5,
+  message = FALSE
+)
+```
+
+```{r, echo = FALSE, eval = TRUE}
+library(R.ComDim)
+
+b1 = matrix(rnorm(500),10,50) # 10 rows and 50 columns
+b2 = as.data.frame(matrix(rnorm(800),10,80)) # 10 rows and 80 columns
+b2[c(2,3,4),c(5,7,8)] <- NA # Making some data missing, just for fun.
+rownames(b2) <- LETTERS[5:14] # Adding some sample names
+b3 = MultiBlock(Samples = 1:10,
+                Data = list(s1 = b1, s2 = b2),
+                Variables = list(s1 = 1:ncol(b1),
+                                s2 = 1:ncol(b2)))
+MB <- BuildMultiBlock(b1,b2,b3,ignore.names = TRUE)
+```
+
+# MultiBlock data handling {#handling}
+
+## Inspecting the data
+
+We can easily read the content of a MultiBlock object with the following
+functions:
+
+```{r handling, echo = TRUE, eval = TRUE}
+getSampleNames(MB)
+getVariableNames(MB)
+getVariableNames(MB, block = 2)
+getBlockNames(MB)
+getBlockNames(MB, "Batch")
+getBlockNames(MB, "Metadata")
+ncolMultiBlock(MB)
+nrowMultiBlock(MB)
+MB2<- FilterSamplesMultiBlock(MB, c(1:9)) # To create a MultiBlock with 
+ # a sample subset. In this case, we selected samples 1-9.
+```
+
+Or we can simply see all the content with `str()` function.
+
+If needed, everything in the MB can be renamed.
+```{r rename, echo = TRUE, eval = FALSE}
+MB <- setBlockNames(MB, paste("X", 1:4, sep = '')) # The blocks
+getBlockNames(MB)
+MB <- setSampleNames(MB, LETTERS[1:10]) # The samples
+getSampleNames(MB)
+MB <- setVariableNames(MB, paste("vars", 1:50, sep = ''), 1)
+getVariableNames(MB, 1)
+```
+
+## Data pre-processing {#processing}
+
+The `R.ComDim` package contains functions to easily apply some data
+transformations. This can result in handy since we there is no need to build
+ the `MultiBlock` every time a new data transformation is tested.
+```{r processing1, echo = TRUE, eval = FALSE}
+## NA removal
+# We first add some NAs to the MultiBlock.
+MB@Data$X2[c(2,3,5),c(1,2,3)] <- NA # Add some NAs
+allMB <- NARemoveMultiBlock(MB, method = 'none', minfrac = 0.2)
+# Variables containing more than 20% of NAs will be discarded
+
+## Data normalization
+allMB <- NormalizeMultiBlock(allMB, method = 'norm')
+# MB is normalized (mean-center and divided by the block norm)
+```
+
+The `R.ComDim` package has been writted with the idea to result very flexible 
+and, as such, it allows the user to apply custom data transformations. For 
+instance, in the code below, all variables with values lower than the 5% of the 
+most intense value are discarded.
+
+```{r processing2, echo = TRUE, eval = FALSE}
+# MB is converted to matrix to calculate the max value.
+maxMB <- max(MultiBlock2matrix(allMB), na.rm = TRUE) 
+# Variables are filtered with the ProcessMultiBlock() function.
+allMB <- ProcessMultiBlock(allMB,
+  FUN.SelectVars = function(x) {apply(x,2,max) > maxMB * 0.05})
+```
