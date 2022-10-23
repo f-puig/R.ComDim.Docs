@@ -6,8 +6,8 @@
 ]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -33,14 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={R.ComDim (a tutorial)},
-  pdfauthor={Francesc Puig Castellví},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -109,11 +101,19 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={R.ComDim (a tutorial)},
+  pdfauthor={Francesc Puig Castellví},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{R.ComDim (a tutorial)}
 \author{Francesc Puig Castellví}
@@ -177,7 +177,7 @@ common to all the blocks.
 \end{itemize}
 
 \hypertarget{functions}{%
-\section{Functions}\label{functions}}
+\section{Some functions to get started}\label{functions}}
 
 To successfully extract all the potential of the ComDim method, several
 functions coded in R are proposed. Some of them are listed below:
@@ -190,7 +190,7 @@ functions coded in R are proposed. Some of them are listed below:
   \texttt{BuildMultiBlock()}: To combine several single data-blocks into a \texttt{MultiBlock}
   object, containing some of them metadata information.
 \item
-  \texttt{ExpandMultiBlock()}: To combine several single data-blocks into a
+  \texttt{ExpandMultiBlock()}: To reorganize the blocks from a MultiBlock based on a metadata information (i.e.~taxonomy, molecular functions).
   \texttt{MultiBlock} object, containing some of them metadata information.
 \item
   \texttt{NormalizeMultiBlock()}: To normalize (some or all) the data-blocks of the
@@ -475,6 +475,25 @@ are kept.
 \NormalTok{rw3 }\OtherTok{\textless{}{-}} \FunctionTok{SplitRW}\NormalTok{(x1x5, }\AttributeTok{checkSampleCorrespondence =} \ConstantTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## Warning in class(add_param[[i]]) == "matrix" || class(add_param[[i]]) == :
+## 'length(x) = 2 > 1' in coercion to 'logical(1)'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in duplicated(samples_list[[i]]) && ignore.names: 'length(x) = 10 > 1'
+## in coercion to 'logical(1)'
+
+## Warning in duplicated(samples_list[[i]]) && ignore.names: 'length(x) = 10 > 1'
+## in coercion to 'logical(1)'
+
+## Warning in duplicated(samples_list[[i]]) && ignore.names: 'length(x) = 10 > 1'
+## in coercion to 'logical(1)'
+
+## Warning in duplicated(samples_list[[i]]) && ignore.names: 'length(x) = 10 > 1'
+## in coercion to 'logical(1)'
+\end{verbatim}
 
 \hypertarget{handling}{%
 \chapter{MultiBlock data handling}\label{handling}}

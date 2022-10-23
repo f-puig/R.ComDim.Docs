@@ -95,7 +95,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -108,7 +108,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -144,7 +144,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>2.1</b> The ComDim method</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>2.2</b> Why should I use ComDim?</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>2.3</b> Functions</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>2.3</b> Some functions to get started</a></li>
 <li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>2.4</b> Install and load R.ComDim package</a></li>
 <li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>2.5</b> References</a></li>
 </ul></li>
@@ -227,21 +227,21 @@ to any of the <strong>taxonomic levels</strong> (class, family, gender, species,
 categories each variable can be listed in. In the resulting <code>MultiBlock</code>, a
 variable will be included in as many blocks as groups (i.e. molecular function)
 it belongs to.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="Section5.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mouse_ds)</span>
-<span id="cb38-2"><a href="Section5.html#cb38-2" aria-hidden="true" tabindex="-1"></a>lipidsMB <span class="ot">&lt;-</span> <span class="fu">ExpandMultiBlock</span>(<span class="at">data =</span> lipids, <span class="at">metadata =</span> metadata_lipids,</span>
-<span id="cb38-3"><a href="Section5.html#cb38-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">minblock =</span> <span class="dv">0</span>, <span class="at">loquace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb38-4"><a href="Section5.html#cb38-4" aria-hidden="true" tabindex="-1"></a>extraMB <span class="ot">&lt;-</span> <span class="fu">ExpandMultiBlock</span>(<span class="at">data =</span> extra, <span class="at">metadata =</span> KEGG_table_metabolites,</span>
-<span id="cb38-5"><a href="Section5.html#cb38-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">minblock =</span> <span class="dv">10</span>, <span class="at">loquace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb38-6"><a href="Section5.html#cb38-6" aria-hidden="true" tabindex="-1"></a>intraMB <span class="ot">&lt;-</span> <span class="fu">ExpandMultiBlock</span>(<span class="at">data =</span> intra, <span class="at">metadata =</span> KEGG_table_metabolites,</span>
-<span id="cb38-7"><a href="Section5.html#cb38-7" aria-hidden="true" tabindex="-1"></a>                            <span class="at">minblock =</span> <span class="dv">10</span>, <span class="at">loquace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb38-8"><a href="Section5.html#cb38-8" aria-hidden="true" tabindex="-1"></a>RNAseqMB <span class="ot">&lt;-</span> <span class="fu">ExpandMultiBlock</span>(<span class="at">data =</span> RNAseq3[,<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>],</span>
-<span id="cb38-9"><a href="Section5.html#cb38-9" aria-hidden="true" tabindex="-1"></a>                             <span class="at">metadata =</span> metadata_RNAseq3,</span>
-<span id="cb38-10"><a href="Section5.html#cb38-10" aria-hidden="true" tabindex="-1"></a>                             <span class="at">minblock =</span> <span class="dv">500</span>, <span class="at">loquace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb38-11"><a href="Section5.html#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="co"># We can count the number of blocks in each MultiBlock</span></span>
-<span id="cb38-12"><a href="Section5.html#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">getBlockNames</span>(lipidsMB)) <span class="co"># 4 blocks</span></span>
-<span id="cb38-13"><a href="Section5.html#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">getBlockNames</span>(extraMB))  <span class="co"># 12 blocks</span></span>
-<span id="cb38-14"><a href="Section5.html#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">getBlockNames</span>(intraMB))  <span class="co"># 12 blocks</span></span>
-<span id="cb38-15"><a href="Section5.html#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">getBlockNames</span>(RNAseqMB)) <span class="co"># 16 blocks</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="Section5.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mouse_ds)</span>
+<span id="cb40-2"><a href="Section5.html#cb40-2" aria-hidden="true" tabindex="-1"></a>lipidsMB <span class="ot">&lt;-</span> <span class="fu">ExpandMultiBlock</span>(<span class="at">data =</span> lipids, <span class="at">metadata =</span> metadata_lipids,</span>
+<span id="cb40-3"><a href="Section5.html#cb40-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">minblock =</span> <span class="dv">0</span>, <span class="at">loquace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb40-4"><a href="Section5.html#cb40-4" aria-hidden="true" tabindex="-1"></a>extraMB <span class="ot">&lt;-</span> <span class="fu">ExpandMultiBlock</span>(<span class="at">data =</span> extra, <span class="at">metadata =</span> KEGG_table_metabolites,</span>
+<span id="cb40-5"><a href="Section5.html#cb40-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">minblock =</span> <span class="dv">10</span>, <span class="at">loquace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb40-6"><a href="Section5.html#cb40-6" aria-hidden="true" tabindex="-1"></a>intraMB <span class="ot">&lt;-</span> <span class="fu">ExpandMultiBlock</span>(<span class="at">data =</span> intra, <span class="at">metadata =</span> KEGG_table_metabolites,</span>
+<span id="cb40-7"><a href="Section5.html#cb40-7" aria-hidden="true" tabindex="-1"></a>                            <span class="at">minblock =</span> <span class="dv">10</span>, <span class="at">loquace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb40-8"><a href="Section5.html#cb40-8" aria-hidden="true" tabindex="-1"></a>RNAseqMB <span class="ot">&lt;-</span> <span class="fu">ExpandMultiBlock</span>(<span class="at">data =</span> RNAseq3[,<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>],</span>
+<span id="cb40-9"><a href="Section5.html#cb40-9" aria-hidden="true" tabindex="-1"></a>                             <span class="at">metadata =</span> metadata_RNAseq3,</span>
+<span id="cb40-10"><a href="Section5.html#cb40-10" aria-hidden="true" tabindex="-1"></a>                             <span class="at">minblock =</span> <span class="dv">500</span>, <span class="at">loquace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb40-11"><a href="Section5.html#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="co"># We can count the number of blocks in each MultiBlock</span></span>
+<span id="cb40-12"><a href="Section5.html#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">getBlockNames</span>(lipidsMB)) <span class="co"># 4 blocks</span></span>
+<span id="cb40-13"><a href="Section5.html#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">getBlockNames</span>(extraMB))  <span class="co"># 12 blocks</span></span>
+<span id="cb40-14"><a href="Section5.html#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">getBlockNames</span>(intraMB))  <span class="co"># 12 blocks</span></span>
+<span id="cb40-15"><a href="Section5.html#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">getBlockNames</span>(RNAseqMB)) <span class="co"># 16 blocks</span></span></code></pre></div>
 <p>Since the blocks from this <code>MultiBlock</code> are related to a specific biological
 role, the <strong>ComDim analysis</strong> can be used to determine the biological roles more
 important in the the studied dataset.</p>
@@ -256,75 +256,75 @@ Then, the <code>minblock</code> filter is applied to avoid that the smallest blo
 interpretable) influence the ComDim model construction.</p>
 <p>Let’s continue with the example from before, but before the ComDim analysis we
 can apply some data transformations.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="Section5.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Blocks are relabelled for clarity</span></span>
-<span id="cb39-2"><a href="Section5.html#cb39-2" aria-hidden="true" tabindex="-1"></a>lipidsMB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(lipidsMB,</span>
-<span id="cb39-3"><a href="Section5.html#cb39-3" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">paste</span>(<span class="st">&quot;lipids&quot;</span>, <span class="fu">getBlockNames</span>(lipidsMB), <span class="at">sep =</span> <span class="st">&#39;.&#39;</span>))</span>
-<span id="cb39-4"><a href="Section5.html#cb39-4" aria-hidden="true" tabindex="-1"></a>intraMB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(intraMB,</span>
-<span id="cb39-5"><a href="Section5.html#cb39-5" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">paste</span>(<span class="st">&quot;intra&quot;</span>, <span class="fu">getBlockNames</span>(intraMB), <span class="at">sep =</span> <span class="st">&#39;.&#39;</span>))</span>
-<span id="cb39-6"><a href="Section5.html#cb39-6" aria-hidden="true" tabindex="-1"></a>extraMB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(extraMB,</span>
-<span id="cb39-7"><a href="Section5.html#cb39-7" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">paste</span>(<span class="st">&quot;extra&quot;</span>, <span class="fu">getBlockNames</span>(extraMB), <span class="at">sep =</span> <span class="st">&#39;.&#39;</span>))</span>
-<span id="cb39-8"><a href="Section5.html#cb39-8" aria-hidden="true" tabindex="-1"></a>RNAseqMB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(RNAseqMB,</span>
-<span id="cb39-9"><a href="Section5.html#cb39-9" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">paste</span>(<span class="st">&quot;RNAseq&quot;</span>, <span class="fu">getBlockNames</span>(RNAseqMB), <span class="at">sep =</span> <span class="st">&#39;.&#39;</span>))</span>
-<span id="cb39-10"><a href="Section5.html#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-11"><a href="Section5.html#cb39-11" aria-hidden="true" tabindex="-1"></a>allMB2 <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(RNAseqMB, lipidsMB, intraMB, extraMB)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="Section5.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Blocks are relabelled for clarity</span></span>
+<span id="cb41-2"><a href="Section5.html#cb41-2" aria-hidden="true" tabindex="-1"></a>lipidsMB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(lipidsMB,</span>
+<span id="cb41-3"><a href="Section5.html#cb41-3" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">paste</span>(<span class="st">&quot;lipids&quot;</span>, <span class="fu">getBlockNames</span>(lipidsMB), <span class="at">sep =</span> <span class="st">&#39;.&#39;</span>))</span>
+<span id="cb41-4"><a href="Section5.html#cb41-4" aria-hidden="true" tabindex="-1"></a>intraMB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(intraMB,</span>
+<span id="cb41-5"><a href="Section5.html#cb41-5" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">paste</span>(<span class="st">&quot;intra&quot;</span>, <span class="fu">getBlockNames</span>(intraMB), <span class="at">sep =</span> <span class="st">&#39;.&#39;</span>))</span>
+<span id="cb41-6"><a href="Section5.html#cb41-6" aria-hidden="true" tabindex="-1"></a>extraMB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(extraMB,</span>
+<span id="cb41-7"><a href="Section5.html#cb41-7" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">paste</span>(<span class="st">&quot;extra&quot;</span>, <span class="fu">getBlockNames</span>(extraMB), <span class="at">sep =</span> <span class="st">&#39;.&#39;</span>))</span>
+<span id="cb41-8"><a href="Section5.html#cb41-8" aria-hidden="true" tabindex="-1"></a>RNAseqMB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(RNAseqMB,</span>
+<span id="cb41-9"><a href="Section5.html#cb41-9" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">paste</span>(<span class="st">&quot;RNAseq&quot;</span>, <span class="fu">getBlockNames</span>(RNAseqMB), <span class="at">sep =</span> <span class="st">&#39;.&#39;</span>))</span>
+<span id="cb41-10"><a href="Section5.html#cb41-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-11"><a href="Section5.html#cb41-11" aria-hidden="true" tabindex="-1"></a>allMB2 <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(RNAseqMB, lipidsMB, intraMB, extraMB)</span></code></pre></div>
 <p>Now, all 4 <code>MultiBlock</code>s were merged into a single <code>MultiBlock</code>, and each block
 contains a suffix denoting the omics data type.</p>
 <p>We apply some data pre-processings:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="Section5.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We apply some pre-processings</span></span>
-<span id="cb40-2"><a href="Section5.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(DESeq2)</span>
-<span id="cb40-3"><a href="Section5.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove blocks relative to map01100</span></span>
-<span id="cb40-4"><a href="Section5.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># (not very informative, it&#39;s the map with all metabolic pathways)</span></span>
-<span id="cb40-5"><a href="Section5.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB2,</span>
-<span id="cb40-6"><a href="Section5.html#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">blocks =</span> <span class="fu">which</span>(<span class="fu">grepl</span>(<span class="st">&#39;map01100&#39;</span>, <span class="fu">getBlockNames</span>(allMB2))),</span>
-<span id="cb40-7"><a href="Section5.html#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># All blocks with map01100 are deleted, since ncol(x) is always &gt; 0.</span></span>
-<span id="cb40-8"><a href="Section5.html#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUN.SelectBlocks =</span> <span class="cf">function</span>(x){<span class="fu">ncol</span>(x) <span class="sc">&lt;</span> <span class="dv">0</span>})</span>
-<span id="cb40-9"><a href="Section5.html#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate the absolute maximum from the RNAseq data.</span></span>
-<span id="cb40-10"><a href="Section5.html#cb40-10" aria-hidden="true" tabindex="-1"></a>  maxMB <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">MultiBlock2matrix</span>(allMB2,</span>
-<span id="cb40-11"><a href="Section5.html#cb40-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">blocks =</span> <span class="fu">grep</span>(<span class="st">&#39;RNAseq&#39;</span>,<span class="fu">getBlockNames</span>(allMB2))</span>
-<span id="cb40-12"><a href="Section5.html#cb40-12" aria-hidden="true" tabindex="-1"></a>                                 ),</span>
-<span id="cb40-13"><a href="Section5.html#cb40-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb40-14"><a href="Section5.html#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Exclude normalized variables with max intensity reported below 0.1%</span></span>
-<span id="cb40-15"><a href="Section5.html#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># of the max from all RNAseq blocks.</span></span>
-<span id="cb40-16"><a href="Section5.html#cb40-16" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB2,</span>
-<span id="cb40-17"><a href="Section5.html#cb40-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">blocks =</span> <span class="fu">grep</span>(<span class="st">&#39;RNAseq&#39;</span>,<span class="fu">getBlockNames</span>(allMB2)),</span>
-<span id="cb40-18"><a href="Section5.html#cb40-18" aria-hidden="true" tabindex="-1"></a>     <span class="at">FUN.SelectVars =</span> <span class="cf">function</span>(x) {<span class="fu">apply</span>(x,<span class="dv">2</span>,max) <span class="sc">&gt;</span> maxMB <span class="sc">*</span> <span class="fl">0.001</span>})</span>
-<span id="cb40-19"><a href="Section5.html#cb40-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add 1 to each value in RNAseq data to remove 0s.</span></span>
-<span id="cb40-20"><a href="Section5.html#cb40-20" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">NARemoveMultiBlock</span>(allMB2,</span>
-<span id="cb40-21"><a href="Section5.html#cb40-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">blocks =</span> <span class="fu">grep</span>(<span class="st">&#39;RNAseq&#39;</span>,<span class="fu">getBlockNames</span>(allMB2)),</span>
-<span id="cb40-22"><a href="Section5.html#cb40-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">method =</span> <span class="st">&#39;fixed.value.all&#39;</span>,</span>
-<span id="cb40-23"><a href="Section5.html#cb40-23" aria-hidden="true" tabindex="-1"></a>     <span class="at">constant =</span> <span class="dv">1</span>)</span>
-<span id="cb40-24"><a href="Section5.html#cb40-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Do rlog transform of the RNAseq data.</span></span>
-<span id="cb40-25"><a href="Section5.html#cb40-25" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB2,</span>
-<span id="cb40-26"><a href="Section5.html#cb40-26" aria-hidden="true" tabindex="-1"></a>     <span class="at">blocks =</span> <span class="fu">grep</span>(<span class="st">&#39;RNAseq&#39;</span>,<span class="fu">getBlockNames</span>(allMB2)),</span>
-<span id="cb40-27"><a href="Section5.html#cb40-27" aria-hidden="true" tabindex="-1"></a>     <span class="co"># Normalize rlog transcript counts</span></span>
-<span id="cb40-28"><a href="Section5.html#cb40-28" aria-hidden="true" tabindex="-1"></a>     <span class="at">FUN =</span> <span class="cf">function</span>(x){<span class="fu">t</span>(DESeq2<span class="sc">::</span><span class="fu">rlog</span>(<span class="fu">t</span>(x)))})</span>
-<span id="cb40-29"><a href="Section5.html#cb40-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replace NAs by random noise</span></span>
-<span id="cb40-30"><a href="Section5.html#cb40-30" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">NARemoveMultiBlock</span>(allMB2, <span class="at">method =</span> <span class="st">&#39;random.noise&#39;</span>)</span>
-<span id="cb40-31"><a href="Section5.html#cb40-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Normalize (mean-center and divided by each block-norm)</span></span>
-<span id="cb40-32"><a href="Section5.html#cb40-32" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB2, <span class="at">method =</span> <span class="st">&#39;norm&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="Section5.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We apply some pre-processings</span></span>
+<span id="cb42-2"><a href="Section5.html#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(DESeq2)</span>
+<span id="cb42-3"><a href="Section5.html#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove blocks relative to map01100</span></span>
+<span id="cb42-4"><a href="Section5.html#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># (not very informative, it&#39;s the map with all metabolic pathways)</span></span>
+<span id="cb42-5"><a href="Section5.html#cb42-5" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB2,</span>
+<span id="cb42-6"><a href="Section5.html#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">blocks =</span> <span class="fu">which</span>(<span class="fu">grepl</span>(<span class="st">&#39;map01100&#39;</span>, <span class="fu">getBlockNames</span>(allMB2))),</span>
+<span id="cb42-7"><a href="Section5.html#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># All blocks with map01100 are deleted, since ncol(x) is always &gt; 0.</span></span>
+<span id="cb42-8"><a href="Section5.html#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUN.SelectBlocks =</span> <span class="cf">function</span>(x){<span class="fu">ncol</span>(x) <span class="sc">&lt;</span> <span class="dv">0</span>})</span>
+<span id="cb42-9"><a href="Section5.html#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate the absolute maximum from the RNAseq data.</span></span>
+<span id="cb42-10"><a href="Section5.html#cb42-10" aria-hidden="true" tabindex="-1"></a>  maxMB <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">MultiBlock2matrix</span>(allMB2,</span>
+<span id="cb42-11"><a href="Section5.html#cb42-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">blocks =</span> <span class="fu">grep</span>(<span class="st">&#39;RNAseq&#39;</span>,<span class="fu">getBlockNames</span>(allMB2))</span>
+<span id="cb42-12"><a href="Section5.html#cb42-12" aria-hidden="true" tabindex="-1"></a>                                 ),</span>
+<span id="cb42-13"><a href="Section5.html#cb42-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb42-14"><a href="Section5.html#cb42-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Exclude normalized variables with max intensity reported below 0.1%</span></span>
+<span id="cb42-15"><a href="Section5.html#cb42-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># of the max from all RNAseq blocks.</span></span>
+<span id="cb42-16"><a href="Section5.html#cb42-16" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB2,</span>
+<span id="cb42-17"><a href="Section5.html#cb42-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">blocks =</span> <span class="fu">grep</span>(<span class="st">&#39;RNAseq&#39;</span>,<span class="fu">getBlockNames</span>(allMB2)),</span>
+<span id="cb42-18"><a href="Section5.html#cb42-18" aria-hidden="true" tabindex="-1"></a>     <span class="at">FUN.SelectVars =</span> <span class="cf">function</span>(x) {<span class="fu">apply</span>(x,<span class="dv">2</span>,max) <span class="sc">&gt;</span> maxMB <span class="sc">*</span> <span class="fl">0.001</span>})</span>
+<span id="cb42-19"><a href="Section5.html#cb42-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add 1 to each value in RNAseq data to remove 0s.</span></span>
+<span id="cb42-20"><a href="Section5.html#cb42-20" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">NARemoveMultiBlock</span>(allMB2,</span>
+<span id="cb42-21"><a href="Section5.html#cb42-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">blocks =</span> <span class="fu">grep</span>(<span class="st">&#39;RNAseq&#39;</span>,<span class="fu">getBlockNames</span>(allMB2)),</span>
+<span id="cb42-22"><a href="Section5.html#cb42-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">method =</span> <span class="st">&#39;fixed.value.all&#39;</span>,</span>
+<span id="cb42-23"><a href="Section5.html#cb42-23" aria-hidden="true" tabindex="-1"></a>     <span class="at">constant =</span> <span class="dv">1</span>)</span>
+<span id="cb42-24"><a href="Section5.html#cb42-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Do rlog transform of the RNAseq data.</span></span>
+<span id="cb42-25"><a href="Section5.html#cb42-25" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB2,</span>
+<span id="cb42-26"><a href="Section5.html#cb42-26" aria-hidden="true" tabindex="-1"></a>     <span class="at">blocks =</span> <span class="fu">grep</span>(<span class="st">&#39;RNAseq&#39;</span>,<span class="fu">getBlockNames</span>(allMB2)),</span>
+<span id="cb42-27"><a href="Section5.html#cb42-27" aria-hidden="true" tabindex="-1"></a>     <span class="co"># Normalize rlog transcript counts</span></span>
+<span id="cb42-28"><a href="Section5.html#cb42-28" aria-hidden="true" tabindex="-1"></a>     <span class="at">FUN =</span> <span class="cf">function</span>(x){<span class="fu">t</span>(DESeq2<span class="sc">::</span><span class="fu">rlog</span>(<span class="fu">t</span>(x)))})</span>
+<span id="cb42-29"><a href="Section5.html#cb42-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replace NAs by random noise</span></span>
+<span id="cb42-30"><a href="Section5.html#cb42-30" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">NARemoveMultiBlock</span>(allMB2, <span class="at">method =</span> <span class="st">&#39;random.noise&#39;</span>)</span>
+<span id="cb42-31"><a href="Section5.html#cb42-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Normalize (mean-center and divided by each block-norm)</span></span>
+<span id="cb42-32"><a href="Section5.html#cb42-32" aria-hidden="true" tabindex="-1"></a>  allMB2 <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB2, <span class="at">method =</span> <span class="st">&#39;norm&#39;</span>)</span></code></pre></div>
 <p>We continue with the ComDim analysis:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="Section5.html#cb41-1" aria-hidden="true" tabindex="-1"></a>  resultsPCA2 <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA_MB</span>(allMB2, <span class="at">ndim =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="Section5.html#cb43-1" aria-hidden="true" tabindex="-1"></a>  resultsPCA2 <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA_MB</span>(allMB2, <span class="at">ndim =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p>A first look at the scores can tell us how the blocks relate to the sample type.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="Section5.html#cb42-1" aria-hidden="true" tabindex="-1"></a>  scoresTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsPCA2)</span>
-<span id="cb42-2"><a href="Section5.html#cb42-2" aria-hidden="true" tabindex="-1"></a>  scoresTable_wider <span class="ot">&lt;-</span> scoresTable <span class="sc">%&gt;%</span></span>
-<span id="cb42-3"><a href="Section5.html#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
-<span id="cb42-4"><a href="Section5.html#cb42-4" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
-<span id="cb42-5"><a href="Section5.html#cb42-5" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb42-6"><a href="Section5.html#cb42-6" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, block.name, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
-<span id="cb42-7"><a href="Section5.html#cb42-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(sample.id, sample.type, scores.type.dim, block.name) <span class="sc">%&gt;%</span></span>
-<span id="cb42-8"><a href="Section5.html#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span></span>
-<span id="cb42-9"><a href="Section5.html#cb42-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">omics =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;RNAseq&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
-<span id="cb42-10"><a href="Section5.html#cb42-10" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">grepl</span>(<span class="st">&#39;lipids&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;lipids&#39;</span>,</span>
-<span id="cb42-11"><a href="Section5.html#cb42-11" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">grepl</span>(<span class="st">&#39;extra&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;extra&#39;</span>,</span>
-<span id="cb42-12"><a href="Section5.html#cb42-12" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">grepl</span>(<span class="st">&#39;intra&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;intra&#39;</span>,</span>
-<span id="cb42-13"><a href="Section5.html#cb42-13" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">grepl</span>(<span class="st">&#39;Global&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;Global&#39;</span>))</span>
-<span id="cb42-14"><a href="Section5.html#cb42-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-15"><a href="Section5.html#cb42-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> scoresTable_wider) <span class="sc">+</span></span>
-<span id="cb42-16"><a href="Section5.html#cb42-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> T.scores1, <span class="at">y =</span> T.scores2, <span class="at">color =</span> sample.type, <span class="at">shape =</span> omics)) <span class="sc">+</span></span>
-<span id="cb42-17"><a href="Section5.html#cb42-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores2, <span class="at">fill =</span> sample.type),</span>
-<span id="cb42-18"><a href="Section5.html#cb42-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">24</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
-<span id="cb42-19"><a href="Section5.html#cb42-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb42-20"><a href="Section5.html#cb42-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim scores&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="Section5.html#cb44-1" aria-hidden="true" tabindex="-1"></a>  scoresTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsPCA2)</span>
+<span id="cb44-2"><a href="Section5.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  scoresTable_wider <span class="ot">&lt;-</span> scoresTable <span class="sc">%&gt;%</span></span>
+<span id="cb44-3"><a href="Section5.html#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
+<span id="cb44-4"><a href="Section5.html#cb44-4" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
+<span id="cb44-5"><a href="Section5.html#cb44-5" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb44-6"><a href="Section5.html#cb44-6" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, block.name, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
+<span id="cb44-7"><a href="Section5.html#cb44-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(sample.id, sample.type, scores.type.dim, block.name) <span class="sc">%&gt;%</span></span>
+<span id="cb44-8"><a href="Section5.html#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span></span>
+<span id="cb44-9"><a href="Section5.html#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">omics =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;RNAseq&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
+<span id="cb44-10"><a href="Section5.html#cb44-10" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">grepl</span>(<span class="st">&#39;lipids&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;lipids&#39;</span>,</span>
+<span id="cb44-11"><a href="Section5.html#cb44-11" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">grepl</span>(<span class="st">&#39;extra&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;extra&#39;</span>,</span>
+<span id="cb44-12"><a href="Section5.html#cb44-12" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">grepl</span>(<span class="st">&#39;intra&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;intra&#39;</span>,</span>
+<span id="cb44-13"><a href="Section5.html#cb44-13" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">grepl</span>(<span class="st">&#39;Global&#39;</span>, block.name) <span class="sc">~</span> <span class="st">&#39;Global&#39;</span>))</span>
+<span id="cb44-14"><a href="Section5.html#cb44-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-15"><a href="Section5.html#cb44-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> scoresTable_wider) <span class="sc">+</span></span>
+<span id="cb44-16"><a href="Section5.html#cb44-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> T.scores1, <span class="at">y =</span> T.scores2, <span class="at">color =</span> sample.type, <span class="at">shape =</span> omics)) <span class="sc">+</span></span>
+<span id="cb44-17"><a href="Section5.html#cb44-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores2, <span class="at">fill =</span> sample.type),</span>
+<span id="cb44-18"><a href="Section5.html#cb44-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">24</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb44-19"><a href="Section5.html#cb44-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb44-20"><a href="Section5.html#cb44-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim scores&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
 <img src="Figs/fig5_1.png" alt="Scores" width="50%" />
 <p class="caption">
@@ -340,25 +340,25 @@ Despite this, NI seems to be different from DOX and OFF at the lipidomic level.<
 <div id="molecular-functions" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Molecular functions<a href="Section5.html#molecular-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s start by looking at the <strong>saliences</strong>:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="Section5.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot saliences</span></span>
-<span id="cb43-2"><a href="Section5.html#cb43-2" aria-hidden="true" tabindex="-1"></a>saliences2 <span class="ot">&lt;-</span> resultsPCA2<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
-<span id="cb43-3"><a href="Section5.html#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb43-4"><a href="Section5.html#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
-<span id="cb43-5"><a href="Section5.html#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;CC1&#39;</span>,<span class="st">&#39;CC2&#39;</span>),</span>
-<span id="cb43-6"><a href="Section5.html#cb43-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>,</span>
-<span id="cb43-7"><a href="Section5.html#cb43-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb43-8"><a href="Section5.html#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">omics =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;RNAseq&#39;</span>, dataset) <span class="sc">~</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
-<span id="cb43-9"><a href="Section5.html#cb43-9" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">grepl</span>(<span class="st">&#39;lipids&#39;</span>, dataset) <span class="sc">~</span> <span class="st">&#39;lipids&#39;</span>,</span>
-<span id="cb43-10"><a href="Section5.html#cb43-10" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">grepl</span>(<span class="st">&#39;extra&#39;</span>, dataset) <span class="sc">~</span> <span class="st">&#39;extra&#39;</span>,</span>
-<span id="cb43-11"><a href="Section5.html#cb43-11" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">grepl</span>(<span class="st">&#39;intra&#39;</span>, dataset) <span class="sc">~</span> <span class="st">&#39;intra&#39;</span>))</span>
-<span id="cb43-12"><a href="Section5.html#cb43-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> saliences2,</span>
-<span id="cb43-13"><a href="Section5.html#cb43-13" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CC, <span class="at">y =</span> Salience, <span class="at">group =</span> dataset )) <span class="sc">+</span></span>
-<span id="cb43-14"><a href="Section5.html#cb43-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>,</span>
-<span id="cb43-15"><a href="Section5.html#cb43-15" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">fill =</span> omics)) <span class="sc">+</span></span>
-<span id="cb43-16"><a href="Section5.html#cb43-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb43-17"><a href="Section5.html#cb43-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">label =</span> <span class="st">&#39;lipids.GLP&#39;</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb43-18"><a href="Section5.html#cb43-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">label =</span> <span class="st">&#39;intra.map04978&#39;</span>, <span class="at">x =</span> <span class="fl">1.25</span>, <span class="at">y =</span> <span class="fl">0.88</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb43-19"><a href="Section5.html#cb43-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim Saliences&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="Section5.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot saliences</span></span>
+<span id="cb45-2"><a href="Section5.html#cb45-2" aria-hidden="true" tabindex="-1"></a>saliences2 <span class="ot">&lt;-</span> resultsPCA2<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="Section5.html#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb45-4"><a href="Section5.html#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb45-5"><a href="Section5.html#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;CC1&#39;</span>,<span class="st">&#39;CC2&#39;</span>),</span>
+<span id="cb45-6"><a href="Section5.html#cb45-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>,</span>
+<span id="cb45-7"><a href="Section5.html#cb45-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-8"><a href="Section5.html#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">omics =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;RNAseq&#39;</span>, dataset) <span class="sc">~</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
+<span id="cb45-9"><a href="Section5.html#cb45-9" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">grepl</span>(<span class="st">&#39;lipids&#39;</span>, dataset) <span class="sc">~</span> <span class="st">&#39;lipids&#39;</span>,</span>
+<span id="cb45-10"><a href="Section5.html#cb45-10" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">grepl</span>(<span class="st">&#39;extra&#39;</span>, dataset) <span class="sc">~</span> <span class="st">&#39;extra&#39;</span>,</span>
+<span id="cb45-11"><a href="Section5.html#cb45-11" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">grepl</span>(<span class="st">&#39;intra&#39;</span>, dataset) <span class="sc">~</span> <span class="st">&#39;intra&#39;</span>))</span>
+<span id="cb45-12"><a href="Section5.html#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> saliences2,</span>
+<span id="cb45-13"><a href="Section5.html#cb45-13" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CC, <span class="at">y =</span> Salience, <span class="at">group =</span> dataset )) <span class="sc">+</span></span>
+<span id="cb45-14"><a href="Section5.html#cb45-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>,</span>
+<span id="cb45-15"><a href="Section5.html#cb45-15" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">fill =</span> omics)) <span class="sc">+</span></span>
+<span id="cb45-16"><a href="Section5.html#cb45-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb45-17"><a href="Section5.html#cb45-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">label =</span> <span class="st">&#39;lipids.GLP&#39;</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">0.4</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb45-18"><a href="Section5.html#cb45-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">label =</span> <span class="st">&#39;intra.map04978&#39;</span>, <span class="at">x =</span> <span class="fl">1.25</span>, <span class="at">y =</span> <span class="fl">0.88</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb45-19"><a href="Section5.html#cb45-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim Saliences&#39;</span>)</span></code></pre></div>
 <p><img src="Figs/fig5_2.png" />
 CC1 is descriptive of metabolomics data (both intra and extra)
 CC2 is descriptive of RNAseq and glycerophospholipids (lipids.GLP)
@@ -370,26 +370,26 @@ in the “intra” data.</p>
 features in the block.
 We will plot now the loadings for the two most relevant blocks as seen in the
 previous section.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="Section5.html#cb44-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># MINERAL ABSORPTION</span></span>
-<span id="cb44-2"><a href="Section5.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  LoadingsTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimLoadingsTable</span>(<span class="at">model =</span> resultsPCA2,</span>
-<span id="cb44-3"><a href="Section5.html#cb44-3" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">block =</span> <span class="st">&#39;intra.map04978&#39;</span>,</span>
-<span id="cb44-4"><a href="Section5.html#cb44-4" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">dim =</span> <span class="dv">1</span>)</span>
-<span id="cb44-5"><a href="Section5.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(LoadingsTable, <span class="fu">aes</span>(<span class="at">x =</span> variable.id, <span class="at">y =</span> value)) <span class="sc">+</span></span>
-<span id="cb44-6"><a href="Section5.html#cb44-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span></span>
-<span id="cb44-7"><a href="Section5.html#cb44-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;MINERAL ABSORPTION&#39;</span>) <span class="sc">+</span></span>
-<span id="cb44-8"><a href="Section5.html#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb44-9"><a href="Section5.html#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
-<span id="cb44-10"><a href="Section5.html#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-11"><a href="Section5.html#cb44-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># GLYCEROPHOSPHOLIPIDS</span></span>
-<span id="cb44-12"><a href="Section5.html#cb44-12" aria-hidden="true" tabindex="-1"></a>  LoadingsTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimLoadingsTable</span>(<span class="at">model =</span> resultsPCA2,</span>
-<span id="cb44-13"><a href="Section5.html#cb44-13" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">block =</span> <span class="st">&#39;lipids.GPL&#39;</span>,</span>
-<span id="cb44-14"><a href="Section5.html#cb44-14" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">dim =</span> <span class="dv">2</span>)</span>
-<span id="cb44-15"><a href="Section5.html#cb44-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(LoadingsTable, <span class="fu">aes</span>(<span class="at">x =</span> variable.id, <span class="at">y =</span> value)) <span class="sc">+</span></span>
-<span id="cb44-16"><a href="Section5.html#cb44-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span></span>
-<span id="cb44-17"><a href="Section5.html#cb44-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;GLYCEROPHOSPHOLIPIDS&#39;</span>) <span class="sc">+</span></span>
-<span id="cb44-18"><a href="Section5.html#cb44-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb44-19"><a href="Section5.html#cb44-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>,</span>
-<span id="cb44-20"><a href="Section5.html#cb44-20" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">size =</span> <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="Section5.html#cb46-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># MINERAL ABSORPTION</span></span>
+<span id="cb46-2"><a href="Section5.html#cb46-2" aria-hidden="true" tabindex="-1"></a>  LoadingsTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimLoadingsTable</span>(<span class="at">model =</span> resultsPCA2,</span>
+<span id="cb46-3"><a href="Section5.html#cb46-3" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">block =</span> <span class="st">&#39;intra.map04978&#39;</span>,</span>
+<span id="cb46-4"><a href="Section5.html#cb46-4" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">dim =</span> <span class="dv">1</span>)</span>
+<span id="cb46-5"><a href="Section5.html#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(LoadingsTable, <span class="fu">aes</span>(<span class="at">x =</span> variable.id, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb46-6"><a href="Section5.html#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span></span>
+<span id="cb46-7"><a href="Section5.html#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;MINERAL ABSORPTION&#39;</span>) <span class="sc">+</span></span>
+<span id="cb46-8"><a href="Section5.html#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb46-9"><a href="Section5.html#cb46-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
+<span id="cb46-10"><a href="Section5.html#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="Section5.html#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># GLYCEROPHOSPHOLIPIDS</span></span>
+<span id="cb46-12"><a href="Section5.html#cb46-12" aria-hidden="true" tabindex="-1"></a>  LoadingsTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimLoadingsTable</span>(<span class="at">model =</span> resultsPCA2,</span>
+<span id="cb46-13"><a href="Section5.html#cb46-13" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">block =</span> <span class="st">&#39;lipids.GPL&#39;</span>,</span>
+<span id="cb46-14"><a href="Section5.html#cb46-14" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">dim =</span> <span class="dv">2</span>)</span>
+<span id="cb46-15"><a href="Section5.html#cb46-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(LoadingsTable, <span class="fu">aes</span>(<span class="at">x =</span> variable.id, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb46-16"><a href="Section5.html#cb46-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span></span>
+<span id="cb46-17"><a href="Section5.html#cb46-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;GLYCEROPHOSPHOLIPIDS&#39;</span>) <span class="sc">+</span></span>
+<span id="cb46-18"><a href="Section5.html#cb46-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb46-19"><a href="Section5.html#cb46-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>,</span>
+<span id="cb46-20"><a href="Section5.html#cb46-20" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">size =</span> <span class="dv">3</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
 <img src="Figs/fig5_3.png" alt="Mineral absorption" width="50%" />
 <p class="caption">
@@ -402,36 +402,36 @@ PE36:2, PC36:1,…</p>
 <p>We can also plot the loadings into <strong>KEGG pathway maps</strong> (if the omics variables
 can be matched with the KEGG identifiers).</p>
 <p>Here is an example for the metabolomics data:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="Section5.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MINERAL ABSORPTION</span></span>
-<span id="cb45-2"><a href="Section5.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare input data</span></span>
-<span id="cb45-3"><a href="Section5.html#cb45-3" aria-hidden="true" tabindex="-1"></a>loadingVector <span class="ot">&lt;-</span> LoadingsTable<span class="sc">$</span>value <span class="sc">*</span> <span class="dv">10</span> <span class="co"># 10 is a factor used to maximize</span></span>
-<span id="cb45-4"><a href="Section5.html#cb45-4" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># the color contrast in the resulting</span></span>
-<span id="cb45-5"><a href="Section5.html#cb45-5" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># KEGG map.</span></span>
-<span id="cb45-6"><a href="Section5.html#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(loadingVector) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;map04978.&quot;</span>,<span class="st">&quot;&quot;</span>,LoadingsTable<span class="sc">$</span>variable.id)</span>
-<span id="cb45-7"><a href="Section5.html#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-8"><a href="Section5.html#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pathview) <span class="co"># From Bioconductor</span></span>
-<span id="cb45-9"><a href="Section5.html#cb45-9" aria-hidden="true" tabindex="-1"></a>pv.out <span class="ot">&lt;-</span> <span class="fu">pathview</span>(<span class="at">cpd.data =</span> loadingVector,</span>
-<span id="cb45-10"><a href="Section5.html#cb45-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pathway.id =</span> <span class="st">&quot;04978&quot;</span>,</span>
-<span id="cb45-11"><a href="Section5.html#cb45-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">species =</span> <span class="st">&quot;mmu&quot;</span>,</span>
-<span id="cb45-12"><a href="Section5.html#cb45-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">out.suffix =</span> <span class="st">&quot;ComDim&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="Section5.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MINERAL ABSORPTION</span></span>
+<span id="cb47-2"><a href="Section5.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare input data</span></span>
+<span id="cb47-3"><a href="Section5.html#cb47-3" aria-hidden="true" tabindex="-1"></a>loadingVector <span class="ot">&lt;-</span> LoadingsTable<span class="sc">$</span>value <span class="sc">*</span> <span class="dv">10</span> <span class="co"># 10 is a factor used to maximize</span></span>
+<span id="cb47-4"><a href="Section5.html#cb47-4" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># the color contrast in the resulting</span></span>
+<span id="cb47-5"><a href="Section5.html#cb47-5" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># KEGG map.</span></span>
+<span id="cb47-6"><a href="Section5.html#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(loadingVector) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;map04978.&quot;</span>,<span class="st">&quot;&quot;</span>,LoadingsTable<span class="sc">$</span>variable.id)</span>
+<span id="cb47-7"><a href="Section5.html#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="Section5.html#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pathview) <span class="co"># From Bioconductor</span></span>
+<span id="cb47-9"><a href="Section5.html#cb47-9" aria-hidden="true" tabindex="-1"></a>pv.out <span class="ot">&lt;-</span> <span class="fu">pathview</span>(<span class="at">cpd.data =</span> loadingVector,</span>
+<span id="cb47-10"><a href="Section5.html#cb47-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pathway.id =</span> <span class="st">&quot;04978&quot;</span>,</span>
+<span id="cb47-11"><a href="Section5.html#cb47-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">species =</span> <span class="st">&quot;mmu&quot;</span>,</span>
+<span id="cb47-12"><a href="Section5.html#cb47-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">out.suffix =</span> <span class="st">&quot;ComDim&quot;</span>)</span></code></pre></div>
 <p>The map is saved in the working directory:
 <img src="Figs/mmu04978.ComDim.png" /></p>
 <p>And here, there is an example for the RNAseq-data (block mmu05200, “Pathways in
 Cancer”):</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="Section5.html#cb46-1" aria-hidden="true" tabindex="-1"></a>LoadingsTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimLoadingsTable</span>(<span class="at">model =</span> resultsPCA2,</span>
-<span id="cb46-2"><a href="Section5.html#cb46-2" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">block =</span> <span class="st">&#39;RNAseq.mmu05200&#39;</span>,</span>
-<span id="cb46-3"><a href="Section5.html#cb46-3" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">dim =</span> <span class="dv">2</span>)</span>
-<span id="cb46-4"><a href="Section5.html#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare input data</span></span>
-<span id="cb46-5"><a href="Section5.html#cb46-5" aria-hidden="true" tabindex="-1"></a>loadingVector <span class="ot">&lt;-</span> LoadingsTable<span class="sc">$</span>value <span class="sc">*</span> <span class="dv">10</span> <span class="co"># 10 is a factor to maximize </span></span>
-<span id="cb46-6"><a href="Section5.html#cb46-6" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># the color contrast in the</span></span>
-<span id="cb46-7"><a href="Section5.html#cb46-7" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># resulting KEGG map.</span></span>
-<span id="cb46-8"><a href="Section5.html#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(loadingVector) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;mmu05200.&quot;</span>,<span class="st">&quot;&quot;</span>,LoadingsTable<span class="sc">$</span>variable.id)</span>
-<span id="cb46-9"><a href="Section5.html#cb46-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-10"><a href="Section5.html#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pathview) <span class="co"># From Bioconductor</span></span>
-<span id="cb46-11"><a href="Section5.html#cb46-11" aria-hidden="true" tabindex="-1"></a>pv.out <span class="ot">&lt;-</span> <span class="fu">pathview</span>(<span class="at">gene.data =</span> loadingVector,</span>
-<span id="cb46-12"><a href="Section5.html#cb46-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pathway.id =</span> <span class="st">&quot;05200&quot;</span>,</span>
-<span id="cb46-13"><a href="Section5.html#cb46-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">species =</span> <span class="st">&quot;mmu&quot;</span>,</span>
-<span id="cb46-14"><a href="Section5.html#cb46-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">out.suffix =</span> <span class="st">&quot;ComDim&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="Section5.html#cb48-1" aria-hidden="true" tabindex="-1"></a>LoadingsTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimLoadingsTable</span>(<span class="at">model =</span> resultsPCA2,</span>
+<span id="cb48-2"><a href="Section5.html#cb48-2" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">block =</span> <span class="st">&#39;RNAseq.mmu05200&#39;</span>,</span>
+<span id="cb48-3"><a href="Section5.html#cb48-3" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">dim =</span> <span class="dv">2</span>)</span>
+<span id="cb48-4"><a href="Section5.html#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare input data</span></span>
+<span id="cb48-5"><a href="Section5.html#cb48-5" aria-hidden="true" tabindex="-1"></a>loadingVector <span class="ot">&lt;-</span> LoadingsTable<span class="sc">$</span>value <span class="sc">*</span> <span class="dv">10</span> <span class="co"># 10 is a factor to maximize </span></span>
+<span id="cb48-6"><a href="Section5.html#cb48-6" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># the color contrast in the</span></span>
+<span id="cb48-7"><a href="Section5.html#cb48-7" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># resulting KEGG map.</span></span>
+<span id="cb48-8"><a href="Section5.html#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(loadingVector) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;mmu05200.&quot;</span>,<span class="st">&quot;&quot;</span>,LoadingsTable<span class="sc">$</span>variable.id)</span>
+<span id="cb48-9"><a href="Section5.html#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="Section5.html#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pathview) <span class="co"># From Bioconductor</span></span>
+<span id="cb48-11"><a href="Section5.html#cb48-11" aria-hidden="true" tabindex="-1"></a>pv.out <span class="ot">&lt;-</span> <span class="fu">pathview</span>(<span class="at">gene.data =</span> loadingVector,</span>
+<span id="cb48-12"><a href="Section5.html#cb48-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pathway.id =</span> <span class="st">&quot;05200&quot;</span>,</span>
+<span id="cb48-13"><a href="Section5.html#cb48-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">species =</span> <span class="st">&quot;mmu&quot;</span>,</span>
+<span id="cb48-14"><a href="Section5.html#cb48-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">out.suffix =</span> <span class="st">&quot;ComDim&quot;</span>)</span></code></pre></div>
 <p><img src="Figs/mmu05200.ComDim.png" /></p>
 
 </div>

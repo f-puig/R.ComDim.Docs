@@ -34,7 +34,7 @@ platform.
 errors in the sample preparation.
 
 
-## Functions {#functions}
+## Some functions to get started {#functions}
 
 To successfully extract all the potential of the ComDim method, several 
 functions coded in R are proposed. Some of them are listed below:
@@ -42,7 +42,7 @@ functions coded in R are proposed. Some of them are listed below:
 - `MultiBlock()`: To initialize a `MultiBlock` object with the first data-block(s). 
 - `BuildMultiBlock()`: To combine several single data-blocks into a `MultiBlock`
 object, containing some of them metadata information.
-- `ExpandMultiBlock()`: To combine several single data-blocks into a 
+- `ExpandMultiBlock()`: To reorganize the blocks from a MultiBlock based on a metadata information (i.e. taxonomy, molecular functions).
 `MultiBlock` object, containing some of them metadata information. 
 - `NormalizeMultiBlock()`: To normalize (some or all) the data-blocks of the 
 `MultiBlock` object.
