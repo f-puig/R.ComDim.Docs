@@ -117,7 +117,7 @@
 
 \title{R.ComDim (a tutorial)}
 \author{Francesc Puig Castellví}
-\date{2022-10-22}
+\date{2022-10-23}
 
 \begin{document}
 \maketitle
@@ -229,25 +229,20 @@ next chapters and the help (\texttt{?}).
   Puig-Castellví, F.; Jouan-Rimbaud Bouveresse, D.; Mazéas, L.; Chapleur, O.;
   Rutledge, D. N. Rearrangement of incomplete multi-omics datasets combined with
   ComDim for evaluating replicate cross-platform variability and batch influence.
-  Chemom. Intell. Lab. Syst. 2021, 18 (104422).
-  {[}\textbf{\url{https://doi.org/10.1016/j.chemolab.2021.104422}}{]}
-  (\url{https://doi.org/10.1016/j.chemolab.2021.104422})
+  Chemom. Intell. Lab. Syst. 2021, 18 (104422). \href{https://doi.org/10.1016/j.chemolab.2021.104422}{\textbf{(DOI)}}
 \item
   Qannari, E. M.; Courcoux, P.; Vigneau, E. Common Components and Specific
   Weights Analysis Performed on Preference Data. Food Qual. Prefer. 2001, 12
-  (5--7), 365--368.{[}\textbf{\url{https://doi.org/10.1016/S0950-3293(01)00026-X}}{]}
-  (\url{https://doi.org/10.1016/S0950-3293(01)00026-X})
+  (5--7), 365--368.\href{https://doi.org/10.1016/S0950-3293(01)00026-X}{\textbf{(DOI)}}
 \item
   Mazerolles, G.; Hanafi, M.; Dufour, E.; Bertrand, D.; Qannari, E. M. Common
   Components and Specific Weights Analysis: A Chemometric Method for Dealing with
-  Complexity of Food Products. Chemom. Intell. Lab. Syst. 2006, 81 (1), 41--49. {[}\textbf{\url{https://doi.org/10.1016/J.CHEMOLAB.2005.09.004}}{]}
-  (\url{https://doi.org/10.1016/J.CHEMOLAB.2005.09.004})
+  Complexity of Food Products. Chemom. Intell. Lab. Syst. 2006, 81 (1), 41--49. \href{https://doi.org/10.1016/J.CHEMOLAB.2005.09.004}{\textbf{(DOI)}}
 \item
   Claeys-Bruno, M.; Béal, A.; Rutledge, D. N.; Sergent, M. Use of the Common
   Components and Specific Weights Analysis to Interpret Supersaturated Designs.
   Chemom. Intell. Lab. Syst. 2016, 152, 97--106.
-  {[}\textbf{\url{https://doi.org/10.1016/j.chemolab.2016.01.014}}{]}
-  (\url{https://doi.org/10.1016/j.chemolab.2016.01.014})
+  \href{https://doi.org/10.1016/j.chemolab.2016.01.014}{\textbf{(DOI)}}
 \end{itemize}
 
 \hypertarget{create}{%
@@ -731,8 +726,8 @@ The ComDim analysis is run with 2 components.
 \texttt{resultsPCA} is an object of class \texttt{ComDim}.
 Let's proceed now to inspect some of the results from this analysis.
 
-\hypertarget{Saliences}{%
-\subsection{Saliences}\label{Saliences}}
+\hypertarget{saliences}{%
+\subsection{Saliences}\label{saliences}}
 
 We can start by looking at the saliences, which show the contribution of each
 block for every component.
@@ -757,10 +752,17 @@ block for every component.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Figs/fig1.png}
+\begin{figure}
 
-\hypertarget{Scores}{%
-\subsection{Scores}\label{Scores}}
+{\centering \includegraphics[width=0.5\linewidth]{Figs/fig1} 
+
+}
+
+\caption{Saliences}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\hypertarget{scores}{%
+\subsection{Scores}\label{scores}}
 
 The scores give the contribution of each sample. There are two types of scores,
 \textbf{Global} (Q.scores) and \textbf{Local} (T.scores). \textbf{Global scores} show the
@@ -794,13 +796,20 @@ the contribution for each of the blocks.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Figs/fig4_2.png}
+\begin{figure}
 
-\hypertarget{Loadings}{%
-\subsection{Loadings}\label{Loadings}}
+{\centering \includegraphics[width=0.5\linewidth]{Figs/fig4_2} 
+
+}
+
+\caption{Scores}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+\hypertarget{loadings}{%
+\subsection{Loadings}\label{loadings}}
 
 The \textbf{loadings} give the contribution of each variable in the model.
-And example of how to use the loadings is presented in the next section.
+And example of how to use the loadings is presented in \href{https://f-puig.github.io/R.ComDim.Docs/Section5.html}{\textbf{CHAPTER6}}.
 
 \hypertarget{PART3}{%
 \section{Data prediction}\label{PART3}}
@@ -969,7 +978,14 @@ A first look at the scores can tell us how the blocks relate to the sample type.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Figs/fig5_1.png}
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{Figs/fig5_1} 
+
+}
+
+\caption{Scores}\label{fig:unnamed-chunk-12}
+\end{figure}
 
 The metabolomic and the RNAseq profiles appear to be very orthogonal
 (uncorrelated), since intra and extra does not change much (within each group)
@@ -1046,8 +1062,17 @@ previous section.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Figs/fig5_3.png}
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{Figs/fig5_3} 
+
+}
+
+\caption{Mineral absorption}\label{fig:unnamed-chunk-13}
+\end{figure}
+
 \includegraphics{Figs/fig5_4.png}
+
 Most important changes in the GPL group occur for PC36:2, PC34:1, PC:34:2,
 PE36:2, PC36:1,\ldots{}
 
@@ -1101,7 +1126,7 @@ Cancer''):
 \includegraphics{Figs/mmu05200.ComDim.png}
 
 \hypertarget{Section6}{%
-\chapter{Data from a single omics data are multi-blocks}\label{Section6}}
+\chapter{Other ComDim methods}\label{Section6}}
 
 In the previous sections, we have only used \textbf{ComDim-PCA}, but many other
 ComDim versions exist. ComDim can be regarded as a chemometric method able to
@@ -1116,17 +1141,43 @@ additional functions \textbf{to allow the users to create their own ComDim metho
 \hypertarget{PLS}{%
 \section{ComDim-Partial Least Squares (ComDim-PLS)}\label{PLS}}
 
+\textbf{ComDim-PLS} can be executed with the function \texttt{ComDim\_PLS\_MB()}, by
+providing a \texttt{y} regression vector (i.e.~numerical) and indicating that the
+ComDim \texttt{method=\textquotesingle{}PLS-R}.
+The output of the \textbf{ComDim-PLS} method is an object of the \texttt{ComDim} class (like
+when \texttt{ComDim\_PCA\_MB()} is used) that contains the typical PLS figures of merit
+(\textbf{R2X}, \textbf{R2Y}, \textbf{Q2}), the PLS regression coefficients \textbf{B} and \textbf{B0},
+and the \textbf{predicted y} according to the ComDim-PLS model.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{resultsPLSR }\OtherTok{\textless{}{-}} \FunctionTok{ComDim\_PLS\_MB}\NormalTok{(allMB,}
                              \AttributeTok{y=} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{),}\FunctionTok{rep}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{4}\NormalTok{),}\FunctionTok{rep}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{4}\NormalTok{)),}
-                             \CommentTok{\# Arbitrary scale, just for the demonstration}
+                             \CommentTok{\# y is an arbitrary numerical vector,}
+                             \CommentTok{\# just for testing the function.}
                              \AttributeTok{ndim =} \DecValTok{2}\NormalTok{, }\AttributeTok{method =} \StringTok{\textquotesingle{}PLS{-}R\textquotesingle{}}\NormalTok{)}
+\NormalTok{resultsPLSR}\SpecialCharTok{@}\NormalTok{R2X}
+\NormalTok{resultsPLSR}\SpecialCharTok{@}\NormalTok{R2Y}
+\NormalTok{resultsPLSR}\SpecialCharTok{@}\NormalTok{Q2}
+
+\NormalTok{resultsPLSR}\SpecialCharTok{@}\NormalTok{PLS.model}\SpecialCharTok{$}\NormalTok{B}
+\NormalTok{resultsPLSR}\SpecialCharTok{@}\NormalTok{PLS.model}\SpecialCharTok{$}\NormalTok{B0}
+
+\NormalTok{resultsPLSR}\SpecialCharTok{@}\NormalTok{Prediction}\SpecialCharTok{$}\NormalTok{Y.pred}
 \end{Highlighting}
 \end{Shaded}
 
 \hypertarget{PLS-DA}{%
 \section{ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)}\label{PLS-DA}}
+
+\textbf{ComDim-PLSDA} is executed with the same function as \textbf{ComDim-PLS},
+\texttt{ComDim\_PLS\_MB()}, but it requires a \texttt{y} vector with the sample classes and that
+\texttt{method=\textquotesingle{}PLS-DA}.
+In addition to the \emph{ComDim-PLS} outputs, the object resulting from the
+\textbf{ComDim-PLSDA} analysis has additional elements for assessing the discriminant
+power of the model. These outputs are the \textbf{discriminant Q2} \href{https://doi.org/10.1007/s11306-008-0126-2}{\textbf{DOI}}, the model \textbf{specificity},
+the model \textbf{sensitivity}, and a \textbf{confusion matrix} with the list of correct
+and wrong class assignments.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1134,10 +1185,11 @@ additional functions \textbf{to allow the users to create their own ComDim metho
                               \AttributeTok{y=} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{\textquotesingle{}NI\textquotesingle{}}\NormalTok{,}\DecValTok{4}\NormalTok{),}\FunctionTok{rep}\NormalTok{(}\StringTok{\textquotesingle{}DOX\textquotesingle{}}\NormalTok{,}\DecValTok{4}\NormalTok{),}\FunctionTok{rep}\NormalTok{(}\StringTok{\textquotesingle{}OFF\textquotesingle{}}\NormalTok{,}\DecValTok{4}\NormalTok{)),}
                               \AttributeTok{ndim =} \DecValTok{2}\NormalTok{, }\AttributeTok{method =} \StringTok{\textquotesingle{}PLS{-}DA\textquotesingle{}}\NormalTok{)}
 
-\CommentTok{\# Method evaluation}
+\CommentTok{\# Some of the outputs}
 \NormalTok{resultsPLSDA}\SpecialCharTok{@}\NormalTok{R2X}
 \NormalTok{resultsPLSDA}\SpecialCharTok{@}\NormalTok{R2Y}
 \NormalTok{resultsPLSDA}\SpecialCharTok{@}\NormalTok{Q2}
+\NormalTok{resultsPLSDA}\SpecialCharTok{@}\NormalTok{DQ2}
 \NormalTok{resultsPLSDA}\SpecialCharTok{@}\NormalTok{Prediction}\SpecialCharTok{$}\NormalTok{confusionMatrix}
 
 \CommentTok{\# Plot saliences}
@@ -1176,8 +1228,23 @@ additional functions \textbf{to allow the users to create their own ComDim metho
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Figs/fig6_1.png}
-\includegraphics{Figs/fig6_2.png}
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{Figs/fig6_1} 
+
+}
+
+\caption{Saliences}\label{fig:unnamed-chunk-16}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{Figs/fig6_2} 
+
+}
+
+\caption{Scores}\label{fig:unnamed-chunk-17}
+\end{figure}
 
 \hypertarget{KOPLS}{%
 \section{ComDim-kernel-OPLS}\label{KOPLS}}
@@ -1235,6 +1302,7 @@ The function used to execute \textbf{PLS} here was \texttt{opls()}, obtained fro
 \texttt{ropls} package.
 In this case, \texttt{fun.PLS} is used to capture the output from the PLS analysis
 (scores,P,W,U,Q,y).
+\texttt{type=regression} is set to calculate R2Y, Q2,\ldots{} as with \texttt{ComDim\_Pls\_MB()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]

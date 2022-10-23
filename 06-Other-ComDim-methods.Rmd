@@ -30,7 +30,7 @@ allMB <- NARemoveMultiBlock(allMB, method = 'random.noise')
 allMB <- NormalizeMultiBlock(allMB, method = 'norm')
 ```
 
-# Data from a single omics data are multi-blocks {#Section6}
+# Other ComDim methods {#Section6}
 
 In the previous sections, we have only used **ComDim-PCA**, but many other
 ComDim versions exist. ComDim can be regarded as a chemometric method able to
@@ -43,24 +43,50 @@ The `R.Comdim` package includes a few of those other methods, as well as some
 additional functions **to allow the users to create their own ComDim methods**.
 
 ## ComDim-Partial Least Squares (ComDim-PLS) {#PLS}
+**ComDim-PLS** can be executed with the function `ComDim_PLS_MB()`, by 
+providing a `y` regression vector (i.e. numerical) and indicating that the 
+ComDim `method='PLS-R`.
+The output of the **ComDim-PLS** method is an object of the `ComDim` class (like
+when `ComDim_PCA_MB()` is used) that contains the typical PLS figures of merit
+(**R2X**, **R2Y**, **Q2**), the PLS regression coefficients **B** and **B0**, 
+and the **predicted y** according to the ComDim-PLS model.
 ```{r PLS, echo = TRUE, eval = FALSE}
 resultsPLSR <- ComDim_PLS_MB(allMB,
                              y= c(rep(1,4),rep(5,4),rep(10,4)),
-                             # Arbitrary scale, just for the demonstration
+                             # y is an arbitrary numerical vector,
+                             # just for testing the function.
                              ndim = 2, method = 'PLS-R')
+resultsPLSR@R2X
+resultsPLSR@R2Y
+resultsPLSR@Q2
+
+resultsPLSR@PLS.model$B
+resultsPLSR@PLS.model$B0
+
+resultsPLSR@Prediction$Y.pred
 ```
 
 
 ## ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA) {#PLS-DA}
+**ComDim-PLSDA** is executed with the same function as **ComDim-PLS**, 
+`ComDim_PLS_MB()`, but it requires a `y` vector with the sample classes and that
+`method='PLS-DA`.
+In addition to the *ComDim-PLS* outputs, the object resulting from the 
+**ComDim-PLSDA** analysis has additional elements for assessing the discriminant
+power of the model. These outputs are the **discriminant Q2** [**DOI**](https://doi.org/10.1007/s11306-008-0126-2), the model **specificity**,
+the model **sensitivity**, and a **confusion matrix** with the list of correct 
+and wrong class assignments.
+
 ```{r PLSDA, echo = TRUE, eval = FALSE}
 resultsPLSDA <- ComDim_PLS_MB(allMB,
                               y= c(rep('NI',4),rep('DOX',4),rep('OFF',4)),
                               ndim = 2, method = 'PLS-DA')
 
-# Method evaluation
+# Some of the outputs
 resultsPLSDA@R2X
 resultsPLSDA@R2Y
 resultsPLSDA@Q2
+resultsPLSDA@DQ2
 resultsPLSDA@Prediction$confusionMatrix
 
 # Plot saliences
@@ -97,8 +123,14 @@ ggplot(data = scoresTable_wider) +
   theme_minimal() +
   labs(title = 'ComDim scores - PLSDA', x = 'CC1', y = 'CC2')
 ```
-![](Figs/fig6_1.png)
-![](Figs/fig6_2.png)
+
+```{r, echo=FALSE, out.width="50%", fig.align = 'center', fig.cap="Saliences"}
+knitr::include_graphics("Figs/fig6_1.png")
+```
+
+```{r, echo=FALSE, out.width="50%", fig.align = 'center', fig.cap="Scores"}
+knitr::include_graphics("Figs/fig6_2.png")
+```
 
 ## ComDim-kernel-OPLS {#KOPLS}
 ```{r kOPLS, echo = TRUE, eval = FALSE}
@@ -147,6 +179,7 @@ The function used to execute **PLS** here was `opls()`, obtained from the
 `ropls` package.
 In this case, `fun.PLS` is used to capture the output from the PLS analysis
 (scores,P,W,U,Q,y).
+`type=regression` is set to calculate R2Y, Q2,... as with `ComDim_Pls_MB()`.
 ```{r ropls1, echo = TRUE, eval = FALSE}
 library(ropls) # From bioconductor
 source('./R/ComDim_y_MB.R')

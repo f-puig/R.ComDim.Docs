@@ -147,7 +147,9 @@ A first look at the scores can tell us how the blocks relate to the sample type.
     theme_minimal() +
     labs(title = 'ComDim scores', x = 'CC1', y = 'CC2')
 ```
-![](Figs/fig5_1.png)
+```{r, echo=FALSE, out.width="50%", fig.align = 'center', fig.cap="Scores"}
+knitr::include_graphics("Figs/fig5_1.png")
+```
 
 The metabolomic and the RNAseq profiles appear to be very orthogonal
 (uncorrelated), since intra and extra does not change much (within each group) 
@@ -216,8 +218,12 @@ previous section.
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1,
                                      size = 3))
 ```
-![](Figs/fig5_3.png)
+
+```{r, echo=FALSE, out.width="50%", fig.align = 'center', fig.cap="Mineral absorption"}
+knitr::include_graphics("Figs/fig5_3.png")
+```
 ![](Figs/fig5_4.png)
+
 Most important changes in the GPL group occur for PC36:2, PC34:1, PC:34:2, 
 PE36:2, PC36:1,...
 

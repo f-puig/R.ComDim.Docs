@@ -26,7 +26,7 @@ the chemometric method ComDim.</p>" />
 <meta name="author" content="Francesc Puig Castellví" />
 
 
-<meta name="date" content="2022-10-22" />
+<meta name="date" content="2022-10-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,9 +166,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>5.1</b> Data processing</a></li>
 <li class="chapter" data-level="5.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>5.2</b> Data analysis</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="multi-omics.html"><a href="multi-omics.html#Saliences"><i class="fa fa-check"></i><b>5.2.1</b> Saliences</a></li>
-<li class="chapter" data-level="5.2.2" data-path="multi-omics.html"><a href="multi-omics.html#Scores"><i class="fa fa-check"></i><b>5.2.2</b> Scores</a></li>
-<li class="chapter" data-level="5.2.3" data-path="multi-omics.html"><a href="multi-omics.html#Loadings"><i class="fa fa-check"></i><b>5.2.3</b> Loadings</a></li>
+<li class="chapter" data-level="5.2.1" data-path="multi-omics.html"><a href="multi-omics.html#saliences"><i class="fa fa-check"></i><b>5.2.1</b> Saliences</a></li>
+<li class="chapter" data-level="5.2.2" data-path="multi-omics.html"><a href="multi-omics.html#scores"><i class="fa fa-check"></i><b>5.2.2</b> Scores</a></li>
+<li class="chapter" data-level="5.2.3" data-path="multi-omics.html"><a href="multi-omics.html#loadings"><i class="fa fa-check"></i><b>5.2.3</b> Loadings</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>5.3</b> Data prediction</a></li>
 </ul></li>
@@ -179,7 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-patwhays"><i class="fa fa-check"></i><b>6.1.1</b> The molecular patwhays</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>7</b> Data from a single omics data are multi-blocks</a>
+<li class="chapter" data-level="7" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>7</b> Other ComDim methods</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>7.1</b> ComDim-Partial Least Squares (ComDim-PLS)</a></li>
 <li class="chapter" data-level="7.2" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>7.2</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a></li>
@@ -261,8 +261,8 @@ The ComDim analysis is run with 2 components.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="multi-omics.html#cb34-1" aria-hidden="true" tabindex="-1"></a>resultsPCA <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA_MB</span>(allMB, <span class="at">ndim =</span> <span class="dv">2</span>) <span class="co"># 2 Components.</span></span></code></pre></div>
 <p><code>resultsPCA</code> is an object of class <code>ComDim</code>.
 Let’s proceed now to inspect some of the results from this analysis.</p>
-<div id="Saliences" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Saliences<a href="multi-omics.html#Saliences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="saliences" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Saliences<a href="multi-omics.html#saliences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can start by looking at the saliences, which show the contribution of each
 block for every component.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="multi-omics.html#cb35-1" aria-hidden="true" tabindex="-1"></a>saliences <span class="ot">&lt;-</span> resultsPCA<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
@@ -280,10 +280,15 @@ block for every component.</p>
 <span id="cb35-13"><a href="multi-omics.html#cb35-13" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">fill =</span> dataset)) <span class="sc">+</span></span>
 <span id="cb35-14"><a href="multi-omics.html#cb35-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb35-15"><a href="multi-omics.html#cb35-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim Saliences&#39;</span>)</span></code></pre></div>
-<p><img src="Figs/fig1.png" /></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="Figs/fig1.png" alt="Saliences" width="50%" />
+<p class="caption">
+Figure 5.1: Saliences
+</p>
 </div>
-<div id="Scores" class="section level3 hasAnchor" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Scores<a href="multi-omics.html#Scores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="scores" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Scores<a href="multi-omics.html#scores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The scores give the contribution of each sample. There are two types of scores,
 <strong>Global</strong> (Q.scores) and <strong>Local</strong> (T.scores). <strong>Global scores</strong> show the
 contribution for the total model (all blocks) while the <strong>Local scores</strong> give
@@ -310,12 +315,17 @@ the contribution for each of the blocks.</p>
 <span id="cb36-20"><a href="multi-omics.html#cb36-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim scores&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span>
 <span id="cb36-21"><a href="multi-omics.html#cb36-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># OFF samples are very different than DOX and NI by their lipid content.</span></span>
 <span id="cb36-22"><a href="multi-omics.html#cb36-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extracellular metabolites are not very different</span></span></code></pre></div>
-<p><img src="Figs/fig4_2.png" /></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="Figs/fig4_2.png" alt="Scores" width="50%" />
+<p class="caption">
+Figure 5.2: Scores
+</p>
 </div>
-<div id="Loadings" class="section level3 hasAnchor" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> Loadings<a href="multi-omics.html#Loadings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="loadings" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Loadings<a href="multi-omics.html#loadings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>loadings</strong> give the contribution of each variable in the model.
-And example of how to use the loadings is presented in the next section.</p>
+And example of how to use the loadings is presented in <a href="https://f-puig.github.io/R.ComDim.Docs/Section5.html"><strong>CHAPTER6</strong></a>.</p>
 </div>
 </div>
 <div id="PART3" class="section level2 hasAnchor" number="5.3">

@@ -78,7 +78,8 @@ resultsPCA <- ComDim_PCA_MB(allMB, ndim = 2) # 2 Components.
 Let's proceed now to inspect some of the results from this analysis.
 
 
-### Saliences {#Saliences}
+### Saliences
+
 We can start by looking at the saliences, which show the contribution of each 
 block for every component.
 ```{r multiomics-saliences, echo = TRUE, eval = FALSE}
@@ -99,9 +100,12 @@ ggplot(data = saliences,
   labs(title = 'ComDim Saliences')
 
 ```
-![](Figs/fig1.png)
 
-### Scores {#Scores}
+```{r, echo=FALSE, out.width="50%", fig.align = 'center', fig.cap="Saliences"}
+knitr::include_graphics("Figs/fig1.png")
+```
+
+### Scores
 
 The scores give the contribution of each sample. There are two types of scores,
 **Global** (Q.scores) and **Local** (T.scores). **Global scores** show the 
@@ -132,11 +136,14 @@ ggplot(data = scoresTable_wider) +
   # Extracellular metabolites are not very different
 
 ```
-![](Figs/fig4_2.png)
+```{r, echo=FALSE, out.width="50%", fig.align = 'center', fig.cap="Scores"}
+knitr::include_graphics("Figs/fig4_2.png")
+```
 
-### Loadings {#Loadings}
+### Loadings
+
 The **loadings** give the contribution of each variable in the model.
-And example of how to use the loadings is presented in the next section.
+And example of how to use the loadings is presented in [**CHAPTER6**](https://f-puig.github.io/R.ComDim.Docs/Section5.html).
 
 
 
