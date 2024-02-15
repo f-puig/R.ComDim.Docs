@@ -33,13 +33,13 @@ Metabolic pathways are composed by a group of related metabolites. Extrapolating
 
 ```{r Expand, echo = TRUE, eval = FALSE}
 data(mouse_ds)
-lipidsMB <- ExpandMultiBlock(data = lipids, metadata = metadata_lipids,
+lipidsMB <- ExpandMultiBlock(data = t(lipids), metadata = metadata_lipids,
                              minblock = 0, loquace = FALSE)
-extraMB <- ExpandMultiBlock(data = extra, metadata = KEGG_table_metabolites,
+extraMB <- ExpandMultiBlock(data = t(extra), metadata = KEGG_table_metabolites,
                             minblock = 10, loquace = FALSE)
-intraMB <- ExpandMultiBlock(data = intra, metadata = KEGG_table_metabolites,
+intraMB <- ExpandMultiBlock(data = t(intra), metadata = KEGG_table_metabolites,
                             minblock = 10, loquace = FALSE)
-RNAseqMB <- ExpandMultiBlock(data = RNAseq3[,1:12],
+RNAseqMB <- ExpandMultiBlock(data = t(RNAseq3[,1:12]),
                              metadata = metadata_RNAseq3,
                              minblock = 500, loquace = FALSE)
 # We can count the number of blocks in each MultiBlock
