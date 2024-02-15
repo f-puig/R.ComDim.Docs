@@ -85,6 +85,7 @@ Let's proceed now to inspect some of the results from this analysis.
 We can start by looking at the saliences, which show the contribution of each 
 block for every component.
 ```{r multiomics-saliences, echo = TRUE, eval = FALSE}
+require(tidyverse)
 saliences <- resultsPCA@Saliences %>%
   as.data.frame() %>%
   mutate(dataset = rownames(.)) %>%
