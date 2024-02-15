@@ -81,17 +81,25 @@ getBlockNames(MB)
  `MultiAssayExperiments`.
 
 ```{r SummarizedExperiment, echo = TRUE, eval = FALSE}
-library(MultiAssayExperiment)
-data(miniACC)
 library(SummarizedExperiment)
+# Example data 1 - SummarizedExperiment
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("airway")
+library(airway)
 data(airway, package="airway")
 
 MB1 <- SummarizedExperiment2MultiBlock(airway,
                                        colData_samplenames = 'Run',
                                        Batch = NULL)
+# Example data 2 - MultiAssayExperiment
+library(MultiAssayExperiment)
+data(miniACC)
 MB2 <- MultiAssayExperiment2MultiBlock(miniACC,
                                        colData_samplenames = 'patientID',
                                        Batch = NULL)
+
+
 se2 <-  MultiBlock2MultiAssayExperiment(MB2, MSEmetadata = NULL)
 ```
 
@@ -99,7 +107,7 @@ se2 <-  MultiBlock2MultiAssayExperiment(MB2, MSEmetadata = NULL)
 
 ## Sample correspondence across blocks {#correspondence}
 
-We define as __sample correspondence across blocks__ to the fact that the sample
+We define as __sample correspondence across blocks__ when the sample
  order is maintained across blocks. That is, the first sample from the first 
  block has a correspondence sample in the second block at the same position, and
  so on.
@@ -107,7 +115,7 @@ We define as __sample correspondence across blocks__ to the fact that the sample
 To run ComDim **and most multi-omics analysis** in general, sample 
 correspondence across blocks is needed. This is normally verified by the user.
 For `R.ComDim`, we can use `BuildMultiBlock()` to check for the same 
-correspondence and resort samples (and discard) if needed. This process is 
+correspondence and re-sort samples (and discard) if needed. This process is 
 achieved with the option `ignore.names = FALSE` (the default).
 
 ```{r correspondence, echo = TRUE, eval = FALSE}
