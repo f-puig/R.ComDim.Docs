@@ -54,6 +54,8 @@ allMB <- NARemoveMultiBlock(allMB, blocks = 'RNAseq',
 
 # 2) Do rlog transform of the RNAseq data (rlog assumes samples in columns)
 #    The rlog transform function is obtained from the DESeq2 R-package.
+if (!require("DESeq2"))
+  BiocManager::install("DESeq2")
 library(DESeq2)
 allMB <- ProcessMultiBlock(allMB, blocks = 'RNAseq',
                             FUN = function(x){t(DESeq2::rlog(t(x)))})
