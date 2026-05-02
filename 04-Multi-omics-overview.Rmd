@@ -28,7 +28,7 @@ downloaded from Metabolights
  [**MTBLS1507**](https://www.ebi.ac.uk/metabolights/MTBLS1507)
 while the RNAseq data was obtained from ARRAYEXPRESS [**E-MTAB-8834**](https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-8834/).
 
-```{r multiomics, echo = TRUE, eval = FALSE}
+```{r multiomics, echo = TRUE, eval = TRUE}
 data(mouse_ds)
 
 allMB <- MultiBlock(Data = list(b1 = RNAseq3,
@@ -44,7 +44,7 @@ blockNames(allMB) <- c('RNAseq', 'lipids', 'intra', 'extra')
 
 This is an example of a possible data processing:
 
-```{r multiomics-preprocess, echo = TRUE, eval = FALSE}
+```{r multiomics-preprocess, echo = TRUE, eval = TRUE}
 # 1) Exclude normalized variables with max intensity reported below 0.1% of the
 #    max from all RNAseq blocks.
 allMB <- ProcessMultiBlock(
@@ -72,7 +72,7 @@ allMB <- NormalizeMultiBlock(allMB, method = 'norm')
 
 We use in this example ComDim-PCA, which is intended for exploratory purposes.
 The ComDim analysis is run with 2 components.
-```{r multiomics-analysis, echo = TRUE, eval = FALSE}
+```{r multiomics-analysis, echo = TRUE, eval = TRUE}
 resultsPCA <- ComDim_PCA(allMB, ndim = 2) # 2 Components.
 ```
 
@@ -155,12 +155,12 @@ An example of how to use the loadings is presented in [**CHAPTER6**](https://f-p
 ## Data prediction {#PART3}
 
 The built model can be used to investigate new samples if available.
-```{r multiomics-predict, echo = TRUE, eval = FALSE}
+```{r multiomics-predict, echo = TRUE, eval = TRUE}
 pred.resultsPCA <- PredictMultiBlock(MB = allMB, model = resultsPCA)
-data.frame(original = resultsPCA@T.scores[[2]][,1],
-           predicted = pred.resultsPCA@T.scores[[2]][,1])
-data.frame(original = resultsPCA@Q.scores[,2],
-           predicted = resultsPCA@Q.scores[,2])
+head(data.frame(original = resultsPCA@T.scores[[2]][,1],
+           predicted = pred.resultsPCA@T.scores[[2]][,1]))
+head(data.frame(original = resultsPCA@Q.scores[,2],
+           predicted = resultsPCA@Q.scores[,2]))
 ```
 In this example, the original and predicted scores are identical because the
 new samples are the same as the original ones.
