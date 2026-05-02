@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 MultiBlock data handling | R.ComDim (a tutorial)</title>
+  <title>Chapter 3 MultiBlock data handling | R.ComDim (a tutorial)</title>
   <meta name="description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
 the chemometric method ComDim.</p>" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 MultiBlock data handling | R.ComDim (a tutorial)" />
+  <meta property="og:title" content="Chapter 3 MultiBlock data handling | R.ComDim (a tutorial)" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
@@ -17,7 +17,7 @@ the chemometric method ComDim.</p>" />
   <meta name="github-repo" content="f-puig/R.ComDim.Docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 MultiBlock data handling | R.ComDim (a tutorial)" />
+  <meta name="twitter:title" content="Chapter 3 MultiBlock data handling | R.ComDim (a tutorial)" />
   
   <meta name="twitter:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
 the chemometric method ComDim.</p>" />
@@ -26,7 +26,7 @@ the chemometric method ComDim.</p>" />
 <meta name="author" content="Francesc Puig Castellví" />
 
 
-<meta name="date" content="2022-10-23" />
+<meta name="date" content="2026-05-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -122,6 +122,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -139,57 +143,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R.ComDim (a tutorial)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>2.1</b> The ComDim method</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>2.2</b> Why should I use ComDim?</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>2.3</b> Some functions to get started</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>2.4</b> Install and load R.ComDim package</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>2.5</b> References</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>1.1</b> The ComDim method</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>1.2</b> Why should I use ComDim?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>1.3</b> Some functions to get started</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>1.4</b> Install and load R.ComDim package</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>1.5</b> References</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#notes"><i class="fa fa-check"></i><b>1.6</b> Notes</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>3</b> Create a MultiBlock</a>
+<li class="chapter" data-level="2" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>2</b> Create a MultiBlock</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="create.html"><a href="create.html#option1"><i class="fa fa-check"></i><b>3.1</b> Option 1: for small MultiBlocks</a></li>
-<li class="chapter" data-level="3.2" data-path="create.html"><a href="create.html#option2"><i class="fa fa-check"></i><b>3.2</b> Option 2: for large MultiBlocks</a></li>
-<li class="chapter" data-level="3.3" data-path="create.html"><a href="create.html#option3"><i class="fa fa-check"></i><b>3.3</b> Option 3: from SummarizedExperiment or MultiAssayExperiment objects.</a></li>
-<li class="chapter" data-level="3.4" data-path="create.html"><a href="create.html#correspondence"><i class="fa fa-check"></i><b>3.4</b> Sample correspondence across blocks</a></li>
-<li class="chapter" data-level="3.5" data-path="create.html"><a href="create.html#splitRW"><i class="fa fa-check"></i><b>3.5</b> Splitting blocks by the Batch criterion.</a></li>
+<li class="chapter" data-level="2.1" data-path="create.html"><a href="create.html#option1"><i class="fa fa-check"></i><b>2.1</b> Option 1: for small MultiBlocks</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="create.html"><a href="create.html#batch-and-metadata"><i class="fa fa-check"></i><b>2.1.1</b> <code>Batch</code> and <code>metadata</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i><b>4</b> MultiBlock data handling</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="handling.html"><a href="handling.html#inspecting-the-data"><i class="fa fa-check"></i><b>4.1</b> Inspecting the data</a></li>
-<li class="chapter" data-level="4.2" data-path="handling.html"><a href="handling.html#processing"><i class="fa fa-check"></i><b>4.2</b> Data pre-processing</a></li>
+<li class="chapter" data-level="2.2" data-path="create.html"><a href="create.html#option2"><i class="fa fa-check"></i><b>2.2</b> Option 2: for large MultiBlocks</a></li>
+<li class="chapter" data-level="2.3" data-path="create.html"><a href="create.html#option3"><i class="fa fa-check"></i><b>2.3</b> Option 3: from SummarizedExperiment or MultiAssayExperiment objects</a></li>
+<li class="chapter" data-level="2.4" data-path="create.html"><a href="create.html#correspondence"><i class="fa fa-check"></i><b>2.4</b> Sample correspondence across blocks</a></li>
+<li class="chapter" data-level="2.5" data-path="create.html"><a href="create.html#splitRW"><i class="fa fa-check"></i><b>2.5</b> Splitting blocks by <code>Batch</code></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="multi-omics.html"><a href="multi-omics.html"><i class="fa fa-check"></i><b>5</b> Multi-omics amd Multi-blocks</a>
+<li class="chapter" data-level="3" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i><b>3</b> MultiBlock data handling</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>5.1</b> Data processing</a></li>
-<li class="chapter" data-level="5.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>5.2</b> Data analysis</a>
+<li class="chapter" data-level="3.1" data-path="handling.html"><a href="handling.html#inspecting-the-data"><i class="fa fa-check"></i><b>3.1</b> Inspecting the data</a></li>
+<li class="chapter" data-level="3.2" data-path="handling.html"><a href="handling.html#processing"><i class="fa fa-check"></i><b>3.2</b> Data pre-processing</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="multi-omics.html"><a href="multi-omics.html#saliences"><i class="fa fa-check"></i><b>5.2.1</b> Saliences</a></li>
-<li class="chapter" data-level="5.2.2" data-path="multi-omics.html"><a href="multi-omics.html#scores"><i class="fa fa-check"></i><b>5.2.2</b> Scores</a></li>
-<li class="chapter" data-level="5.2.3" data-path="multi-omics.html"><a href="multi-omics.html#loadings"><i class="fa fa-check"></i><b>5.2.3</b> Loadings</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>5.3</b> Data prediction</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="Section5.html"><a href="Section5.html"><i class="fa fa-check"></i><b>6</b> Data from a single omics data are multi-blocks</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="Section5.html"><a href="Section5.html#molecular-functions"><i class="fa fa-check"></i><b>6.1</b> Molecular functions</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-patwhays"><i class="fa fa-check"></i><b>6.1.1</b> The molecular patwhays</a></li>
+<li class="chapter" data-level="3.2.1" data-path="handling.html"><a href="handling.html#normalization"><i class="fa fa-check"></i><b>3.2.1</b> Normalization methods</a></li>
+<li class="chapter" data-level="3.2.2" data-path="handling.html"><a href="handling.html#metadata"><i class="fa fa-check"></i><b>3.2.2</b> Adding batch and metadata information</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>7</b> Other ComDim methods</a>
+<li class="chapter" data-level="4" data-path="multi-omics.html"><a href="multi-omics.html"><i class="fa fa-check"></i><b>4</b> Multi-omics and Multi-blocks</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>7.1</b> ComDim-Partial Least Squares (ComDim-PLS)</a></li>
-<li class="chapter" data-level="7.2" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>7.2</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a></li>
-<li class="chapter" data-level="7.3" data-path="Section6.html"><a href="Section6.html#KOPLS"><i class="fa fa-check"></i><b>7.3</b> ComDim-kernel-OPLS</a></li>
-<li class="chapter" data-level="7.4" data-path="Section6.html"><a href="Section6.html#Other"><i class="fa fa-check"></i><b>7.4</b> Other extensions</a>
+<li class="chapter" data-level="4.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>4.1</b> Data processing</a></li>
+<li class="chapter" data-level="4.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>4.2</b> Data analysis</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="Section6.html"><a href="Section6.html#example-of-comdim-ica"><i class="fa fa-check"></i><b>7.4.1</b> Example of ComDim-ICA</a></li>
-<li class="chapter" data-level="7.4.2" data-path="Section6.html"><a href="Section6.html#example-of-comdim-pls-version-ropls"><i class="fa fa-check"></i><b>7.4.2</b> Example of ComDim-PLS (version ropls)</a></li>
-<li class="chapter" data-level="7.4.3" data-path="Section6.html"><a href="Section6.html#example-of-comdim-plsda-version-ropls"><i class="fa fa-check"></i><b>7.4.3</b> Example of ComDim-PLSDA (version ropls)</a></li>
-<li class="chapter" data-level="7.4.4" data-path="Section6.html"><a href="Section6.html#example-of-comdim-oplsda-version-ropls"><i class="fa fa-check"></i><b>7.4.4</b> Example of ComDim-OPLSDA (version ropls)</a></li>
+<li class="chapter" data-level="4.2.1" data-path="multi-omics.html"><a href="multi-omics.html#saliences"><i class="fa fa-check"></i><b>4.2.1</b> Saliences</a></li>
+<li class="chapter" data-level="4.2.2" data-path="multi-omics.html"><a href="multi-omics.html#scores"><i class="fa fa-check"></i><b>4.2.2</b> Scores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="multi-omics.html"><a href="multi-omics.html#loadings"><i class="fa fa-check"></i><b>4.2.3</b> Loadings</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>4.3</b> Data prediction</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Section5.html"><a href="Section5.html"><i class="fa fa-check"></i><b>5</b> Data from a single omics data are multi-blocks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Section5.html"><a href="Section5.html#molecular-functions"><i class="fa fa-check"></i><b>5.1</b> Molecular functions</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-pathways"><i class="fa fa-check"></i><b>5.1.1</b> The molecular pathways</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>6</b> Other ComDim methods</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>6.1</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="Section6.html"><a href="Section6.html#predicting-new-samples-with-comdim-plsda"><i class="fa fa-check"></i><b>6.1.1</b> Predicting new samples with ComDim-PLSDA</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>6.2</b> ComDim-Partial Least Squares Regression (ComDim-PLSR)</a></li>
+<li class="chapter" data-level="6.3" data-path="Section6.html"><a href="Section6.html#OPLS"><i class="fa fa-check"></i><b>6.3</b> ComDim-Orthogonal PLS (ComDim-OPLS)</a></li>
+<li class="chapter" data-level="6.4" data-path="Section6.html"><a href="Section6.html#compmethod"><i class="fa fa-check"></i><b>6.4</b> Computation strategies: <code>CompMethod</code> and <code>Partitions</code></a></li>
+<li class="chapter" data-level="6.5" data-path="Section6.html"><a href="Section6.html#Other"><i class="fa fa-check"></i><b>6.5</b> Other extensions</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Section6.html"><a href="Section6.html#example-of-comdim-ica"><i class="fa fa-check"></i><b>6.5.1</b> Example of ComDim-ICA</a></li>
+<li class="chapter" data-level="6.5.2" data-path="Section6.html"><a href="Section6.html#example-of-comdim-pls-version-ropls"><i class="fa fa-check"></i><b>6.5.2</b> Example of ComDim-PLS (version ropls)</a></li>
+<li class="chapter" data-level="6.5.3" data-path="Section6.html"><a href="Section6.html#example-of-comdim-plsda-version-ropls"><i class="fa fa-check"></i><b>6.5.3</b> Example of ComDim-PLSDA (version ropls)</a></li>
+<li class="chapter" data-level="6.5.4" data-path="Section6.html"><a href="Section6.html#example-of-comdim-oplsda-version-ropls"><i class="fa fa-check"></i><b>6.5.4</b> Example of ComDim-OPLSDA (version ropls)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Section7.html"><a href="Section7.html"><i class="fa fa-check"></i><b>7</b> Replicate-Wise (RW) analysis</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Section7.html"><a href="Section7.html#dataset3"><i class="fa fa-check"></i><b>7.1</b> Data</a></li>
+<li class="chapter" data-level="7.2" data-path="Section7.html"><a href="Section7.html#build-rw"><i class="fa fa-check"></i><b>7.2</b> Building the MultiBlock with batch information</a></li>
+<li class="chapter" data-level="7.3" data-path="Section7.html"><a href="Section7.html#splitRW-replicate"><i class="fa fa-check"></i><b>7.3</b> Splitting the MultiBlock into RW blocks</a></li>
+<li class="chapter" data-level="7.4" data-path="Section7.html"><a href="Section7.html#rw-pca"><i class="fa fa-check"></i><b>7.4</b> ComDim-PCA on the RW multi-block</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="Section7.html"><a href="Section7.html#rw-saliences"><i class="fa fa-check"></i><b>7.4.1</b> Saliences</a></li>
+<li class="chapter" data-level="7.4.2" data-path="Section7.html"><a href="Section7.html#rw-qscores"><i class="fa fa-check"></i><b>7.4.2</b> Global scores</a></li>
+<li class="chapter" data-level="7.4.3" data-path="Section7.html"><a href="Section7.html#rw-tscores"><i class="fa fa-check"></i><b>7.4.3</b> Comparing local and global scores</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="Section7.html"><a href="Section7.html#rw-pls"><i class="fa fa-check"></i><b>7.5</b> ComDim-PLS on the RW multi-block</a></li>
+<li class="chapter" data-level="7.6" data-path="Section7.html"><a href="Section7.html#rw-features"><i class="fa fa-check"></i><b>7.6</b> Selecting the most significant variables</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="Section7.html"><a href="Section7.html#splot"><i class="fa fa-check"></i><b>7.6.1</b> Principle of the S-plot</a></li>
+<li class="chapter" data-level="7.6.2" data-path="Section7.html"><a href="Section7.html#rw-mirna"><i class="fa fa-check"></i><b>7.6.2</b> Feature selection on the mirnaseq blocks</a></li>
+<li class="chapter" data-level="7.6.3" data-path="Section7.html"><a href="Section7.html#rw-thresholds"><i class="fa fa-check"></i><b>7.6.3</b> Adjusting the selection thresholds</a></li>
+<li class="chapter" data-level="7.6.4" data-path="Section7.html"><a href="Section7.html#rw-features-pls"><i class="fa fa-check"></i><b>7.6.4</b> Feature selection after ComDim-PLSDA</a></li>
+<li class="chapter" data-level="7.6.5" data-path="Section7.html"><a href="Section7.html#rw-features-vis"><i class="fa fa-check"></i><b>7.6.5</b> Visualising selected features</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -212,15 +249,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="handling" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> MultiBlock data handling<a href="handling.html#handling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="inspecting-the-data" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Inspecting the data<a href="handling.html#inspecting-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We can easily read the content of a MultiBlock object with the following
-functions:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="handling.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getSampleNames</span>(MB)</span></code></pre></div>
+<div id="handling" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> MultiBlock data handling<a href="handling.html#handling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="inspecting-the-data" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Inspecting the data<a href="handling.html#inspecting-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The slots of a <code>MultiBlock</code> object can be accessed directly with <code>@</code>. The five
+slots are <code>@Samples</code>, <code>@Data</code>, <code>@Variables</code>, <code>@Batch</code>, and <code>@Metadata</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="handling.html#cb1-1" tabindex="-1"></a>MB<span class="sc">@</span>Samples            <span class="co"># Sample names (vector, or list when blocks differ)</span></span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="handling.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getVariableNames</span>(MB)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="handling.html#cb3-1" tabindex="-1"></a>MB<span class="sc">@</span>Variables          <span class="co"># Variable names for all blocks (named list)</span></span></code></pre></div>
 <pre><code>## $b1
 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
 ## [26] 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
@@ -243,7 +280,7 @@ functions:</p>
 ## [26] 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
 ## [51] 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75
 ## [76] 76 77 78 79 80</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="handling.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getVariableNames</span>(MB, <span class="at">block =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="handling.html#cb5-1" tabindex="-1"></a>MB<span class="sc">@</span>Variables[[<span class="dv">2</span>]]     <span class="co"># Variable names for the second block</span></span></code></pre></div>
 <pre><code>##  [1] &quot;V1&quot;  &quot;V2&quot;  &quot;V3&quot;  &quot;V4&quot;  &quot;V5&quot;  &quot;V6&quot;  &quot;V7&quot;  &quot;V8&quot;  &quot;V9&quot;  &quot;V10&quot; &quot;V11&quot; &quot;V12&quot;
 ## [13] &quot;V13&quot; &quot;V14&quot; &quot;V15&quot; &quot;V16&quot; &quot;V17&quot; &quot;V18&quot; &quot;V19&quot; &quot;V20&quot; &quot;V21&quot; &quot;V22&quot; &quot;V23&quot; &quot;V24&quot;
 ## [25] &quot;V25&quot; &quot;V26&quot; &quot;V27&quot; &quot;V28&quot; &quot;V29&quot; &quot;V30&quot; &quot;V31&quot; &quot;V32&quot; &quot;V33&quot; &quot;V34&quot; &quot;V35&quot; &quot;V36&quot;
@@ -251,51 +288,163 @@ functions:</p>
 ## [49] &quot;V49&quot; &quot;V50&quot; &quot;V51&quot; &quot;V52&quot; &quot;V53&quot; &quot;V54&quot; &quot;V55&quot; &quot;V56&quot; &quot;V57&quot; &quot;V58&quot; &quot;V59&quot; &quot;V60&quot;
 ## [61] &quot;V61&quot; &quot;V62&quot; &quot;V63&quot; &quot;V64&quot; &quot;V65&quot; &quot;V66&quot; &quot;V67&quot; &quot;V68&quot; &quot;V69&quot; &quot;V70&quot; &quot;V71&quot; &quot;V72&quot;
 ## [73] &quot;V73&quot; &quot;V74&quot; &quot;V75&quot; &quot;V76&quot; &quot;V77&quot; &quot;V78&quot; &quot;V79&quot; &quot;V80&quot;</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="handling.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getBlockNames</span>(MB)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="handling.html#cb7-1" tabindex="-1"></a>MB<span class="sc">@</span>Variables[[<span class="st">&quot;s2&quot;</span>]]  <span class="co"># Variable names for a block by name</span></span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+## [26] 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
+## [51] 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75
+## [76] 76 77 78 79 80</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="handling.html#cb9-1" tabindex="-1"></a><span class="fu">names</span>(MB<span class="sc">@</span>Data)        <span class="co"># Block names</span></span></code></pre></div>
 <pre><code>## [1] &quot;b1&quot; &quot;b2&quot; &quot;s1&quot; &quot;s2&quot;</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="handling.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getBlockNames</span>(MB, <span class="st">&quot;Batch&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="handling.html#cb11-1" tabindex="-1"></a><span class="fu">names</span>(MB<span class="sc">@</span>Batch)       <span class="co"># Blocks that have batch labels</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="handling.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getBlockNames</span>(MB, <span class="st">&quot;Metadata&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="handling.html#cb13-1" tabindex="-1"></a><span class="fu">names</span>(MB<span class="sc">@</span>Metadata)    <span class="co"># Blocks that have metadata</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="handling.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncolMultiBlock</span>(MB)</span></code></pre></div>
-<pre><code>## [1] 50 80 50 80</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="handling.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrowMultiBlock</span>(MB)</span></code></pre></div>
-<pre><code>## [1] 10 10 10 10</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="handling.html#cb30-1" aria-hidden="true" tabindex="-1"></a>MB2<span class="ot">&lt;-</span> <span class="fu">FilterSamplesMultiBlock</span>(MB, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)) <span class="co"># To create a MultiBlock with </span></span>
-<span id="cb30-2"><a href="handling.html#cb30-2" aria-hidden="true" tabindex="-1"></a> <span class="co"># a sample subset. In this case, we selected samples 1-9.</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="handling.html#cb15-1" tabindex="-1"></a><span class="fu">ncol</span>(MB)</span></code></pre></div>
+<pre><code>## b1 b2 s1 s2 
+## 50 80 50 80</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="handling.html#cb17-1" tabindex="-1"></a><span class="fu">nrow</span>(MB)</span></code></pre></div>
+<pre><code>## b1 b2 s1 s2 
+## 10 10 10 10</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="handling.html#cb19-1" tabindex="-1"></a>MB2 <span class="ot">&lt;-</span> <span class="fu">FilterSamplesMultiBlock</span>(MB, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)) <span class="co"># To create a MultiBlock with</span></span>
+<span id="cb19-2"><a href="handling.html#cb19-2" tabindex="-1"></a> <span class="co"># a sample subset. In this case, we selected samples 1-9.</span></span></code></pre></div>
 <p>Or we can simply see all the content with <code>str()</code> function.</p>
-<p>If needed, everything in the MB can be renamed.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="handling.html#cb31-1" aria-hidden="true" tabindex="-1"></a>MB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(MB, <span class="fu">paste</span>(<span class="st">&quot;X&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">sep =</span> <span class="st">&#39;&#39;</span>)) <span class="co"># The blocks</span></span>
-<span id="cb31-2"><a href="handling.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getBlockNames</span>(MB)</span>
-<span id="cb31-3"><a href="handling.html#cb31-3" aria-hidden="true" tabindex="-1"></a>MB <span class="ot">&lt;-</span> <span class="fu">setSampleNames</span>(MB, LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]) <span class="co"># The samples</span></span>
-<span id="cb31-4"><a href="handling.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">getSampleNames</span>(MB)</span>
-<span id="cb31-5"><a href="handling.html#cb31-5" aria-hidden="true" tabindex="-1"></a>MB <span class="ot">&lt;-</span> <span class="fu">setVariableNames</span>(MB, <span class="fu">paste</span>(<span class="st">&quot;vars&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>, <span class="at">sep =</span> <span class="st">&#39;&#39;</span>), <span class="dv">1</span>)</span>
-<span id="cb31-6"><a href="handling.html#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">getVariableNames</span>(MB, <span class="dv">1</span>)</span></code></pre></div>
+<p>If needed, everything in the <code>MultiBlock</code> can be renamed by direct slot
+assignment.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="handling.html#cb20-1" tabindex="-1"></a><span class="co"># Rename blocks (update @Data and @Variables names together)</span></span>
+<span id="cb20-2"><a href="handling.html#cb20-2" tabindex="-1"></a><span class="fu">names</span>(MB<span class="sc">@</span>Data)      <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;X&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">sep =</span> <span class="st">&#39;&#39;</span>)</span>
+<span id="cb20-3"><a href="handling.html#cb20-3" tabindex="-1"></a><span class="fu">names</span>(MB<span class="sc">@</span>Variables) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;X&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">sep =</span> <span class="st">&#39;&#39;</span>)</span>
+<span id="cb20-4"><a href="handling.html#cb20-4" tabindex="-1"></a><span class="fu">names</span>(MB<span class="sc">@</span>Data)</span></code></pre></div>
+<pre><code>## [1] &quot;X1&quot; &quot;X2&quot; &quot;X3&quot; &quot;X4&quot;</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="handling.html#cb22-1" tabindex="-1"></a><span class="co"># Rename samples</span></span>
+<span id="cb22-2"><a href="handling.html#cb22-2" tabindex="-1"></a>MB<span class="sc">@</span>Samples <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
+<span id="cb22-3"><a href="handling.html#cb22-3" tabindex="-1"></a>MB<span class="sc">@</span>Samples</span></code></pre></div>
+<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot;</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="handling.html#cb24-1" tabindex="-1"></a><span class="co"># Rename variables in a specific block</span></span>
+<span id="cb24-2"><a href="handling.html#cb24-2" tabindex="-1"></a>MB<span class="sc">@</span>Variables[[<span class="st">&quot;X1&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;vars&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>, <span class="at">sep =</span> <span class="st">&#39;&#39;</span>)</span>
+<span id="cb24-3"><a href="handling.html#cb24-3" tabindex="-1"></a>MB<span class="sc">@</span>Variables[[<span class="st">&quot;X1&quot;</span>]]</span></code></pre></div>
+<pre><code>##  [1] &quot;vars1&quot;  &quot;vars2&quot;  &quot;vars3&quot;  &quot;vars4&quot;  &quot;vars5&quot;  &quot;vars6&quot;  &quot;vars7&quot;  &quot;vars8&quot; 
+##  [9] &quot;vars9&quot;  &quot;vars10&quot; &quot;vars11&quot; &quot;vars12&quot; &quot;vars13&quot; &quot;vars14&quot; &quot;vars15&quot; &quot;vars16&quot;
+## [17] &quot;vars17&quot; &quot;vars18&quot; &quot;vars19&quot; &quot;vars20&quot; &quot;vars21&quot; &quot;vars22&quot; &quot;vars23&quot; &quot;vars24&quot;
+## [25] &quot;vars25&quot; &quot;vars26&quot; &quot;vars27&quot; &quot;vars28&quot; &quot;vars29&quot; &quot;vars30&quot; &quot;vars31&quot; &quot;vars32&quot;
+## [33] &quot;vars33&quot; &quot;vars34&quot; &quot;vars35&quot; &quot;vars36&quot; &quot;vars37&quot; &quot;vars38&quot; &quot;vars39&quot; &quot;vars40&quot;
+## [41] &quot;vars41&quot; &quot;vars42&quot; &quot;vars43&quot; &quot;vars44&quot; &quot;vars45&quot; &quot;vars46&quot; &quot;vars47&quot; &quot;vars48&quot;
+## [49] &quot;vars49&quot; &quot;vars50&quot;</code></pre>
 </div>
-<div id="processing" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Data pre-processing<a href="handling.html#processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="processing" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Data pre-processing<a href="handling.html#processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <code>R.ComDim</code> package contains functions to easily apply some data
 transformations. This can result in handy since we there is no need to build
 the <code>MultiBlock</code> every time a new data transformation is tested.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="handling.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="do">## NA removal</span></span>
-<span id="cb32-2"><a href="handling.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We first add some NAs to the MultiBlock.</span></span>
-<span id="cb32-3"><a href="handling.html#cb32-3" aria-hidden="true" tabindex="-1"></a>MB<span class="sc">@</span>Data<span class="sc">$</span>X2[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># Add some NAs</span></span>
-<span id="cb32-4"><a href="handling.html#cb32-4" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NARemoveMultiBlock</span>(MB, <span class="at">method =</span> <span class="st">&#39;none&#39;</span>, <span class="at">minfrac =</span> <span class="fl">0.2</span>)</span>
-<span id="cb32-5"><a href="handling.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables containing more than 20% of NAs will be discarded</span></span>
-<span id="cb32-6"><a href="handling.html#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-7"><a href="handling.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Data normalization</span></span>
-<span id="cb32-8"><a href="handling.html#cb32-8" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;norm&#39;</span>)</span>
-<span id="cb32-9"><a href="handling.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># MB is normalized (mean-center and divided by the block norm)</span></span></code></pre></div>
-<p>The <code>R.ComDim</code> package has been writted with the idea to result very flexible
-and, as such, it allows the user to apply custom data transformations. For
-instance, in the code below, all variables with values lower than the 5% of the
-most intense value are discarded.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="handling.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MB is converted to matrix to calculate the max value.</span></span>
-<span id="cb33-2"><a href="handling.html#cb33-2" aria-hidden="true" tabindex="-1"></a>maxMB <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">MultiBlock2matrix</span>(allMB), <span class="at">na.rm =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb33-3"><a href="handling.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables are filtered with the ProcessMultiBlock() function.</span></span>
-<span id="cb33-4"><a href="handling.html#cb33-4" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB,</span>
-<span id="cb33-5"><a href="handling.html#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">FUN.SelectVars =</span> <span class="cf">function</span>(x) {<span class="fu">apply</span>(x,<span class="dv">2</span>,max) <span class="sc">&gt;</span> maxMB <span class="sc">*</span> <span class="fl">0.05</span>})</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="handling.html#cb26-1" tabindex="-1"></a><span class="do">## NA removal</span></span>
+<span id="cb26-2"><a href="handling.html#cb26-2" tabindex="-1"></a><span class="co"># Block names are X1–X4 after the renaming step above.</span></span>
+<span id="cb26-3"><a href="handling.html#cb26-3" tabindex="-1"></a>MB<span class="sc">@</span>Data<span class="sc">$</span>X2[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># Add some NAs to block X2</span></span>
+<span id="cb26-4"><a href="handling.html#cb26-4" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NAInfRemoveMultiBlock</span>(MB, <span class="at">na.method =</span> <span class="st">&#39;none&#39;</span>, <span class="at">minfrac =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<pre><code>## Warning in NAInfRemoveMultiBlock(MB, na.method = &quot;none&quot;, minfrac = 0.2): 9
+## variable(s) exceeded the NA/Infinite threshold and were deleted.</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="handling.html#cb28-1" tabindex="-1"></a><span class="co"># Variables containing more than 20% of NAs will be discarded</span></span>
+<span id="cb28-2"><a href="handling.html#cb28-2" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="handling.html#cb28-3" tabindex="-1"></a><span class="do">## Data normalization</span></span>
+<span id="cb28-4"><a href="handling.html#cb28-4" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;norm&#39;</span>)</span>
+<span id="cb28-5"><a href="handling.html#cb28-5" tabindex="-1"></a><span class="co"># MB is normalized (mean-center and divided by the block norm)</span></span></code></pre></div>
+<p>The <code>R.ComDim</code> package has been designed with flexibility in mind, and allows
+the user to apply custom data transformations. For instance, in the code below,
+all variables with values lower than 5% of the most intense value are discarded.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="handling.html#cb29-1" tabindex="-1"></a><span class="co"># MB is converted to matrix to calculate the max value.</span></span>
+<span id="cb29-2"><a href="handling.html#cb29-2" tabindex="-1"></a>maxMB <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">MultiBlock2Matrix</span>(allMB), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Warning in MultiBlock2Matrix(allMB): Some variable names were repeated across blocks.
+##   The repeated variable names were renamed.</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="handling.html#cb31-1" tabindex="-1"></a><span class="co"># Variables are filtered with the ProcessMultiBlock() function.</span></span>
+<span id="cb31-2"><a href="handling.html#cb31-2" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB,</span>
+<span id="cb31-3"><a href="handling.html#cb31-3" tabindex="-1"></a>  <span class="at">FUN.SelectVars =</span> <span class="cf">function</span>(x) {<span class="fu">apply</span>(x,<span class="dv">2</span>,max) <span class="sc">&gt;</span> maxMB <span class="sc">*</span> <span class="fl">0.05</span>})</span></code></pre></div>
+<p><code>ProcessMultiBlock()</code> can also apply a custom transformation to the data (<code>FUN</code>),
+or remove entire blocks based on a criterion (<code>FUN.SelectBlocks</code>). The three
+arguments can be combined; when they are, the order of execution is
+<code>FUN</code> → <code>FUN.SelectVars</code> → <code>FUN.SelectBlocks</code>. The <code>blocks</code> argument restricts
+processing to a subset of blocks, while <code>vars</code> allows explicit variable
+selection per block.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="handling.html#cb32-1" tabindex="-1"></a><span class="co"># Apply a custom transformation: express each block as a percentage of its maximum.</span></span>
+<span id="cb32-2"><a href="handling.html#cb32-2" tabindex="-1"></a>BY100 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { <span class="dv">100</span> <span class="sc">*</span> (x <span class="sc">/</span> <span class="fu">max</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) }</span>
+<span id="cb32-3"><a href="handling.html#cb32-3" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB, <span class="at">FUN =</span> BY100)</span>
+<span id="cb32-4"><a href="handling.html#cb32-4" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="handling.html#cb32-5" tabindex="-1"></a><span class="co"># Process only specific blocks (by name or by index):</span></span>
+<span id="cb32-6"><a href="handling.html#cb32-6" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB, <span class="at">blocks =</span> <span class="fu">c</span>(<span class="st">&#39;X1&#39;</span>, <span class="st">&#39;X2&#39;</span>), <span class="at">FUN =</span> BY100)</span>
+<span id="cb32-7"><a href="handling.html#cb32-7" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="handling.html#cb32-8" tabindex="-1"></a><span class="co"># Keep only a specific set of variables in each processed block.</span></span>
+<span id="cb32-9"><a href="handling.html#cb32-9" tabindex="-1"></a><span class="co"># &#39;vars&#39; must be a list with one element per block listed in &#39;blocks&#39;.</span></span>
+<span id="cb32-10"><a href="handling.html#cb32-10" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB,</span>
+<span id="cb32-11"><a href="handling.html#cb32-11" tabindex="-1"></a>  <span class="at">blocks =</span> <span class="fu">c</span>(<span class="st">&#39;X1&#39;</span>, <span class="st">&#39;X2&#39;</span>),</span>
+<span id="cb32-12"><a href="handling.html#cb32-12" tabindex="-1"></a>  <span class="at">vars   =</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>))   <span class="co"># first 20 vars of X1, first 40 vars of X2</span></span>
+<span id="cb32-13"><a href="handling.html#cb32-13" tabindex="-1"></a></span>
+<span id="cb32-14"><a href="handling.html#cb32-14" tabindex="-1"></a><span class="co"># Remove blocks whose Frobenius norm is below a threshold</span></span>
+<span id="cb32-15"><a href="handling.html#cb32-15" tabindex="-1"></a><span class="co"># (FUN.SelectBlocks should return TRUE to indicate the block passes the criterion;</span></span>
+<span id="cb32-16"><a href="handling.html#cb32-16" tabindex="-1"></a><span class="co">#  blocks for which it returns FALSE are removed):</span></span>
+<span id="cb32-17"><a href="handling.html#cb32-17" tabindex="-1"></a>norm_threshold <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { <span class="fu">norm</span>(x, <span class="at">type =</span> <span class="st">&#39;F&#39;</span>) <span class="sc">&gt;</span> <span class="dv">50</span> }</span>
+<span id="cb32-18"><a href="handling.html#cb32-18" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB, <span class="at">FUN.SelectBlocks =</span> norm_threshold)</span></code></pre></div>
+<div id="normalization" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Normalization methods<a href="handling.html#normalization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>NormalizeMultiBlock()</code> provides several normalization strategies. The default
+(<code>'norm'</code>) mean-centers each block and divides by its Frobenius norm — this is
+the standard preparation before running ComDim. Other methods are available for
+exploratory work or when a specific pre-processing is required.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="handling.html#cb33-1" tabindex="-1"></a><span class="co"># Reset to NA-removed, un-normalized data so each method is applied independently.</span></span>
+<span id="cb33-2"><a href="handling.html#cb33-2" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NAInfRemoveMultiBlock</span>(MB, <span class="at">na.method =</span> <span class="st">&#39;zero&#39;</span>, <span class="at">minfrac =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<pre><code>## Warning in NAInfRemoveMultiBlock(MB, na.method = &quot;zero&quot;, minfrac = 0.2): 9
+## variable(s) exceeded the NA/Infinite threshold and were deleted.</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="handling.html#cb35-1" tabindex="-1"></a><span class="co"># &#39;norm&#39; (default): mean-center + divide by Frobenius norm. Recommended for ComDim.</span></span>
+<span id="cb35-2"><a href="handling.html#cb35-2" tabindex="-1"></a>allMB_norm    <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;norm&#39;</span>)</span>
+<span id="cb35-3"><a href="handling.html#cb35-3" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="handling.html#cb35-4" tabindex="-1"></a><span class="co"># &#39;auto&#39;: autoscaling (mean-center + divide by SD per variable, i.e. unit variance).</span></span>
+<span id="cb35-5"><a href="handling.html#cb35-5" tabindex="-1"></a>allMB_auto    <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;auto&#39;</span>)</span>
+<span id="cb35-6"><a href="handling.html#cb35-6" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="handling.html#cb35-7" tabindex="-1"></a><span class="co"># &#39;mean&#39;: mean-centering only (no scaling).</span></span>
+<span id="cb35-8"><a href="handling.html#cb35-8" tabindex="-1"></a>allMB_mean    <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;mean&#39;</span>)</span>
+<span id="cb35-9"><a href="handling.html#cb35-9" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="handling.html#cb35-10" tabindex="-1"></a><span class="co"># &#39;pareto&#39;: mean-center + divide by sqrt(SD) per variable.</span></span>
+<span id="cb35-11"><a href="handling.html#cb35-11" tabindex="-1"></a>allMB_pareto  <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;pareto&#39;</span>)</span>
+<span id="cb35-12"><a href="handling.html#cb35-12" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="handling.html#cb35-13" tabindex="-1"></a><span class="co"># &#39;geometric&#39;: all values must be positive after the constant shift.</span></span>
+<span id="cb35-14"><a href="handling.html#cb35-14" tabindex="-1"></a><span class="co">#   Random (or mean-centered) data can be negative, so shift each block to</span></span>
+<span id="cb35-15"><a href="handling.html#cb35-15" tabindex="-1"></a><span class="co">#   make it strictly positive before calling NormalizeMultiBlock.</span></span>
+<span id="cb35-16"><a href="handling.html#cb35-16" tabindex="-1"></a>allMB_pos  <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB, <span class="at">FUN =</span> <span class="cf">function</span>(x) x <span class="sc">-</span> <span class="fu">min</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb35-17"><a href="handling.html#cb35-17" tabindex="-1"></a>allMB_geo  <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB_pos, <span class="at">method =</span> <span class="st">&#39;geometric&#39;</span>)</span>
+<span id="cb35-18"><a href="handling.html#cb35-18" tabindex="-1"></a></span>
+<span id="cb35-19"><a href="handling.html#cb35-19" tabindex="-1"></a><span class="co"># &#39;ranknorm&#39;: rank-based inverse normal transform (Blom transform by default).</span></span>
+<span id="cb35-20"><a href="handling.html#cb35-20" tabindex="-1"></a>allMB_rn      <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;ranknorm&#39;</span>)</span>
+<span id="cb35-21"><a href="handling.html#cb35-21" tabindex="-1"></a></span>
+<span id="cb35-22"><a href="handling.html#cb35-22" tabindex="-1"></a><span class="co"># &#39;none&#39;: no transformation (still converts Inf to NA when infinite.as.NA = TRUE).</span></span>
+<span id="cb35-23"><a href="handling.html#cb35-23" tabindex="-1"></a>allMB_none    <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;none&#39;</span>, <span class="at">infinite.as.NA =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb35-24"><a href="handling.html#cb35-24" tabindex="-1"></a></span>
+<span id="cb35-25"><a href="handling.html#cb35-25" tabindex="-1"></a><span class="co"># Normalize only selected blocks:</span></span>
+<span id="cb35-26"><a href="handling.html#cb35-26" tabindex="-1"></a>allMB         <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">blocks =</span> <span class="fu">c</span>(<span class="st">&#39;X1&#39;</span>, <span class="st">&#39;X3&#39;</span>), <span class="at">method =</span> <span class="st">&#39;auto&#39;</span>)</span></code></pre></div>
+</div>
+<div id="metadata" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Adding batch and metadata information<a href="handling.html#metadata" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Batch labels and per-sample metadata can be attached to any block with
+<code>AddMetadata()</code>. This information is used by <code>SplitRW()</code> (Chapter <a href="create.html#splitRW">2.5</a>)
+and is preserved throughout the ComDim workflow.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="handling.html#cb36-1" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">500</span>), <span class="dv">10</span>, <span class="dv">50</span>)   <span class="co"># 10 samples, 50 variables</span></span>
+<span id="cb36-2"><a href="handling.html#cb36-2" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">800</span>), <span class="dv">10</span>, <span class="dv">80</span>)   <span class="co"># 10 samples, 80 variables</span></span>
+<span id="cb36-3"><a href="handling.html#cb36-3" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="fu">MultiBlock</span>(<span class="at">Data =</span> <span class="fu">list</span>(<span class="at">b1 =</span> b1, <span class="at">b2 =</span> b2))</span>
+<span id="cb36-4"><a href="handling.html#cb36-4" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="handling.html#cb36-5" tabindex="-1"></a><span class="co"># Add batch labels (must be a numeric vector, one value per sample):</span></span>
+<span id="cb36-6"><a href="handling.html#cb36-6" tabindex="-1"></a>batch_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb36-7"><a href="handling.html#cb36-7" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="fu">AddMetadata</span>(mb, <span class="at">block =</span> <span class="st">&#39;b1&#39;</span>, <span class="at">batches =</span> batch_labels)</span>
+<span id="cb36-8"><a href="handling.html#cb36-8" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="fu">AddMetadata</span>(mb, <span class="at">block =</span> <span class="st">&#39;b2&#39;</span>, <span class="at">batches =</span> batch_labels)</span>
+<span id="cb36-9"><a href="handling.html#cb36-9" tabindex="-1"></a></span>
+<span id="cb36-10"><a href="handling.html#cb36-10" tabindex="-1"></a><span class="co"># Add sample metadata (must be a data.frame with one row per sample):</span></span>
+<span id="cb36-11"><a href="handling.html#cb36-11" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb36-12"><a href="handling.html#cb36-12" tabindex="-1"></a>  <span class="at">condition =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&#39;Control&#39;</span>, <span class="st">&#39;Treatment&#39;</span>), <span class="dv">5</span>),</span>
+<span id="cb36-13"><a href="handling.html#cb36-13" tabindex="-1"></a>  <span class="at">time      =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">24</span>, <span class="dv">24</span>, <span class="dv">48</span>, <span class="dv">48</span>)</span>
+<span id="cb36-14"><a href="handling.html#cb36-14" tabindex="-1"></a>)</span>
+<span id="cb36-15"><a href="handling.html#cb36-15" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="fu">AddMetadata</span>(mb, <span class="at">block =</span> <span class="st">&#39;b1&#39;</span>, <span class="at">metadata =</span> meta)</span>
+<span id="cb36-16"><a href="handling.html#cb36-16" tabindex="-1"></a></span>
+<span id="cb36-17"><a href="handling.html#cb36-17" tabindex="-1"></a><span class="co"># Batch labels and metadata can be set together in one call:</span></span>
+<span id="cb36-18"><a href="handling.html#cb36-18" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="fu">AddMetadata</span>(mb, <span class="at">block =</span> <span class="st">&#39;b2&#39;</span>, <span class="at">batches =</span> batch_labels, <span class="at">metadata =</span> meta)</span>
+<span id="cb36-19"><a href="handling.html#cb36-19" tabindex="-1"></a></span>
+<span id="cb36-20"><a href="handling.html#cb36-20" tabindex="-1"></a><span class="co"># Multiple blocks can be updated at once if they share the same labels:</span></span>
+<span id="cb36-21"><a href="handling.html#cb36-21" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="fu">AddMetadata</span>(mb, <span class="at">block =</span> <span class="fu">c</span>(<span class="st">&#39;b1&#39;</span>, <span class="st">&#39;b2&#39;</span>), <span class="at">batches =</span> batch_labels)</span></code></pre></div>
 
+</div>
 </div>
 </div>
             </section>
@@ -318,42 +467,42 @@ most intense value are discarded.</p>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/f-puig/R.ComDim.Docs/edit/master/03-Data-handling.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["_main.pdf", "_main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/f-puig/R.ComDim.Docs/edit/master/03-Data-handling.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

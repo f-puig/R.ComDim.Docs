@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Introduction | R.ComDim (a tutorial)</title>
+  <title>Chapter 1 Introduction | R.ComDim (a tutorial)</title>
   <meta name="description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
 the chemometric method ComDim.</p>" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Introduction | R.ComDim (a tutorial)" />
+  <meta property="og:title" content="Chapter 1 Introduction | R.ComDim (a tutorial)" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
@@ -17,7 +17,7 @@ the chemometric method ComDim.</p>" />
   <meta name="github-repo" content="f-puig/R.ComDim.Docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Introduction | R.ComDim (a tutorial)" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | R.ComDim (a tutorial)" />
   
   <meta name="twitter:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
 the chemometric method ComDim.</p>" />
@@ -26,7 +26,7 @@ the chemometric method ComDim.</p>" />
 <meta name="author" content="Francesc Puig Castellví" />
 
 
-<meta name="date" content="2022-10-23" />
+<meta name="date" content="2026-04-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -122,6 +122,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -139,57 +143,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R.ComDim (a tutorial)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>2.1</b> The ComDim method</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>2.2</b> Why should I use ComDim?</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>2.3</b> Some functions to get started</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>2.4</b> Install and load R.ComDim package</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>2.5</b> References</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>1.1</b> The ComDim method</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>1.2</b> Why should I use ComDim?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>1.3</b> Some functions to get started</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>1.4</b> Install and load R.ComDim package</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>1.5</b> References</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#notes"><i class="fa fa-check"></i><b>1.6</b> Notes</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>3</b> Create a MultiBlock</a>
+<li class="chapter" data-level="2" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>2</b> Create a MultiBlock</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="create.html"><a href="create.html#option1"><i class="fa fa-check"></i><b>3.1</b> Option 1: for small MultiBlocks</a></li>
-<li class="chapter" data-level="3.2" data-path="create.html"><a href="create.html#option2"><i class="fa fa-check"></i><b>3.2</b> Option 2: for large MultiBlocks</a></li>
-<li class="chapter" data-level="3.3" data-path="create.html"><a href="create.html#option3"><i class="fa fa-check"></i><b>3.3</b> Option 3: from SummarizedExperiment or MultiAssayExperiment objects.</a></li>
-<li class="chapter" data-level="3.4" data-path="create.html"><a href="create.html#correspondence"><i class="fa fa-check"></i><b>3.4</b> Sample correspondence across blocks</a></li>
-<li class="chapter" data-level="3.5" data-path="create.html"><a href="create.html#splitRW"><i class="fa fa-check"></i><b>3.5</b> Splitting blocks by the Batch criterion.</a></li>
+<li class="chapter" data-level="2.1" data-path="create.html"><a href="create.html#option1"><i class="fa fa-check"></i><b>2.1</b> Option 1: for small MultiBlocks</a></li>
+<li class="chapter" data-level="2.2" data-path="create.html"><a href="create.html#option2"><i class="fa fa-check"></i><b>2.2</b> Option 2: for large MultiBlocks</a></li>
+<li class="chapter" data-level="2.3" data-path="create.html"><a href="create.html#option3"><i class="fa fa-check"></i><b>2.3</b> Option 3: from SummarizedExperiment or MultiAssayExperiment objects.</a></li>
+<li class="chapter" data-level="2.4" data-path="create.html"><a href="create.html#correspondence"><i class="fa fa-check"></i><b>2.4</b> Sample correspondence across blocks</a></li>
+<li class="chapter" data-level="2.5" data-path="create.html"><a href="create.html#splitRW"><i class="fa fa-check"></i><b>2.5</b> Splitting blocks by the Batch criterion.</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i><b>4</b> MultiBlock data handling</a>
+<li class="chapter" data-level="3" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i><b>3</b> MultiBlock data handling</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="handling.html"><a href="handling.html#inspecting-the-data"><i class="fa fa-check"></i><b>4.1</b> Inspecting the data</a></li>
-<li class="chapter" data-level="4.2" data-path="handling.html"><a href="handling.html#processing"><i class="fa fa-check"></i><b>4.2</b> Data pre-processing</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="multi-omics.html"><a href="multi-omics.html"><i class="fa fa-check"></i><b>5</b> Multi-omics amd Multi-blocks</a>
+<li class="chapter" data-level="3.1" data-path="handling.html"><a href="handling.html#inspecting-the-data"><i class="fa fa-check"></i><b>3.1</b> Inspecting the data</a></li>
+<li class="chapter" data-level="3.2" data-path="handling.html"><a href="handling.html#processing"><i class="fa fa-check"></i><b>3.2</b> Data pre-processing</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>5.1</b> Data processing</a></li>
-<li class="chapter" data-level="5.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>5.2</b> Data analysis</a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="multi-omics.html"><a href="multi-omics.html#saliences"><i class="fa fa-check"></i><b>5.2.1</b> Saliences</a></li>
-<li class="chapter" data-level="5.2.2" data-path="multi-omics.html"><a href="multi-omics.html#scores"><i class="fa fa-check"></i><b>5.2.2</b> Scores</a></li>
-<li class="chapter" data-level="5.2.3" data-path="multi-omics.html"><a href="multi-omics.html#loadings"><i class="fa fa-check"></i><b>5.2.3</b> Loadings</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>5.3</b> Data prediction</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="Section5.html"><a href="Section5.html"><i class="fa fa-check"></i><b>6</b> Data from a single omics data are multi-blocks</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="Section5.html"><a href="Section5.html#molecular-functions"><i class="fa fa-check"></i><b>6.1</b> Molecular functions</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-patwhays"><i class="fa fa-check"></i><b>6.1.1</b> The molecular patwhays</a></li>
+<li class="chapter" data-level="3.2.1" data-path="handling.html"><a href="handling.html#normalization"><i class="fa fa-check"></i><b>3.2.1</b> Normalization methods</a></li>
+<li class="chapter" data-level="3.2.2" data-path="handling.html"><a href="handling.html#metadata"><i class="fa fa-check"></i><b>3.2.2</b> Adding batch and metadata information</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>7</b> Other ComDim methods</a>
+<li class="chapter" data-level="4" data-path="multi-omics.html"><a href="multi-omics.html"><i class="fa fa-check"></i><b>4</b> Multi-omics and Multi-blocks</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>7.1</b> ComDim-Partial Least Squares (ComDim-PLS)</a></li>
-<li class="chapter" data-level="7.2" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>7.2</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a></li>
-<li class="chapter" data-level="7.3" data-path="Section6.html"><a href="Section6.html#KOPLS"><i class="fa fa-check"></i><b>7.3</b> ComDim-kernel-OPLS</a></li>
-<li class="chapter" data-level="7.4" data-path="Section6.html"><a href="Section6.html#Other"><i class="fa fa-check"></i><b>7.4</b> Other extensions</a>
+<li class="chapter" data-level="4.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>4.1</b> Data processing</a></li>
+<li class="chapter" data-level="4.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>4.2</b> Data analysis</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="Section6.html"><a href="Section6.html#example-of-comdim-ica"><i class="fa fa-check"></i><b>7.4.1</b> Example of ComDim-ICA</a></li>
-<li class="chapter" data-level="7.4.2" data-path="Section6.html"><a href="Section6.html#example-of-comdim-pls-version-ropls"><i class="fa fa-check"></i><b>7.4.2</b> Example of ComDim-PLS (version ropls)</a></li>
-<li class="chapter" data-level="7.4.3" data-path="Section6.html"><a href="Section6.html#example-of-comdim-plsda-version-ropls"><i class="fa fa-check"></i><b>7.4.3</b> Example of ComDim-PLSDA (version ropls)</a></li>
-<li class="chapter" data-level="7.4.4" data-path="Section6.html"><a href="Section6.html#example-of-comdim-oplsda-version-ropls"><i class="fa fa-check"></i><b>7.4.4</b> Example of ComDim-OPLSDA (version ropls)</a></li>
+<li class="chapter" data-level="4.2.1" data-path="multi-omics.html"><a href="multi-omics.html#saliences"><i class="fa fa-check"></i><b>4.2.1</b> Saliences</a></li>
+<li class="chapter" data-level="4.2.2" data-path="multi-omics.html"><a href="multi-omics.html#scores"><i class="fa fa-check"></i><b>4.2.2</b> Scores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="multi-omics.html"><a href="multi-omics.html#loadings"><i class="fa fa-check"></i><b>4.2.3</b> Loadings</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>4.3</b> Data prediction</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Section5.html"><a href="Section5.html"><i class="fa fa-check"></i><b>5</b> Data from a single omics data are multi-blocks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Section5.html"><a href="Section5.html#molecular-functions"><i class="fa fa-check"></i><b>5.1</b> Molecular functions</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-pathways"><i class="fa fa-check"></i><b>5.1.1</b> The molecular pathways</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>6</b> Other ComDim methods</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>6.1</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="Section6.html"><a href="Section6.html#predicting-new-samples-with-comdim-plsda"><i class="fa fa-check"></i><b>6.1.1</b> Predicting new samples with ComDim-PLSDA</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>6.2</b> ComDim-Partial Least Squares Regression (ComDim-PLSR)</a></li>
+<li class="chapter" data-level="6.3" data-path="Section6.html"><a href="Section6.html#OPLS"><i class="fa fa-check"></i><b>6.3</b> ComDim-Orthogonal PLS (ComDim-OPLS)</a></li>
+<li class="chapter" data-level="6.4" data-path="Section6.html"><a href="Section6.html#compmethod"><i class="fa fa-check"></i><b>6.4</b> Computation strategies: <code>CompMethod</code> and <code>Partitions</code></a></li>
+<li class="chapter" data-level="6.5" data-path="Section6.html"><a href="Section6.html#Other"><i class="fa fa-check"></i><b>6.5</b> Other extensions</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Section6.html"><a href="Section6.html#example-of-comdim-ica"><i class="fa fa-check"></i><b>6.5.1</b> Example of ComDim-ICA</a></li>
+<li class="chapter" data-level="6.5.2" data-path="Section6.html"><a href="Section6.html#example-of-comdim-pls-version-ropls"><i class="fa fa-check"></i><b>6.5.2</b> Example of ComDim-PLS (version ropls)</a></li>
+<li class="chapter" data-level="6.5.3" data-path="Section6.html"><a href="Section6.html#example-of-comdim-plsda-version-ropls"><i class="fa fa-check"></i><b>6.5.3</b> Example of ComDim-PLSDA (version ropls)</a></li>
+<li class="chapter" data-level="6.5.4" data-path="Section6.html"><a href="Section6.html#example-of-comdim-oplsda-version-ropls"><i class="fa fa-check"></i><b>6.5.4</b> Example of ComDim-OPLSDA (version ropls)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Section7.html"><a href="Section7.html"><i class="fa fa-check"></i><b>7</b> Replicate-Wise (RW) analysis</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Section7.html"><a href="Section7.html#dataset3"><i class="fa fa-check"></i><b>7.1</b> Data</a></li>
+<li class="chapter" data-level="7.2" data-path="Section7.html"><a href="Section7.html#build-rw"><i class="fa fa-check"></i><b>7.2</b> Building the MultiBlock with batch information</a></li>
+<li class="chapter" data-level="7.3" data-path="Section7.html"><a href="Section7.html#splitRW-replicate"><i class="fa fa-check"></i><b>7.3</b> Splitting the MultiBlock into RW blocks</a></li>
+<li class="chapter" data-level="7.4" data-path="Section7.html"><a href="Section7.html#rw-pca"><i class="fa fa-check"></i><b>7.4</b> ComDim-PCA on the RW multi-block</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="Section7.html"><a href="Section7.html#rw-saliences"><i class="fa fa-check"></i><b>7.4.1</b> Saliences</a></li>
+<li class="chapter" data-level="7.4.2" data-path="Section7.html"><a href="Section7.html#rw-qscores"><i class="fa fa-check"></i><b>7.4.2</b> Global scores</a></li>
+<li class="chapter" data-level="7.4.3" data-path="Section7.html"><a href="Section7.html#rw-tscores"><i class="fa fa-check"></i><b>7.4.3</b> Comparing local and global scores</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="Section7.html"><a href="Section7.html#rw-pls"><i class="fa fa-check"></i><b>7.5</b> ComDim-PLS on the RW multi-block</a></li>
+<li class="chapter" data-level="7.6" data-path="Section7.html"><a href="Section7.html#rw-features"><i class="fa fa-check"></i><b>7.6</b> Selecting the most significant variables</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="Section7.html"><a href="Section7.html#splot"><i class="fa fa-check"></i><b>7.6.1</b> Principle of the S-plot</a></li>
+<li class="chapter" data-level="7.6.2" data-path="Section7.html"><a href="Section7.html#rw-mirna"><i class="fa fa-check"></i><b>7.6.2</b> Feature selection on the mirnaseq blocks</a></li>
+<li class="chapter" data-level="7.6.3" data-path="Section7.html"><a href="Section7.html#rw-thresholds"><i class="fa fa-check"></i><b>7.6.3</b> Adjusting the selection thresholds</a></li>
+<li class="chapter" data-level="7.6.4" data-path="Section7.html"><a href="Section7.html#rw-features-pls"><i class="fa fa-check"></i><b>7.6.4</b> Feature selection after ComDim-PLSDA</a></li>
+<li class="chapter" data-level="7.6.5" data-path="Section7.html"><a href="Section7.html#rw-features-vis"><i class="fa fa-check"></i><b>7.6.5</b> Visualising selected features</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -212,10 +246,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="ComDim" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> The ComDim method<a href="introduction.html#ComDim" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introduction" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ComDim" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> The ComDim method<a href="introduction.html#ComDim" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>ComDim (also known as CCSWA) is an unsupervised multi-block method that aims to
 simultaneously consider multiple data tables to find the latent components that
 are common to all the tables as well as those that are specific to each data
@@ -230,11 +264,11 @@ sets of scores are obtained. The first set corresponds to the <code>Local scores
 each analyzed block while the second set is composed of the <code>Global scores</code>,
 common to all the blocks.</p>
 </div>
-<div id="why" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Why should I use ComDim?<a href="introduction.html#why" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="why" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Why should I use ComDim?<a href="introduction.html#why" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>To analyze <strong>different types of data</strong> (ex. multi-omics) and see how they are
-untangled.</li>
+<li>To analyze <strong>different types of data</strong> (ex. multi-omics) and understand how
+the information is distributed across them.</li>
 <li>To extract the common profiles of <strong>related variables</strong> (ex. metabolites
 detected in the same pathway).</li>
 <li>To deal with <strong>unbalanced multi-block</strong> datasets (ex. different number of
@@ -247,37 +281,36 @@ platform.</li>
 errors in the sample preparation.</li>
 </ul>
 </div>
-<div id="functions" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Some functions to get started<a href="introduction.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="functions" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Some functions to get started<a href="introduction.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To successfully extract all the potential of the ComDim method, several
 functions coded in R are proposed. Some of them are listed below:</p>
 <ul>
 <li><code>MultiBlock()</code>: To initialize a <code>MultiBlock</code> object with the first data-block(s).</li>
-<li><code>BuildMultiBlock()</code>: To combine several single data-blocks into a <code>MultiBlock</code>
-object, containing some of them metadata information.</li>
-<li><code>ExpandMultiBlock()</code>: To reorganize the blocks from a MultiBlock based on a metadata information (i.e. taxonomy, molecular functions).
-<code>MultiBlock</code> object, containing some of them metadata information.</li>
+<li><code>ExpandMultiBlock()</code>: To split a single data block into multiple blocks
+according to a metadata grouping (e.g. metabolic pathways, gene ontology terms),
+allowing variables to appear in more than one block simultaneously.</li>
 <li><code>NormalizeMultiBlock()</code>: To normalize (some or all) the data-blocks of the
 <code>MultiBlock</code> object.</li>
 <li><code>ProcessMultiBlock()</code>: To apply customized data transformation to (some or
 all) the data-blocks of the <code>MultiBlock</code> object.</li>
-<li><code>ComDim_PCA_MB()</code>: This function applies the ComDim-PCA algorithm on the
-<code>MultiBlock</code> object resulting from <code>BuildMultiBlock()</code> or <code>ExpandMultiBlock()</code>.</li>
+<li><code>ComDim_PCA()</code>: This function applies the ComDim-PCA algorithm on a
+<code>MultiBlock</code> object.</li>
 </ul>
 <p>For more information on the usage of these functions, please consult the
 next chapters and the help (<code>?</code>).</p>
 </div>
-<div id="install" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Install and load R.ComDim package<a href="introduction.html#install" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction.html#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;devtools&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb1-2"><a href="introduction.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb1-3"><a href="introduction.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install_github</span>(<span class="st">&quot;f-puig/R.ComDim&quot;</span>)</span>
-<span id="cb1-4"><a href="introduction.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-5"><a href="introduction.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Load R.ComDim</span></span>
-<span id="cb1-6"><a href="introduction.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(<span class="st">&quot;R.ComDim&quot;</span>)</span></code></pre></div>
+<div id="install" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Install and load R.ComDim package<a href="introduction.html#install" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction.html#cb1-1" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;devtools&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb1-2"><a href="introduction.html#cb1-2" tabindex="-1"></a>  <span class="fu">library</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb1-3"><a href="introduction.html#cb1-3" tabindex="-1"></a>  <span class="fu">install_github</span>(<span class="st">&quot;f-puig/R.ComDim&quot;</span>)</span>
+<span id="cb1-4"><a href="introduction.html#cb1-4" tabindex="-1"></a>  </span>
+<span id="cb1-5"><a href="introduction.html#cb1-5" tabindex="-1"></a>  <span class="co"># Load R.ComDim</span></span>
+<span id="cb1-6"><a href="introduction.html#cb1-6" tabindex="-1"></a>  <span class="fu">library</span>(<span class="st">&quot;R.ComDim&quot;</span>)</span></code></pre></div>
 </div>
-<div id="references" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> References<a href="introduction.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="references" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> References<a href="introduction.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Puig-Castellví, F.; Jouan-Rimbaud Bouveresse, D.; Mazéas, L.; Chapleur, O.;
 Rutledge, D. N. Rearrangement of incomplete multi-omics datasets combined with
@@ -294,6 +327,27 @@ Components and Specific Weights Analysis to Interpret Supersaturated Designs.
 Chemom. Intell. Lab. Syst. 2016, 152, 97–106.
 <a href="https://doi.org/10.1016/j.chemolab.2016.01.014"><strong>(DOI)</strong></a></li>
 </ul>
+</div>
+<div id="notes" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Notes<a href="introduction.html#notes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><strong>Note on package version (April 2026).</strong> This book accompanies an updated
+version of the R.ComDim package that supersedes the original release from 2021
+(available at <a href="https://github.com/f-puig/R.ComDim" class="uri">https://github.com/f-puig/R.ComDim</a>). The two most important
+changes introduced in this update are:</p>
+<ul>
+<li><strong><code>MultiBlock()</code> is now the sole constructor</strong> — <code>BuildMultiBlock()</code> has
+been deprecated and removed. The <code>MultiBlock()</code> constructor has been
+extended with new parameters (<code>ignore.names</code>, <code>ignore.size</code>) to better
+handle unbalanced designs. The accessor API has also been overhauled: the
+old <code>getBlockNames()</code> / <code>setBlockNames()</code> style functions are replaced by
+S4 generics with assignment forms (<code>blockNames()</code>, <code>blockNames&lt;-()</code>,
+<code>sampleNames()</code>, <code>sampleNames&lt;-()</code>, <code>variableNames()</code>,
+<code>variableNames&lt;-()</code>) and standard <code>nrow()</code> / <code>ncol()</code>.</li>
+<li><strong><code>ComDim_OPLS()</code></strong> — A new OPLS variant of the ComDim algorithm has
+been added, complementing the existing <code>ComDim_PLS()</code>.</li>
+</ul>
+</blockquote>
 
 </div>
 </div>
@@ -317,42 +371,42 @@ Chemom. Intell. Lab. Syst. 2016, 152, 97–106.
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/f-puig/R.ComDim.Docs/edit/master/01-intro.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["_main.pdf", "_main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/f-puig/R.ComDim.Docs/edit/master/01-intro.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

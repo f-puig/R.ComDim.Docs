@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Other ComDim methods | R.ComDim (a tutorial)</title>
+  <title>Chapter 6 Other ComDim methods | R.ComDim (a tutorial)</title>
   <meta name="description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
 the chemometric method ComDim.</p>" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Other ComDim methods | R.ComDim (a tutorial)" />
+  <meta property="og:title" content="Chapter 6 Other ComDim methods | R.ComDim (a tutorial)" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
@@ -17,7 +17,7 @@ the chemometric method ComDim.</p>" />
   <meta name="github-repo" content="f-puig/R.ComDim.Docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Other ComDim methods | R.ComDim (a tutorial)" />
+  <meta name="twitter:title" content="Chapter 6 Other ComDim methods | R.ComDim (a tutorial)" />
   
   <meta name="twitter:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
 the chemometric method ComDim.</p>" />
@@ -26,7 +26,7 @@ the chemometric method ComDim.</p>" />
 <meta name="author" content="Francesc Puig Castellví" />
 
 
-<meta name="date" content="2022-10-23" />
+<meta name="date" content="2026-05-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,7 +34,7 @@ the chemometric method ComDim.</p>" />
   
   
 <link rel="prev" href="Section5.html"/>
-
+<link rel="next" href="Section7.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -122,6 +122,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -139,57 +143,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R.ComDim (a tutorial)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>2.1</b> The ComDim method</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>2.2</b> Why should I use ComDim?</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>2.3</b> Some functions to get started</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>2.4</b> Install and load R.ComDim package</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>2.5</b> References</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>1.1</b> The ComDim method</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>1.2</b> Why should I use ComDim?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>1.3</b> Some functions to get started</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>1.4</b> Install and load R.ComDim package</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>1.5</b> References</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#notes"><i class="fa fa-check"></i><b>1.6</b> Notes</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>3</b> Create a MultiBlock</a>
+<li class="chapter" data-level="2" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>2</b> Create a MultiBlock</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="create.html"><a href="create.html#option1"><i class="fa fa-check"></i><b>3.1</b> Option 1: for small MultiBlocks</a></li>
-<li class="chapter" data-level="3.2" data-path="create.html"><a href="create.html#option2"><i class="fa fa-check"></i><b>3.2</b> Option 2: for large MultiBlocks</a></li>
-<li class="chapter" data-level="3.3" data-path="create.html"><a href="create.html#option3"><i class="fa fa-check"></i><b>3.3</b> Option 3: from SummarizedExperiment or MultiAssayExperiment objects.</a></li>
-<li class="chapter" data-level="3.4" data-path="create.html"><a href="create.html#correspondence"><i class="fa fa-check"></i><b>3.4</b> Sample correspondence across blocks</a></li>
-<li class="chapter" data-level="3.5" data-path="create.html"><a href="create.html#splitRW"><i class="fa fa-check"></i><b>3.5</b> Splitting blocks by the Batch criterion.</a></li>
+<li class="chapter" data-level="2.1" data-path="create.html"><a href="create.html#option1"><i class="fa fa-check"></i><b>2.1</b> Option 1: for small MultiBlocks</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="create.html"><a href="create.html#batch-and-metadata"><i class="fa fa-check"></i><b>2.1.1</b> <code>Batch</code> and <code>metadata</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i><b>4</b> MultiBlock data handling</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="handling.html"><a href="handling.html#inspecting-the-data"><i class="fa fa-check"></i><b>4.1</b> Inspecting the data</a></li>
-<li class="chapter" data-level="4.2" data-path="handling.html"><a href="handling.html#processing"><i class="fa fa-check"></i><b>4.2</b> Data pre-processing</a></li>
+<li class="chapter" data-level="2.2" data-path="create.html"><a href="create.html#option2"><i class="fa fa-check"></i><b>2.2</b> Option 2: for large MultiBlocks</a></li>
+<li class="chapter" data-level="2.3" data-path="create.html"><a href="create.html#option3"><i class="fa fa-check"></i><b>2.3</b> Option 3: from SummarizedExperiment or MultiAssayExperiment objects</a></li>
+<li class="chapter" data-level="2.4" data-path="create.html"><a href="create.html#correspondence"><i class="fa fa-check"></i><b>2.4</b> Sample correspondence across blocks</a></li>
+<li class="chapter" data-level="2.5" data-path="create.html"><a href="create.html#splitRW"><i class="fa fa-check"></i><b>2.5</b> Splitting blocks by <code>Batch</code></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="multi-omics.html"><a href="multi-omics.html"><i class="fa fa-check"></i><b>5</b> Multi-omics amd Multi-blocks</a>
+<li class="chapter" data-level="3" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i><b>3</b> MultiBlock data handling</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>5.1</b> Data processing</a></li>
-<li class="chapter" data-level="5.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>5.2</b> Data analysis</a>
+<li class="chapter" data-level="3.1" data-path="handling.html"><a href="handling.html#inspecting-the-data"><i class="fa fa-check"></i><b>3.1</b> Inspecting the data</a></li>
+<li class="chapter" data-level="3.2" data-path="handling.html"><a href="handling.html#processing"><i class="fa fa-check"></i><b>3.2</b> Data pre-processing</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="multi-omics.html"><a href="multi-omics.html#saliences"><i class="fa fa-check"></i><b>5.2.1</b> Saliences</a></li>
-<li class="chapter" data-level="5.2.2" data-path="multi-omics.html"><a href="multi-omics.html#scores"><i class="fa fa-check"></i><b>5.2.2</b> Scores</a></li>
-<li class="chapter" data-level="5.2.3" data-path="multi-omics.html"><a href="multi-omics.html#loadings"><i class="fa fa-check"></i><b>5.2.3</b> Loadings</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>5.3</b> Data prediction</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="Section5.html"><a href="Section5.html"><i class="fa fa-check"></i><b>6</b> Data from a single omics data are multi-blocks</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="Section5.html"><a href="Section5.html#molecular-functions"><i class="fa fa-check"></i><b>6.1</b> Molecular functions</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-patwhays"><i class="fa fa-check"></i><b>6.1.1</b> The molecular patwhays</a></li>
+<li class="chapter" data-level="3.2.1" data-path="handling.html"><a href="handling.html#normalization"><i class="fa fa-check"></i><b>3.2.1</b> Normalization methods</a></li>
+<li class="chapter" data-level="3.2.2" data-path="handling.html"><a href="handling.html#metadata"><i class="fa fa-check"></i><b>3.2.2</b> Adding batch and metadata information</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>7</b> Other ComDim methods</a>
+<li class="chapter" data-level="4" data-path="multi-omics.html"><a href="multi-omics.html"><i class="fa fa-check"></i><b>4</b> Multi-omics and Multi-blocks</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>7.1</b> ComDim-Partial Least Squares (ComDim-PLS)</a></li>
-<li class="chapter" data-level="7.2" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>7.2</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a></li>
-<li class="chapter" data-level="7.3" data-path="Section6.html"><a href="Section6.html#KOPLS"><i class="fa fa-check"></i><b>7.3</b> ComDim-kernel-OPLS</a></li>
-<li class="chapter" data-level="7.4" data-path="Section6.html"><a href="Section6.html#Other"><i class="fa fa-check"></i><b>7.4</b> Other extensions</a>
+<li class="chapter" data-level="4.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>4.1</b> Data processing</a></li>
+<li class="chapter" data-level="4.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>4.2</b> Data analysis</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="Section6.html"><a href="Section6.html#example-of-comdim-ica"><i class="fa fa-check"></i><b>7.4.1</b> Example of ComDim-ICA</a></li>
-<li class="chapter" data-level="7.4.2" data-path="Section6.html"><a href="Section6.html#example-of-comdim-pls-version-ropls"><i class="fa fa-check"></i><b>7.4.2</b> Example of ComDim-PLS (version ropls)</a></li>
-<li class="chapter" data-level="7.4.3" data-path="Section6.html"><a href="Section6.html#example-of-comdim-plsda-version-ropls"><i class="fa fa-check"></i><b>7.4.3</b> Example of ComDim-PLSDA (version ropls)</a></li>
-<li class="chapter" data-level="7.4.4" data-path="Section6.html"><a href="Section6.html#example-of-comdim-oplsda-version-ropls"><i class="fa fa-check"></i><b>7.4.4</b> Example of ComDim-OPLSDA (version ropls)</a></li>
+<li class="chapter" data-level="4.2.1" data-path="multi-omics.html"><a href="multi-omics.html#saliences"><i class="fa fa-check"></i><b>4.2.1</b> Saliences</a></li>
+<li class="chapter" data-level="4.2.2" data-path="multi-omics.html"><a href="multi-omics.html#scores"><i class="fa fa-check"></i><b>4.2.2</b> Scores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="multi-omics.html"><a href="multi-omics.html#loadings"><i class="fa fa-check"></i><b>4.2.3</b> Loadings</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>4.3</b> Data prediction</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Section5.html"><a href="Section5.html"><i class="fa fa-check"></i><b>5</b> Data from a single omics data are multi-blocks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Section5.html"><a href="Section5.html#molecular-functions"><i class="fa fa-check"></i><b>5.1</b> Molecular functions</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-pathways"><i class="fa fa-check"></i><b>5.1.1</b> The molecular pathways</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>6</b> Other ComDim methods</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>6.1</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="Section6.html"><a href="Section6.html#predicting-new-samples-with-comdim-plsda"><i class="fa fa-check"></i><b>6.1.1</b> Predicting new samples with ComDim-PLSDA</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>6.2</b> ComDim-Partial Least Squares Regression (ComDim-PLSR)</a></li>
+<li class="chapter" data-level="6.3" data-path="Section6.html"><a href="Section6.html#OPLS"><i class="fa fa-check"></i><b>6.3</b> ComDim-Orthogonal PLS (ComDim-OPLS)</a></li>
+<li class="chapter" data-level="6.4" data-path="Section6.html"><a href="Section6.html#compmethod"><i class="fa fa-check"></i><b>6.4</b> Computation strategies: <code>CompMethod</code> and <code>Partitions</code></a></li>
+<li class="chapter" data-level="6.5" data-path="Section6.html"><a href="Section6.html#Other"><i class="fa fa-check"></i><b>6.5</b> Other extensions</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Section6.html"><a href="Section6.html#example-of-comdim-ica"><i class="fa fa-check"></i><b>6.5.1</b> Example of ComDim-ICA</a></li>
+<li class="chapter" data-level="6.5.2" data-path="Section6.html"><a href="Section6.html#example-of-comdim-pls-version-ropls"><i class="fa fa-check"></i><b>6.5.2</b> Example of ComDim-PLS (version ropls)</a></li>
+<li class="chapter" data-level="6.5.3" data-path="Section6.html"><a href="Section6.html#example-of-comdim-plsda-version-ropls"><i class="fa fa-check"></i><b>6.5.3</b> Example of ComDim-PLSDA (version ropls)</a></li>
+<li class="chapter" data-level="6.5.4" data-path="Section6.html"><a href="Section6.html#example-of-comdim-oplsda-version-ropls"><i class="fa fa-check"></i><b>6.5.4</b> Example of ComDim-OPLSDA (version ropls)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Section7.html"><a href="Section7.html"><i class="fa fa-check"></i><b>7</b> Replicate-Wise (RW) analysis</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Section7.html"><a href="Section7.html#dataset3"><i class="fa fa-check"></i><b>7.1</b> Data</a></li>
+<li class="chapter" data-level="7.2" data-path="Section7.html"><a href="Section7.html#build-rw"><i class="fa fa-check"></i><b>7.2</b> Building the MultiBlock with batch information</a></li>
+<li class="chapter" data-level="7.3" data-path="Section7.html"><a href="Section7.html#splitRW-replicate"><i class="fa fa-check"></i><b>7.3</b> Splitting the MultiBlock into RW blocks</a></li>
+<li class="chapter" data-level="7.4" data-path="Section7.html"><a href="Section7.html#rw-pca"><i class="fa fa-check"></i><b>7.4</b> ComDim-PCA on the RW multi-block</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="Section7.html"><a href="Section7.html#rw-saliences"><i class="fa fa-check"></i><b>7.4.1</b> Saliences</a></li>
+<li class="chapter" data-level="7.4.2" data-path="Section7.html"><a href="Section7.html#rw-qscores"><i class="fa fa-check"></i><b>7.4.2</b> Global scores</a></li>
+<li class="chapter" data-level="7.4.3" data-path="Section7.html"><a href="Section7.html#rw-tscores"><i class="fa fa-check"></i><b>7.4.3</b> Comparing local and global scores</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="Section7.html"><a href="Section7.html#rw-pls"><i class="fa fa-check"></i><b>7.5</b> ComDim-PLS on the RW multi-block</a></li>
+<li class="chapter" data-level="7.6" data-path="Section7.html"><a href="Section7.html#rw-features"><i class="fa fa-check"></i><b>7.6</b> Selecting the most significant variables</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="Section7.html"><a href="Section7.html#splot"><i class="fa fa-check"></i><b>7.6.1</b> Principle of the S-plot</a></li>
+<li class="chapter" data-level="7.6.2" data-path="Section7.html"><a href="Section7.html#rw-mirna"><i class="fa fa-check"></i><b>7.6.2</b> Feature selection on the mirnaseq blocks</a></li>
+<li class="chapter" data-level="7.6.3" data-path="Section7.html"><a href="Section7.html#rw-thresholds"><i class="fa fa-check"></i><b>7.6.3</b> Adjusting the selection thresholds</a></li>
+<li class="chapter" data-level="7.6.4" data-path="Section7.html"><a href="Section7.html#rw-features-pls"><i class="fa fa-check"></i><b>7.6.4</b> Feature selection after ComDim-PLSDA</a></li>
+<li class="chapter" data-level="7.6.5" data-path="Section7.html"><a href="Section7.html#rw-features-vis"><i class="fa fa-check"></i><b>7.6.5</b> Visualising selected features</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -212,231 +249,831 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Section6" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Other ComDim methods<a href="Section6.html#Section6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="Section6" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Other ComDim methods<a href="Section6.html#Section6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In the previous sections, we have only used <strong>ComDim-PCA</strong>, but many other
 ComDim versions exist. ComDim can be regarded as a chemometric method able to
 compact the relevant information of the data into a reduced subspace, defined by
 the <strong>scores</strong>, the <strong>loadings</strong> and the <strong>saliences</strong>.
 Although most ComDim analyses employ <strong>Principal Component Analysis (PCA)</strong> as
 the core method to find this reduced space, other approaches can be used.</p>
-<p>The <code>R.Comdim</code> package includes a few of those other methods, as well as some
+<p>The <code>R.ComDim</code> package includes a few of those other methods, as well as some
 additional functions <strong>to allow the users to create their own ComDim methods</strong>.</p>
-<div id="PLS" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> ComDim-Partial Least Squares (ComDim-PLS)<a href="Section6.html#PLS" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>ComDim-PLS</strong> can be executed with the function <code>ComDim_PLS_MB()</code>, by
-providing a <code>y</code> regression vector (i.e. numerical) and indicating that the
-ComDim <code>method='PLS-R</code>.
-The output of the <strong>ComDim-PLS</strong> method is an object of the <code>ComDim</code> class (like
-when <code>ComDim_PCA_MB()</code> is used) that contains the typical PLS figures of merit
-(<strong>R2X</strong>, <strong>R2Y</strong>, <strong>Q2</strong>), the PLS regression coefficients <strong>B</strong> and <strong>B0</strong>,
-and the <strong>predicted y</strong> according to the ComDim-PLS model.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="Section6.html#cb49-1" aria-hidden="true" tabindex="-1"></a>resultsPLSR <span class="ot">&lt;-</span> <span class="fu">ComDim_PLS_MB</span>(allMB,</span>
-<span id="cb49-2"><a href="Section6.html#cb49-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">y=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="dv">5</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="dv">10</span>,<span class="dv">4</span>)),</span>
-<span id="cb49-3"><a href="Section6.html#cb49-3" aria-hidden="true" tabindex="-1"></a>                             <span class="co"># y is an arbitrary numerical vector,</span></span>
-<span id="cb49-4"><a href="Section6.html#cb49-4" aria-hidden="true" tabindex="-1"></a>                             <span class="co"># just for testing the function.</span></span>
-<span id="cb49-5"><a href="Section6.html#cb49-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">ndim =</span> <span class="dv">2</span>, <span class="at">method =</span> <span class="st">&#39;PLS-R&#39;</span>)</span>
-<span id="cb49-6"><a href="Section6.html#cb49-6" aria-hidden="true" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>R2X</span>
-<span id="cb49-7"><a href="Section6.html#cb49-7" aria-hidden="true" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>R2Y</span>
-<span id="cb49-8"><a href="Section6.html#cb49-8" aria-hidden="true" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>Q2</span>
-<span id="cb49-9"><a href="Section6.html#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-10"><a href="Section6.html#cb49-10" aria-hidden="true" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>PLS.model<span class="sc">$</span>B</span>
-<span id="cb49-11"><a href="Section6.html#cb49-11" aria-hidden="true" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>PLS.model<span class="sc">$</span>B0</span>
-<span id="cb49-12"><a href="Section6.html#cb49-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-13"><a href="Section6.html#cb49-13" aria-hidden="true" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred</span></code></pre></div>
+<div id="PLS-DA" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)<a href="Section6.html#PLS-DA" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>ComDim-PLSDA</strong> is executed with the function <code>ComDim_PLS()</code>, by
+providing a <code>y</code> vector with the sample class labels and setting
+<code>method = 'PLS-DA'</code>.
+The output object contains the typical PLS figures of merit
+(<strong>R2X</strong>, <strong>R2Y</strong>, <strong>Q2</strong>, <strong>DQ2</strong>), the <strong>VIP</strong> (Variable Importance in
+Projection) scores per variable and per block, the PLS regression coefficients
+<strong>B</strong> and <strong>B0</strong>, and the <strong>predicted class</strong> assignments along with a
+<strong>confusion matrix</strong>, <strong>sensitivity</strong> and <strong>specificity</strong> per class.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="Section6.html#cb3-1" tabindex="-1"></a>resultsPLSDA <span class="ot">&lt;-</span> <span class="fu">ComDim_PLS</span>(allMB,</span>
+<span id="cb3-2"><a href="Section6.html#cb3-2" tabindex="-1"></a>                              <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;NI&#39;</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&#39;DOX&#39;</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&#39;OFF&#39;</span>,<span class="dv">4</span>)),</span>
+<span id="cb3-3"><a href="Section6.html#cb3-3" tabindex="-1"></a>                              <span class="at">ndim =</span> <span class="dv">2</span>, <span class="at">method =</span> <span class="st">&#39;PLS-DA&#39;</span>)</span></code></pre></div>
+<pre><code>##   |                                                                              |                                                                      |   0%[1] &quot;The data can be used for ComDim.&quot;
+##   |                                                                              |=====                                                                 |   7%  |                                                                              |==========                                                            |  14%  |                                                                              |===============                                                       |  21%  |                                                                              |====================                                                  |  29%  |                                                                              |=========================                                             |  36%  |                                                                              |=============================================                         |  64%  |                                                                              |==================================================                    |  71%  |                                                                              |=======================================================               |  79%  |                                                                              |============================================================          |  86%  |                                                                              |=================================================================     |  93%  |                                                                              |                                                                      |   0%  |                                                                              |======================================================================| 100%</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="Section6.html#cb5-1" tabindex="-1"></a><span class="co"># Figures of merit</span></span>
+<span id="cb5-2"><a href="Section6.html#cb5-2" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>R2X</span></code></pre></div>
+<pre><code>##        CC1        CC2 
+## 0.93943664 0.06056336</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="Section6.html#cb7-1" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>R2Y</span></code></pre></div>
+<pre><code>##       CC1       CC2 
+## 0.3444983 0.8050514</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="Section6.html#cb9-1" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>Q2   <span class="co"># Cross-validated Q2 per class</span></span></code></pre></div>
+<pre><code>##       DOX        NI       OFF 
+## 0.4779148 0.2743497 0.4987132</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="Section6.html#cb11-1" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>DQ2  <span class="co"># Cross-validated discriminant Q2 per class</span></span></code></pre></div>
+<pre><code>## [1] 0.7180239</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="Section6.html#cb13-1" tabindex="-1"></a><span class="co"># The model results to predict all the classes</span></span>
+<span id="cb13-2"><a href="Section6.html#cb13-2" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="Section6.html#cb13-3" tabindex="-1"></a><span class="co"># Classification outputs</span></span>
+<span id="cb13-4"><a href="Section6.html#cb13-4" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>confusionMatrix</span></code></pre></div>
+<pre><code>## $DOX
+##            trueClass1 trueClass0
+## predClass1          4          0
+## predClass0          0          8
+## 
+## $NI
+##            trueClass1 trueClass0
+## predClass1          4          0
+## predClass0          0          8
+## 
+## $OFF
+##            trueClass1 trueClass0
+## predClass1          4          0
+## predClass0          0          8</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="Section6.html#cb15-1" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>Sensitivity</span></code></pre></div>
+<pre><code>## DOX  NI OFF 
+##   1   1   1</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="Section6.html#cb17-1" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>Specificity</span></code></pre></div>
+<pre><code>## DOX  NI OFF 
+##   1   1   1</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="Section6.html#cb19-1" tabindex="-1"></a><span class="co"># VIP scores (Variable Importance in Projection)</span></span>
+<span id="cb19-2"><a href="Section6.html#cb19-2" tabindex="-1"></a><span class="fu">head</span>(resultsPLSDA<span class="sc">@</span>VIP.block[[<span class="st">&quot;RNAseq&quot;</span>]])</span></code></pre></div>
+<pre><code>##                p       tot
+## 14679  0.3512878 0.3512878
+## 23849  0.4585939 0.4585939
+## 12858  0.5029650 0.5029650
+## 14673  1.0342762 1.0342762
+## 235339 0.9376274 0.9376274
+## 66925  0.4022352 0.4022352</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="Section6.html#cb21-1" tabindex="-1"></a><span class="co"># Plot saliences</span></span>
+<span id="cb21-2"><a href="Section6.html#cb21-2" tabindex="-1"></a>saliencesPLSDA <span class="ot">&lt;-</span> resultsPLSDA<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="Section6.html#cb21-3" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="Section6.html#cb21-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a href="Section6.html#cb21-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;CC1&#39;</span>,<span class="st">&#39;CC2&#39;</span>),</span>
+<span id="cb21-6"><a href="Section6.html#cb21-6" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>,</span>
+<span id="cb21-7"><a href="Section6.html#cb21-7" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>)</span>
+<span id="cb21-8"><a href="Section6.html#cb21-8" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="Section6.html#cb21-9" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> saliencesPLSDA,</span>
+<span id="cb21-10"><a href="Section6.html#cb21-10" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CC, <span class="at">y =</span> Salience, <span class="at">group =</span> dataset )) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="Section6.html#cb21-11" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>,</span>
+<span id="cb21-12"><a href="Section6.html#cb21-12" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">fill =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb21-13"><a href="Section6.html#cb21-13" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb21-14"><a href="Section6.html#cb21-14" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim Saliences&#39;</span>)</span>
+<span id="cb21-15"><a href="Section6.html#cb21-15" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="Section6.html#cb21-16" tabindex="-1"></a><span class="co"># Plot scores</span></span>
+<span id="cb21-17"><a href="Section6.html#cb21-17" tabindex="-1"></a>scoresTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsPLSDA)</span>
+<span id="cb21-18"><a href="Section6.html#cb21-18" tabindex="-1"></a>scoresTable_wider <span class="ot">&lt;-</span> scoresTable <span class="sc">%&gt;%</span></span>
+<span id="cb21-19"><a href="Section6.html#cb21-19" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
+<span id="cb21-20"><a href="Section6.html#cb21-20" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
+<span id="cb21-21"><a href="Section6.html#cb21-21" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-22"><a href="Section6.html#cb21-22" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, block.name, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
+<span id="cb21-23"><a href="Section6.html#cb21-23" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(sample.id, sample.type, scores.type.dim, block.name) <span class="sc">%&gt;%</span></span>
+<span id="cb21-24"><a href="Section6.html#cb21-24" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value)</span>
+<span id="cb21-25"><a href="Section6.html#cb21-25" tabindex="-1"></a></span>
+<span id="cb21-26"><a href="Section6.html#cb21-26" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> scoresTable_wider) <span class="sc">+</span></span>
+<span id="cb21-27"><a href="Section6.html#cb21-27" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> T.scores1, <span class="at">y =</span> T.scores2,</span>
+<span id="cb21-28"><a href="Section6.html#cb21-28" tabindex="-1"></a>                 <span class="at">color =</span> sample.type, <span class="at">shape =</span> block.name)) <span class="sc">+</span></span>
+<span id="cb21-29"><a href="Section6.html#cb21-29" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores2,</span>
+<span id="cb21-30"><a href="Section6.html#cb21-30" tabindex="-1"></a>                 <span class="at">fill =</span> sample.type, <span class="at">shape =</span> block.name),</span>
+<span id="cb21-31"><a href="Section6.html#cb21-31" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">24</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb21-32"><a href="Section6.html#cb21-32" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb21-33"><a href="Section6.html#cb21-33" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim scores - PLSDA&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span>
+<span id="cb21-34"><a href="Section6.html#cb21-34" tabindex="-1"></a></span>
+<span id="cb21-35"><a href="Section6.html#cb21-35" tabindex="-1"></a><span class="co"># Plot top 20 VIP variables</span></span>
+<span id="cb21-36"><a href="Section6.html#cb21-36" tabindex="-1"></a>vip_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb21-37"><a href="Section6.html#cb21-37" tabindex="-1"></a>  <span class="at">variable =</span> <span class="fu">names</span>(resultsPLSDA<span class="sc">@</span>VIP),</span>
+<span id="cb21-38"><a href="Section6.html#cb21-38" tabindex="-1"></a>  <span class="at">VIP =</span> resultsPLSDA<span class="sc">@</span>VIP</span>
+<span id="cb21-39"><a href="Section6.html#cb21-39" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-40"><a href="Section6.html#cb21-40" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(VIP)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-41"><a href="Section6.html#cb21-41" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">20</span>)</span>
+<span id="cb21-42"><a href="Section6.html#cb21-42" tabindex="-1"></a></span>
+<span id="cb21-43"><a href="Section6.html#cb21-43" tabindex="-1"></a><span class="fu">ggplot</span>(vip_df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(variable, VIP), <span class="at">y =</span> VIP)) <span class="sc">+</span></span>
+<span id="cb21-44"><a href="Section6.html#cb21-44" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;steelblue&#39;</span>) <span class="sc">+</span></span>
+<span id="cb21-45"><a href="Section6.html#cb21-45" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb21-46"><a href="Section6.html#cb21-46" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb21-47"><a href="Section6.html#cb21-47" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Top 20 VIP variables (PLSDA)&#39;</span>, <span class="at">x =</span> <span class="st">&#39;&#39;</span>, <span class="at">y =</span> <span class="st">&#39;VIP&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_plsda_sal.png" alt="" width="50%" style="display: block; margin: auto;" />
+<img src="Figs/fig6_plsda_scores.png" alt="" width="50%" style="display: block; margin: auto;" />
+<img src="Figs/fig6_plsda_vip.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
+<div id="predicting-new-samples-with-comdim-plsda" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Predicting new samples with ComDim-PLSDA<a href="Section6.html#predicting-new-samples-with-comdim-plsda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The function <code>PredictMultiBlock()</code> projects a new <code>MultiBlock</code> dataset into an
+existing <code>ComDim</code> model. It computes global and local scores for the new
+samples, predicts the Y-block (class assignments for PLSDA), and — when the
+true labels <code>y</code> are supplied — also returns Q2, DQ2, sensitivity,
+specificity and a confusion matrix for the new samples.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="Section6.html#cb22-1" tabindex="-1"></a><span class="co"># Split the dataset into a training set (9 samples, 3 per class)</span></span>
+<span id="cb22-2"><a href="Section6.html#cb22-2" tabindex="-1"></a><span class="co"># and a test set (3 samples, 1 per class).</span></span>
+<span id="cb22-3"><a href="Section6.html#cb22-3" tabindex="-1"></a>allMB_train <span class="ot">&lt;-</span> <span class="fu">FilterSamplesMultiBlock</span>(allMB, <span class="fu">sampleNames</span>(allMB)[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">5</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">9</span><span class="sc">:</span><span class="dv">11</span>)])</span>
+<span id="cb22-4"><a href="Section6.html#cb22-4" tabindex="-1"></a>allMB_test  <span class="ot">&lt;-</span> <span class="fu">FilterSamplesMultiBlock</span>(allMB, <span class="fu">sampleNames</span>(allMB)[<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">12</span>)])</span>
+<span id="cb22-5"><a href="Section6.html#cb22-5" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="Section6.html#cb22-6" tabindex="-1"></a>y_train <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;NI&#39;</span>, <span class="dv">3</span>), <span class="fu">rep</span>(<span class="st">&#39;DOX&#39;</span>, <span class="dv">3</span>), <span class="fu">rep</span>(<span class="st">&#39;OFF&#39;</span>, <span class="dv">3</span>))</span>
+<span id="cb22-7"><a href="Section6.html#cb22-7" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="Section6.html#cb22-8" tabindex="-1"></a><span class="co"># Fit the model on the training set</span></span>
+<span id="cb22-9"><a href="Section6.html#cb22-9" tabindex="-1"></a>modelPLSDA <span class="ot">&lt;-</span> <span class="fu">ComDim_PLS</span>(allMB_train, <span class="at">y =</span> y_train,</span>
+<span id="cb22-10"><a href="Section6.html#cb22-10" tabindex="-1"></a>                             <span class="at">ndim =</span> <span class="dv">2</span>, <span class="at">method =</span> <span class="st">&#39;PLS-DA&#39;</span>)</span>
+<span id="cb22-11"><a href="Section6.html#cb22-11" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="Section6.html#cb22-12" tabindex="-1"></a><span class="co"># Project the 3 test samples; supply true labels to get Q2/DQ2 and statistics</span></span>
+<span id="cb22-13"><a href="Section6.html#cb22-13" tabindex="-1"></a>y_test <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;NI&#39;</span>, <span class="st">&#39;DOX&#39;</span>, <span class="st">&#39;OFF&#39;</span>)</span>
+<span id="cb22-14"><a href="Section6.html#cb22-14" tabindex="-1"></a>predPLSDA <span class="ot">&lt;-</span> <span class="fu">PredictMultiBlock</span>(allMB_test, <span class="at">y =</span> y_test, <span class="at">model =</span> modelPLSDA)</span>
+<span id="cb22-15"><a href="Section6.html#cb22-15" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="Section6.html#cb22-16" tabindex="-1"></a>predPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred          <span class="co"># Raw predicted Y scores --&gt; Need to have class names and sample names.</span></span>
+<span id="cb22-17"><a href="Section6.html#cb22-17" tabindex="-1"></a>predPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>predClass        <span class="co"># Predicted class assignments</span></span>
+<span id="cb22-18"><a href="Section6.html#cb22-18" tabindex="-1"></a>predPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>confusionMatrix  <span class="co"># Confusion matrix for test set</span></span>
+<span id="cb22-19"><a href="Section6.html#cb22-19" tabindex="-1"></a>predPLSDA<span class="sc">@</span>Q2                          <span class="co"># Q2 for test samples per class</span></span>
+<span id="cb22-20"><a href="Section6.html#cb22-20" tabindex="-1"></a>predPLSDA<span class="sc">@</span>DQ2                         <span class="co"># DQ2 for test samples per class</span></span>
+<span id="cb22-21"><a href="Section6.html#cb22-21" tabindex="-1"></a></span>
+<span id="cb22-22"><a href="Section6.html#cb22-22" tabindex="-1"></a><span class="co"># Plot training and test samples on the model score space</span></span>
+<span id="cb22-23"><a href="Section6.html#cb22-23" tabindex="-1"></a>trainQ <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(modelPLSDA<span class="sc">@</span>Q.scores) <span class="sc">%&gt;%</span></span>
+<span id="cb22-24"><a href="Section6.html#cb22-24" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.id   =</span> <span class="fu">rownames</span>(modelPLSDA<span class="sc">@</span>Q.scores),</span>
+<span id="cb22-25"><a href="Section6.html#cb22-25" tabindex="-1"></a>         <span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
+<span id="cb22-26"><a href="Section6.html#cb22-26" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>,  sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
+<span id="cb22-27"><a href="Section6.html#cb22-27" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>),</span>
+<span id="cb22-28"><a href="Section6.html#cb22-28" tabindex="-1"></a>         <span class="at">set =</span> <span class="st">&#39;Train&#39;</span>)</span>
+<span id="cb22-29"><a href="Section6.html#cb22-29" tabindex="-1"></a></span>
+<span id="cb22-30"><a href="Section6.html#cb22-30" tabindex="-1"></a>testQ <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(predPLSDA<span class="sc">@</span>Q.scores) <span class="sc">%&gt;%</span></span>
+<span id="cb22-31"><a href="Section6.html#cb22-31" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.id   =</span> <span class="fu">rownames</span>(predPLSDA<span class="sc">@</span>Q.scores),</span>
+<span id="cb22-32"><a href="Section6.html#cb22-32" tabindex="-1"></a>         <span class="at">sample.type =</span> y_test,</span>
+<span id="cb22-33"><a href="Section6.html#cb22-33" tabindex="-1"></a>         <span class="at">set =</span> <span class="st">&#39;Test&#39;</span>)</span>
+<span id="cb22-34"><a href="Section6.html#cb22-34" tabindex="-1"></a></span>
+<span id="cb22-35"><a href="Section6.html#cb22-35" tabindex="-1"></a>allQ_PLSDA <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(trainQ, testQ)</span>
+<span id="cb22-36"><a href="Section6.html#cb22-36" tabindex="-1"></a></span>
+<span id="cb22-37"><a href="Section6.html#cb22-37" tabindex="-1"></a><span class="fu">ggplot</span>(allQ_PLSDA, <span class="fu">aes</span>(<span class="at">x =</span> CC1, <span class="at">y =</span> CC2, <span class="at">color =</span> sample.type, <span class="at">shape =</span> set)) <span class="sc">+</span></span>
+<span id="cb22-38"><a href="Section6.html#cb22-38" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb22-39"><a href="Section6.html#cb22-39" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb22-40"><a href="Section6.html#cb22-40" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;PLSDA: Training and test scores&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_plsda_pred.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="PLS-DA" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)<a href="Section6.html#PLS-DA" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>ComDim-PLSDA</strong> is executed with the same function as <strong>ComDim-PLS</strong>,
-<code>ComDim_PLS_MB()</code>, but it requires a <code>y</code> vector with the sample classes and that
-<code>method='PLS-DA</code>.
-In addition to the <em>ComDim-PLS</em> outputs, the object resulting from the
-<strong>ComDim-PLSDA</strong> analysis has additional elements for assessing the discriminant
-power of the model. These outputs are the <strong>discriminant Q2</strong> <a href="https://doi.org/10.1007/s11306-008-0126-2"><strong>DOI</strong></a>, the model <strong>specificity</strong>,
-the model <strong>sensitivity</strong>, and a <strong>confusion matrix</strong> with the list of correct
-and wrong class assignments.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="Section6.html#cb50-1" aria-hidden="true" tabindex="-1"></a>resultsPLSDA <span class="ot">&lt;-</span> <span class="fu">ComDim_PLS_MB</span>(allMB,</span>
-<span id="cb50-2"><a href="Section6.html#cb50-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">y=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;NI&#39;</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="st">&#39;DOX&#39;</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="st">&#39;OFF&#39;</span>,<span class="dv">4</span>)),</span>
-<span id="cb50-3"><a href="Section6.html#cb50-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">ndim =</span> <span class="dv">2</span>, <span class="at">method =</span> <span class="st">&#39;PLS-DA&#39;</span>)</span>
-<span id="cb50-4"><a href="Section6.html#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-5"><a href="Section6.html#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Some of the outputs</span></span>
-<span id="cb50-6"><a href="Section6.html#cb50-6" aria-hidden="true" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>R2X</span>
-<span id="cb50-7"><a href="Section6.html#cb50-7" aria-hidden="true" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>R2Y</span>
-<span id="cb50-8"><a href="Section6.html#cb50-8" aria-hidden="true" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>Q2</span>
-<span id="cb50-9"><a href="Section6.html#cb50-9" aria-hidden="true" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>DQ2</span>
-<span id="cb50-10"><a href="Section6.html#cb50-10" aria-hidden="true" tabindex="-1"></a>resultsPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>confusionMatrix</span>
-<span id="cb50-11"><a href="Section6.html#cb50-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-12"><a href="Section6.html#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot saliences</span></span>
-<span id="cb50-13"><a href="Section6.html#cb50-13" aria-hidden="true" tabindex="-1"></a>saliencesPLSDA <span class="ot">&lt;-</span> resultsPLSDA<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
-<span id="cb50-14"><a href="Section6.html#cb50-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb50-15"><a href="Section6.html#cb50-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
-<span id="cb50-16"><a href="Section6.html#cb50-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;CC1&#39;</span>,<span class="st">&#39;CC2&#39;</span>),</span>
-<span id="cb50-17"><a href="Section6.html#cb50-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>,</span>
-<span id="cb50-18"><a href="Section6.html#cb50-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>)</span>
-<span id="cb50-19"><a href="Section6.html#cb50-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-20"><a href="Section6.html#cb50-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> saliencesPLSDA,</span>
-<span id="cb50-21"><a href="Section6.html#cb50-21" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CC, <span class="at">y =</span> Salience, <span class="at">group =</span> dataset )) <span class="sc">+</span></span>
-<span id="cb50-22"><a href="Section6.html#cb50-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>,</span>
-<span id="cb50-23"><a href="Section6.html#cb50-23" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">fill =</span> dataset)) <span class="sc">+</span></span>
-<span id="cb50-24"><a href="Section6.html#cb50-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb50-25"><a href="Section6.html#cb50-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim Saliences&#39;</span>)</span>
-<span id="cb50-26"><a href="Section6.html#cb50-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-27"><a href="Section6.html#cb50-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot scores</span></span>
-<span id="cb50-28"><a href="Section6.html#cb50-28" aria-hidden="true" tabindex="-1"></a>scoresTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsPLSDA)</span>
-<span id="cb50-29"><a href="Section6.html#cb50-29" aria-hidden="true" tabindex="-1"></a>scoresTable_wider <span class="ot">&lt;-</span> scoresTable <span class="sc">%&gt;%</span></span>
-<span id="cb50-30"><a href="Section6.html#cb50-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
-<span id="cb50-31"><a href="Section6.html#cb50-31" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
-<span id="cb50-32"><a href="Section6.html#cb50-32" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb50-33"><a href="Section6.html#cb50-33" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, block.name, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
-<span id="cb50-34"><a href="Section6.html#cb50-34" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(sample.id, sample.type, scores.type.dim, block.name) <span class="sc">%&gt;%</span></span>
-<span id="cb50-35"><a href="Section6.html#cb50-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value)</span>
-<span id="cb50-36"><a href="Section6.html#cb50-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-37"><a href="Section6.html#cb50-37" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> scoresTable_wider) <span class="sc">+</span></span>
-<span id="cb50-38"><a href="Section6.html#cb50-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> T.scores1, <span class="at">y =</span> T.scores2,</span>
-<span id="cb50-39"><a href="Section6.html#cb50-39" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> sample.type, <span class="at">shape =</span> block.name)) <span class="sc">+</span></span>
-<span id="cb50-40"><a href="Section6.html#cb50-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores2,</span>
-<span id="cb50-41"><a href="Section6.html#cb50-41" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> sample.type, <span class="at">shape =</span> block.name),</span>
-<span id="cb50-42"><a href="Section6.html#cb50-42" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">24</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
-<span id="cb50-43"><a href="Section6.html#cb50-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb50-44"><a href="Section6.html#cb50-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim scores - PLSDA&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
-<img src="Figs/fig6_1.png" alt="Saliences" width="50%" />
-<p class="caption">
-Figure 7.1: Saliences
-</p>
 </div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
-<img src="Figs/fig6_2.png" alt="Scores" width="50%" />
-<p class="caption">
-Figure 7.2: Scores
-</p>
+<div id="PLS" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> ComDim-Partial Least Squares Regression (ComDim-PLSR)<a href="Section6.html#PLS" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>ComDim-PLS</strong> can be executed with the same function <code>ComDim_PLS()</code>, by
+providing a <code>y</code> regression vector (i.e. numerical) and setting
+<code>method = 'PLS-R'</code>.
+The output contains the typical PLS figures of merit
+(<strong>R2X</strong>, <strong>R2Y</strong>, <strong>Q2</strong>), the <strong>VIP</strong> scores, the PLS regression
+coefficients <strong>B</strong> and <strong>B0</strong>, and the <strong>predicted y</strong> values.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="Section6.html#cb23-1" tabindex="-1"></a><span class="co"># Training: 9 samples (3 per class); test: 3 samples (one per class, held out).</span></span>
+<span id="cb23-2"><a href="Section6.html#cb23-2" tabindex="-1"></a><span class="co"># The training and test sets are non-overlapping.</span></span>
+<span id="cb23-3"><a href="Section6.html#cb23-3" tabindex="-1"></a>allMB_train <span class="ot">&lt;-</span> <span class="fu">FilterSamplesMultiBlock</span>(allMB, <span class="fu">sampleNames</span>(allMB)[<span class="fu">setdiff</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">10</span>))])</span>
+<span id="cb23-4"><a href="Section6.html#cb23-4" tabindex="-1"></a>allMB_test  <span class="ot">&lt;-</span> <span class="fu">FilterSamplesMultiBlock</span>(allMB, <span class="fu">sampleNames</span>(allMB)[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">10</span>)])</span>
+<span id="cb23-5"><a href="Section6.html#cb23-5" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="Section6.html#cb23-6" tabindex="-1"></a><span class="co"># Numerical response: 1 = NI, 2 = DOX, 3 = OFF</span></span>
+<span id="cb23-7"><a href="Section6.html#cb23-7" tabindex="-1"></a>y_train <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span> <span class="dv">3</span>)</span>
+<span id="cb23-8"><a href="Section6.html#cb23-8" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="Section6.html#cb23-9" tabindex="-1"></a><span class="co"># Fit ComDim-PLS-R with 2 components</span></span>
+<span id="cb23-10"><a href="Section6.html#cb23-10" tabindex="-1"></a>resultsPLSR <span class="ot">&lt;-</span> <span class="fu">ComDim_PLS</span>(allMB_train,</span>
+<span id="cb23-11"><a href="Section6.html#cb23-11" tabindex="-1"></a>                              <span class="at">y =</span> y_train,</span>
+<span id="cb23-12"><a href="Section6.html#cb23-12" tabindex="-1"></a>                              <span class="at">ndim =</span> <span class="dv">2</span>, <span class="at">method =</span> <span class="st">&#39;PLS-R&#39;</span>)</span>
+<span id="cb23-13"><a href="Section6.html#cb23-13" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="Section6.html#cb23-14" tabindex="-1"></a><span class="co"># Figures of merit</span></span>
+<span id="cb23-15"><a href="Section6.html#cb23-15" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>R2X</span>
+<span id="cb23-16"><a href="Section6.html#cb23-16" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>R2Y   <span class="co"># Cumulative R2Y per CC (CC1, CC2)</span></span>
+<span id="cb23-17"><a href="Section6.html#cb23-17" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>Q2    <span class="co"># Cross-validated Q2</span></span>
+<span id="cb23-18"><a href="Section6.html#cb23-18" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="Section6.html#cb23-19" tabindex="-1"></a><span class="co"># Regression coefficients and training-set predictions</span></span>
+<span id="cb23-20"><a href="Section6.html#cb23-20" tabindex="-1"></a><span class="fu">head</span>(resultsPLSR<span class="sc">@</span>PLS.model<span class="sc">$</span>B)       <span class="co"># B has variable names as rownames</span></span>
+<span id="cb23-21"><a href="Section6.html#cb23-21" tabindex="-1"></a>resultsPLSR<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred       <span class="co"># Training predictions (sample names in rownames)</span></span>
+<span id="cb23-22"><a href="Section6.html#cb23-22" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="Section6.html#cb23-23" tabindex="-1"></a><span class="co"># Project the test set</span></span>
+<span id="cb23-24"><a href="Section6.html#cb23-24" tabindex="-1"></a>y_test <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)  <span class="co"># True y values for the 3 test samples</span></span>
+<span id="cb23-25"><a href="Section6.html#cb23-25" tabindex="-1"></a>predPLSR <span class="ot">&lt;-</span> <span class="fu">PredictMultiBlock</span>(allMB_test, <span class="at">y =</span> y_test, <span class="at">model =</span> resultsPLSR)</span>
+<span id="cb23-26"><a href="Section6.html#cb23-26" tabindex="-1"></a></span>
+<span id="cb23-27"><a href="Section6.html#cb23-27" tabindex="-1"></a>predPLSR<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred  <span class="co"># Predicted y for the 3 test samples</span></span>
+<span id="cb23-28"><a href="Section6.html#cb23-28" tabindex="-1"></a>predPLSR<span class="sc">@</span>Q2                 <span class="co"># Q2 for the test set</span></span>
+<span id="cb23-29"><a href="Section6.html#cb23-29" tabindex="-1"></a></span>
+<span id="cb23-30"><a href="Section6.html#cb23-30" tabindex="-1"></a><span class="co"># Plot predicted vs actual Y for training and test sets</span></span>
+<span id="cb23-31"><a href="Section6.html#cb23-31" tabindex="-1"></a>pred_df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb23-32"><a href="Section6.html#cb23-32" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">actual    =</span> y_train,</span>
+<span id="cb23-33"><a href="Section6.html#cb23-33" tabindex="-1"></a>             <span class="at">predicted =</span> <span class="fu">as.vector</span>(resultsPLSR<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred),</span>
+<span id="cb23-34"><a href="Section6.html#cb23-34" tabindex="-1"></a>             <span class="at">set       =</span> <span class="st">&#39;Train&#39;</span>),</span>
+<span id="cb23-35"><a href="Section6.html#cb23-35" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">actual    =</span> y_test,</span>
+<span id="cb23-36"><a href="Section6.html#cb23-36" tabindex="-1"></a>             <span class="at">predicted =</span> <span class="fu">as.vector</span>(predPLSR<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred),</span>
+<span id="cb23-37"><a href="Section6.html#cb23-37" tabindex="-1"></a>             <span class="at">set       =</span> <span class="st">&#39;Test&#39;</span>)</span>
+<span id="cb23-38"><a href="Section6.html#cb23-38" tabindex="-1"></a>)</span>
+<span id="cb23-39"><a href="Section6.html#cb23-39" tabindex="-1"></a></span>
+<span id="cb23-40"><a href="Section6.html#cb23-40" tabindex="-1"></a><span class="fu">ggplot</span>(pred_df, <span class="fu">aes</span>(<span class="at">x =</span> actual, <span class="at">y =</span> predicted, <span class="at">color =</span> set)) <span class="sc">+</span></span>
+<span id="cb23-41"><a href="Section6.html#cb23-41" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb23-42"><a href="Section6.html#cb23-42" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">&#39;dashed&#39;</span>) <span class="sc">+</span></span>
+<span id="cb23-43"><a href="Section6.html#cb23-43" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb23-44"><a href="Section6.html#cb23-44" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;PLSR: Predicted vs Actual&#39;</span>, <span class="at">x =</span> <span class="st">&#39;Actual Y&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Predicted Y&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_plsr_pred.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
 </div>
+<div id="OPLS" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> ComDim-Orthogonal PLS (ComDim-OPLS)<a href="Section6.html#OPLS" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>ComDim-OPLS</strong> is executed with the function <code>ComDim_OPLS()</code>. It extends
+the PLS formulation by extracting <strong>orthogonal components</strong> — systematic
+variation in X that is <em>uncorrelated</em> with Y — before computing the predictive
+component(s). This produces a cleaner separation between structured noise and
+the Y-relevant signal, and is especially useful when many orthogonal sources of
+variation exist in the data (e.g. batch effects, biological confounders).</p>
+<p>The function supports both <strong>discriminant analysis</strong> (<code>method = 'OPLS-DA'</code>)
+and <strong>regression</strong> (<code>method = 'OPLS-R'</code>). The number of predictive components
+is controlled by <code>ndim</code> (default 1) and the number of orthogonal components by
+<code>nort</code> (default 1).</p>
+<p>The output object is a <code>ComDim</code> object that contains, in addition to the usual
+predictive slots:</p>
+<ul>
+<li><code>@Orthogonal</code> — a list with the orthogonal scores (<code>Q.scores</code>, <code>T.scores</code>),
+orthogonal loadings (<code>P.loadings.ort</code>), and orthogonal saliences
+(<code>Saliences.ort</code>).</li>
+<li><code>@VIP</code> / <code>@VIP.block</code> — VIP scores with three columns per block: <code>p</code>
+(predictive VIP), <code>o</code> (orthogonal VIP), and <code>tot</code> (combined total VIP,
+used in <code>@VIP</code>).</li>
+<li><code>@R2X</code>, <code>@R2Y</code>, <code>@Q2</code>, <code>@DQ2</code> (OPLS-DA only) — the usual figures of merit.</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="Section6.html#cb24-1" tabindex="-1"></a><span class="co"># ComDim-OPLS-DA: 1 predictive component, 1 orthogonal component</span></span>
+<span id="cb24-2"><a href="Section6.html#cb24-2" tabindex="-1"></a>resultsOPLSDA <span class="ot">&lt;-</span> <span class="fu">ComDim_OPLS</span>(allMB,</span>
+<span id="cb24-3"><a href="Section6.html#cb24-3" tabindex="-1"></a>                                 <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;NI&#39;</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&#39;DOX&#39;</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&#39;OFF&#39;</span>, <span class="dv">4</span>)),</span>
+<span id="cb24-4"><a href="Section6.html#cb24-4" tabindex="-1"></a>                                 <span class="at">ndim =</span> <span class="dv">1</span>, <span class="at">nort =</span> <span class="dv">1</span>,</span>
+<span id="cb24-5"><a href="Section6.html#cb24-5" tabindex="-1"></a>                                 <span class="at">method =</span> <span class="st">&#39;OPLS-DA&#39;</span>)</span></code></pre></div>
+<pre><code>##   |                                                                              |                                                                      |   0%[1] &quot;The data can be used for ComDim.&quot;
+##   |                                                                              |=====                                                                 |   7%  |                                                                              |==========                                                            |  14%  |                                                                              |===============                                                       |  21%  |                                                                              |====================                                                  |  29%  |                                                                              |=========================                                             |  36%  |                                                                              |=============================================                         |  64%  |                                                                              |==================================================                    |  71%  |                                                                              |============================================================          |  86%  |                                                                              |=================================================================     |  93%  |                                                                              |                                                                      |   0%  |                                                                              |======================================================================| 100%</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="Section6.html#cb26-1" tabindex="-1"></a><span class="co"># Figures of merit</span></span>
+<span id="cb26-2"><a href="Section6.html#cb26-2" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>R2X</span></code></pre></div>
+<pre><code>##       CC1      ort1 
+## 0.2792416 0.1959382</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="Section6.html#cb28-1" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>R2Y</span></code></pre></div>
+<pre><code>##        CC1       ort1 
+## 0.46482603 0.02137637</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="Section6.html#cb30-1" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>Q2   <span class="co"># Cross-validated Q2 per class</span></span></code></pre></div>
+<pre><code>##         DOX          NI         OFF 
+##  0.69705590  0.50366598 -0.06617125</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="Section6.html#cb32-1" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>DQ2  <span class="co"># Cross-validated discriminant Q2</span></span></code></pre></div>
+<pre><code>##        DOX         NI        OFF 
+##  0.6396892  0.4772644 -0.1612455</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="Section6.html#cb34-1" tabindex="-1"></a><span class="co"># Sores and saliences</span></span>
+<span id="cb34-2"><a href="Section6.html#cb34-2" tabindex="-1"></a><span class="fu">head</span>(resultsOPLSDA<span class="sc">@</span>Q.scores )     <span class="co"># Global predictive scores (n x ndim)</span></span></code></pre></div>
+<pre><code>##                  CC1
+## 1 - NI_A   0.3575418
+## 1 - NI_B   0.3271385
+## 1 - NI_C   0.2698930
+## 1 - NI_D   0.3300657
+## 2 - DOX_A -0.3863582
+## 2 - DOX_B -0.3833217</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="Section6.html#cb36-1" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>Saliences     <span class="co"># Predictive saliences (ntable x ndim)</span></span></code></pre></div>
+<pre><code>##               CC1
+## RNAseq 0.84625846
+## lipids 0.45961136
+## intra  0.06285837
+## extra  0.11622367</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="Section6.html#cb38-1" tabindex="-1"></a><span class="co"># Orthogonal components</span></span>
+<span id="cb38-2"><a href="Section6.html#cb38-2" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>Orthogonal<span class="sc">$</span>nort          <span class="co"># Number of orthogonal components</span></span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="Section6.html#cb40-1" tabindex="-1"></a><span class="fu">head</span>(resultsOPLSDA<span class="sc">@</span>Orthogonal<span class="sc">$</span>Q.scores)      <span class="co"># Global orthogonal scores (n x nort)</span></span></code></pre></div>
+<pre><code>##                   ort1
+## 1 - NI_A   0.352143315
+## 1 - NI_B  -0.082924407
+## 1 - NI_C   0.330748614
+## 1 - NI_D  -0.238108031
+## 2 - DOX_A  0.384526417
+## 2 - DOX_B  0.003552761</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="Section6.html#cb42-1" tabindex="-1"></a><span class="fu">head</span>(resultsOPLSDA<span class="sc">@</span>Orthogonal<span class="sc">$</span>Saliences.ort) <span class="co"># Orthogonal saliences (ntable x nort)</span></span></code></pre></div>
+<pre><code>##             ort1
+## RNAseq 0.1056864
+## lipids 0.5556791
+## intra  0.3167450
+## extra  0.3548201</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="Section6.html#cb44-1" tabindex="-1"></a><span class="co"># VIP scores (predictive &#39;p&#39;, orthogonal &#39;o&#39;, total &#39;tot&#39;)</span></span>
+<span id="cb44-2"><a href="Section6.html#cb44-2" tabindex="-1"></a><span class="fu">head</span>(resultsOPLSDA<span class="sc">@</span>VIP)           <span class="co"># Global total VIP (one value per variable)</span></span></code></pre></div>
+<pre><code>##     14679     23849     12858     14673    235339     66925 
+## 0.3033971 0.4793720 0.2572409 0.9179046 0.7452123 0.3048091</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="Section6.html#cb46-1" tabindex="-1"></a><span class="fu">head</span>(resultsOPLSDA<span class="sc">@</span>VIP.block[[<span class="st">&#39;RNAseq&#39;</span>]]) <span class="co"># Per-block VIP (list of data.frames with p, o, tot)</span></span></code></pre></div>
+<pre><code>##                p          o       tot
+## 14679  0.4249442 0.05934628 0.3033971
+## 23849  0.5449294 0.40329517 0.4793720
+## 12858  0.1304385 0.33960503 0.2572409
+## 14673  1.2427530 0.37505025 0.9179046
+## 235339 1.0527082 0.04988248 0.7452123
+## 66925  0.3672111 0.22577238 0.3048091</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="Section6.html#cb48-1" tabindex="-1"></a><span class="co"># Classification outputs</span></span>
+<span id="cb48-2"><a href="Section6.html#cb48-2" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>predClass</span></code></pre></div>
+<pre><code>##           predClass
+## 1 - NI_A         NI
+## 1 - NI_B         NI
+## 1 - NI_C         NI
+## 1 - NI_D         NI
+## 2 - DOX_A       DOX
+## 2 - DOX_B       DOX
+## 2 - DOX_C       DOX
+## 2 - DOX_D       DOX
+## 3 - OFF_A        NI
+## 3 - OFF_B        NI
+## 3 - OFF_C        NI
+## 3 - OFF_D       DOX</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="Section6.html#cb50-1" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>confusionMatrix</span></code></pre></div>
+<pre><code>## $DOX
+##            trueClass1 trueClass0
+## predClass1          4          0
+## predClass0          1          7
+## 
+## $NI
+##            trueClass1 trueClass0
+## predClass1          4          0
+## predClass0          3          5
+## 
+## $OFF
+##            trueClass1 trueClass0
+## predClass1          0          4
+## predClass0          0          8</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="Section6.html#cb52-1" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>Sensitivity</span></code></pre></div>
+<pre><code>## DOX  NI OFF 
+##   1   1   0</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="Section6.html#cb54-1" tabindex="-1"></a>resultsOPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>Specificity</span></code></pre></div>
+<pre><code>##   DOX    NI   OFF 
+## 0.875 0.625 1.000</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="Section6.html#cb56-1" tabindex="-1"></a><span class="co"># Plot scores: predictive vs orthogonal component</span></span>
+<span id="cb56-2"><a href="Section6.html#cb56-2" tabindex="-1"></a>scoresOPLS <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsOPLSDA,</span>
+<span id="cb56-3"><a href="Section6.html#cb56-3" tabindex="-1"></a>                                    <span class="at">include =</span> <span class="fu">c</span>(<span class="st">&#39;Q.scores&#39;</span>, <span class="st">&#39;Q.scores.ort&#39;</span>))</span>
+<span id="cb56-4"><a href="Section6.html#cb56-4" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="Section6.html#cb56-5" tabindex="-1"></a>scoresOPLS_wider <span class="ot">&lt;-</span> scoresOPLS <span class="sc">%&gt;%</span></span>
+<span id="cb56-6"><a href="Section6.html#cb56-6" tabindex="-1"></a>  <span class="fu">filter</span>(block.name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;Global&#39;</span>, <span class="st">&#39;Global.ort&#39;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb56-7"><a href="Section6.html#cb56-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
+<span id="cb56-8"><a href="Section6.html#cb56-8" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>,  sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
+<span id="cb56-9"><a href="Section6.html#cb56-9" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb56-10"><a href="Section6.html#cb56-10" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
+<span id="cb56-11"><a href="Section6.html#cb56-11" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value)</span>
+<span id="cb56-12"><a href="Section6.html#cb56-12" tabindex="-1"></a></span>
+<span id="cb56-13"><a href="Section6.html#cb56-13" tabindex="-1"></a><span class="fu">ggplot</span>(scoresOPLS_wider, <span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores.ort1, <span class="at">color =</span> sample.type)) <span class="sc">+</span></span>
+<span id="cb56-14"><a href="Section6.html#cb56-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb56-15"><a href="Section6.html#cb56-15" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb56-16"><a href="Section6.html#cb56-16" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim OPLS-DA scores&#39;</span>,</span>
+<span id="cb56-17"><a href="Section6.html#cb56-17" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Predictive CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Orthogonal CC1&#39;</span>)</span>
+<span id="cb56-18"><a href="Section6.html#cb56-18" tabindex="-1"></a></span>
+<span id="cb56-19"><a href="Section6.html#cb56-19" tabindex="-1"></a><span class="co"># Plot predictive and orthogonal saliences side by side</span></span>
+<span id="cb56-20"><a href="Section6.html#cb56-20" tabindex="-1"></a>saliences_pred <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(resultsOPLSDA<span class="sc">@</span>Saliences) <span class="sc">%&gt;%</span></span>
+<span id="cb56-21"><a href="Section6.html#cb56-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset   =</span> <span class="fu">rownames</span>(resultsOPLSDA<span class="sc">@</span>Saliences),</span>
+<span id="cb56-22"><a href="Section6.html#cb56-22" tabindex="-1"></a>         <span class="at">component =</span> <span class="st">&#39;Predictive&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb56-23"><a href="Section6.html#cb56-23" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Salience =</span> CC1)</span>
+<span id="cb56-24"><a href="Section6.html#cb56-24" tabindex="-1"></a></span>
+<span id="cb56-25"><a href="Section6.html#cb56-25" tabindex="-1"></a>saliences_ort <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(resultsOPLSDA<span class="sc">@</span>Orthogonal<span class="sc">$</span>Saliences.ort) <span class="sc">%&gt;%</span></span>
+<span id="cb56-26"><a href="Section6.html#cb56-26" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset   =</span> <span class="fu">rownames</span>(resultsOPLSDA<span class="sc">@</span>Orthogonal<span class="sc">$</span>Saliences.ort),</span>
+<span id="cb56-27"><a href="Section6.html#cb56-27" tabindex="-1"></a>         <span class="at">component =</span> <span class="st">&#39;Orthogonal&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb56-28"><a href="Section6.html#cb56-28" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Salience =</span> ort1)</span>
+<span id="cb56-29"><a href="Section6.html#cb56-29" tabindex="-1"></a></span>
+<span id="cb56-30"><a href="Section6.html#cb56-30" tabindex="-1"></a><span class="fu">bind_rows</span>(saliences_pred, saliences_ort) <span class="sc">%&gt;%</span></span>
+<span id="cb56-31"><a href="Section6.html#cb56-31" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> component, <span class="at">y =</span> Salience, <span class="at">fill =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb56-32"><a href="Section6.html#cb56-32" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="sc">+</span></span>
+<span id="cb56-33"><a href="Section6.html#cb56-33" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb56-34"><a href="Section6.html#cb56-34" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim OPLS-DA Saliences&#39;</span>,</span>
+<span id="cb56-35"><a href="Section6.html#cb56-35" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Component type&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Salience&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_oplsda_scores.png" alt="" width="50%" style="display: block; margin: auto;" />
+<img src="Figs/fig6_oplsda_sal.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
+<p>The predictive scores can be projected onto new data with <code>PredictMultiBlock()</code>.
+For OPLS models the function first applies <strong>orthogonal deflation</strong> (using the
+stored <code>P.loadings.ort</code>) before computing the predictive scores, so the
+pipeline is consistent with the calibration procedure.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="Section6.html#cb57-1" tabindex="-1"></a><span class="co"># Project the last 4 samples through the OPLS-DA model</span></span>
+<span id="cb57-2"><a href="Section6.html#cb57-2" tabindex="-1"></a>allMB_test <span class="ot">&lt;-</span> <span class="fu">FilterSamplesMultiBlock</span>(allMB, <span class="fu">sampleNames</span>(allMB)[<span class="dv">9</span><span class="sc">:</span><span class="dv">12</span>])</span>
+<span id="cb57-3"><a href="Section6.html#cb57-3" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="Section6.html#cb57-4" tabindex="-1"></a>predOPLSDA <span class="ot">&lt;-</span> <span class="fu">PredictMultiBlock</span>(allMB_test, <span class="at">model =</span> resultsOPLSDA)</span>
+<span id="cb57-5"><a href="Section6.html#cb57-5" tabindex="-1"></a></span>
+<span id="cb57-6"><a href="Section6.html#cb57-6" tabindex="-1"></a>predOPLSDA<span class="sc">@</span>Q.scores                  <span class="co"># Predictive scores for the test samples</span></span>
+<span id="cb57-7"><a href="Section6.html#cb57-7" tabindex="-1"></a>predOPLSDA<span class="sc">@</span>Orthogonal<span class="sc">$</span>Q.scores       <span class="co"># Orthogonal scores for the test samples</span></span>
+<span id="cb57-8"><a href="Section6.html#cb57-8" tabindex="-1"></a>predOPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred         <span class="co"># Predicted Y (dummy matrix)</span></span>
+<span id="cb57-9"><a href="Section6.html#cb57-9" tabindex="-1"></a>predOPLSDA<span class="sc">@</span>Prediction<span class="sc">$</span>predClass      <span class="co"># Predicted class assignments</span></span>
+<span id="cb57-10"><a href="Section6.html#cb57-10" tabindex="-1"></a></span>
+<span id="cb57-11"><a href="Section6.html#cb57-11" tabindex="-1"></a><span class="co"># Plot training and test samples together</span></span>
+<span id="cb57-12"><a href="Section6.html#cb57-12" tabindex="-1"></a>trainQ_opls <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(resultsOPLSDA<span class="sc">@</span>Q.scores) <span class="sc">%&gt;%</span></span>
+<span id="cb57-13"><a href="Section6.html#cb57-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.id   =</span> <span class="fu">rownames</span>(resultsOPLSDA<span class="sc">@</span>Q.scores),</span>
+<span id="cb57-14"><a href="Section6.html#cb57-14" tabindex="-1"></a>         <span class="at">Q.ort1      =</span> resultsOPLSDA<span class="sc">@</span>Orthogonal<span class="sc">$</span>Q.scores[, <span class="dv">1</span>],</span>
+<span id="cb57-15"><a href="Section6.html#cb57-15" tabindex="-1"></a>         <span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
+<span id="cb57-16"><a href="Section6.html#cb57-16" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>,  sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
+<span id="cb57-17"><a href="Section6.html#cb57-17" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>),</span>
+<span id="cb57-18"><a href="Section6.html#cb57-18" tabindex="-1"></a>         <span class="at">set =</span> <span class="st">&#39;Train&#39;</span>)</span>
+<span id="cb57-19"><a href="Section6.html#cb57-19" tabindex="-1"></a></span>
+<span id="cb57-20"><a href="Section6.html#cb57-20" tabindex="-1"></a>testQ_opls <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(predOPLSDA<span class="sc">@</span>Q.scores) <span class="sc">%&gt;%</span></span>
+<span id="cb57-21"><a href="Section6.html#cb57-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.id   =</span> <span class="fu">rownames</span>(predOPLSDA<span class="sc">@</span>Q.scores),</span>
+<span id="cb57-22"><a href="Section6.html#cb57-22" tabindex="-1"></a>         <span class="at">Q.ort1      =</span> predOPLSDA<span class="sc">@</span>Orthogonal<span class="sc">$</span>Q.scores[, <span class="dv">1</span>],</span>
+<span id="cb57-23"><a href="Section6.html#cb57-23" tabindex="-1"></a>         <span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
+<span id="cb57-24"><a href="Section6.html#cb57-24" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>,  sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
+<span id="cb57-25"><a href="Section6.html#cb57-25" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>),</span>
+<span id="cb57-26"><a href="Section6.html#cb57-26" tabindex="-1"></a>         <span class="at">set =</span> <span class="st">&#39;Test&#39;</span>)</span>
+<span id="cb57-27"><a href="Section6.html#cb57-27" tabindex="-1"></a></span>
+<span id="cb57-28"><a href="Section6.html#cb57-28" tabindex="-1"></a>allQ_opls <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(trainQ_opls, testQ_opls)</span>
+<span id="cb57-29"><a href="Section6.html#cb57-29" tabindex="-1"></a></span>
+<span id="cb57-30"><a href="Section6.html#cb57-30" tabindex="-1"></a><span class="fu">ggplot</span>(allQ_opls, <span class="fu">aes</span>(<span class="at">x =</span> CC1, <span class="at">y =</span> Q.ort1, <span class="at">color =</span> sample.type, <span class="at">shape =</span> set)) <span class="sc">+</span></span>
+<span id="cb57-31"><a href="Section6.html#cb57-31" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb57-32"><a href="Section6.html#cb57-32" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb57-33"><a href="Section6.html#cb57-33" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;OPLS-DA: Training and test scores&#39;</span>,</span>
+<span id="cb57-34"><a href="Section6.html#cb57-34" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Predictive CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Orthogonal CC1&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_oplsda_pred.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
+<p>For <strong>regression</strong> with OPLS, simply switch <code>method = 'OPLS-R'</code> and supply a
+numerical <code>y</code> vector:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="Section6.html#cb58-1" tabindex="-1"></a>resultsOPLSR <span class="ot">&lt;-</span> <span class="fu">ComDim_OPLS</span>(allMB,</span>
+<span id="cb58-2"><a href="Section6.html#cb58-2" tabindex="-1"></a>                                <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">5</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">4</span>)),</span>
+<span id="cb58-3"><a href="Section6.html#cb58-3" tabindex="-1"></a>                                <span class="at">ndim =</span> <span class="dv">1</span>, <span class="at">nort =</span> <span class="dv">1</span>,</span>
+<span id="cb58-4"><a href="Section6.html#cb58-4" tabindex="-1"></a>                                <span class="at">method =</span> <span class="st">&#39;OPLS-R&#39;</span>)</span>
+<span id="cb58-5"><a href="Section6.html#cb58-5" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="Section6.html#cb58-6" tabindex="-1"></a>resultsOPLSR<span class="sc">@</span>R2X</span>
+<span id="cb58-7"><a href="Section6.html#cb58-7" tabindex="-1"></a>resultsOPLSR<span class="sc">@</span>R2Y</span>
+<span id="cb58-8"><a href="Section6.html#cb58-8" tabindex="-1"></a>resultsOPLSR<span class="sc">@</span>Q2</span>
+<span id="cb58-9"><a href="Section6.html#cb58-9" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="Section6.html#cb58-10" tabindex="-1"></a><span class="fu">head</span>(resultsOPLSR<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred)</span>
+<span id="cb58-11"><a href="Section6.html#cb58-11" tabindex="-1"></a></span>
+<span id="cb58-12"><a href="Section6.html#cb58-12" tabindex="-1"></a><span class="co"># Plot predicted vs actual Y</span></span>
+<span id="cb58-13"><a href="Section6.html#cb58-13" tabindex="-1"></a>y_actual <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">5</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">4</span>))</span>
+<span id="cb58-14"><a href="Section6.html#cb58-14" tabindex="-1"></a></span>
+<span id="cb58-15"><a href="Section6.html#cb58-15" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">actual    =</span> y_actual,</span>
+<span id="cb58-16"><a href="Section6.html#cb58-16" tabindex="-1"></a>                  <span class="at">predicted =</span> <span class="fu">as.vector</span>(resultsOPLSR<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred)),</span>
+<span id="cb58-17"><a href="Section6.html#cb58-17" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> actual, <span class="at">y =</span> predicted)) <span class="sc">+</span></span>
+<span id="cb58-18"><a href="Section6.html#cb58-18" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">&#39;steelblue&#39;</span>) <span class="sc">+</span></span>
+<span id="cb58-19"><a href="Section6.html#cb58-19" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">&#39;dashed&#39;</span>) <span class="sc">+</span></span>
+<span id="cb58-20"><a href="Section6.html#cb58-20" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb58-21"><a href="Section6.html#cb58-21" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;OPLS-R: Predicted vs Actual&#39;</span>, <span class="at">x =</span> <span class="st">&#39;Actual Y&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Predicted Y&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_oplsr_pred.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="KOPLS" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> ComDim-kernel-OPLS<a href="Section6.html#KOPLS" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>(in progress)</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="Section6.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;./R/ComDim_KOPLS_MB.R&#39;</span>)</span>
-<span id="cb51-2"><a href="Section6.html#cb51-2" aria-hidden="true" tabindex="-1"></a>resultsKOPLSDA <span class="ot">&lt;-</span> <span class="fu">ComDim_KOPLS_MB</span>(allMB, <span class="at">y=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;NI&#39;</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="st">&#39;DOX&#39;</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="st">&#39;OFF&#39;</span>,<span class="dv">4</span>)),</span>
-<span id="cb51-3"><a href="Section6.html#cb51-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">max.ort =</span> <span class="dv">2</span>, <span class="at">method =</span> <span class="st">&#39;k-OPLS-DA&#39;</span>, <span class="at">nrcv =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div id="compmethod" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Computation strategies: <code>CompMethod</code> and <code>Partitions</code><a href="Section6.html#compmethod" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All ComDim functions accept a <code>CompMethod</code> argument that controls the internal
+algorithm used to compute the common dimensions. For most datasets the default
+(<code>'Normal'</code>) is fine, but the alternatives can give large speed gains when the
+data geometry is extreme (many more variables than samples, or a very large
+number of samples).</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>CompMethod</code></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>'Normal'</code></td>
+<td>Exact SVD on the full concatenated block (default)</td>
+</tr>
+<tr class="even">
+<td><code>'Kernel'</code></td>
+<td>Works on the <em>n × n</em> kernel matrix instead of the <em>p × n</em> data matrix.</td>
+</tr>
+<tr class="odd">
+<td><code>'PCT'</code></td>
+<td>PCA pre-compression before the ComDim step, recommended for large blocks with redundant variables</td>
+</tr>
+<tr class="even">
+<td><code>'Wide'</code></td>
+<td>Column-partitioned computation, recommended for very wide blocks</td>
+</tr>
+<tr class="odd">
+<td><code>'Tall'</code></td>
+<td>Row-partitioned computation, recommended for blocks with many samples and with <em>n &gt;&gt; p</em></td>
+</tr>
+</tbody>
+</table>
+<p>The <code>Partitions</code> argument is an integer divisor used with <code>'Tall'</code> and <code>'Wide'</code>
+to control how the data are split. It can also be used with <code>'Kernel'</code> and
+<code>'PCT'</code> to limit memory use during pre-compression.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="Section6.html#cb59-1" tabindex="-1"></a><span class="co"># Synthetic dataset: 500 samples, 2 x 1 000 variables, 4 latent sources,</span></span>
+<span id="cb59-2"><a href="Section6.html#cb59-2" tabindex="-1"></a><span class="co"># 5 % noise.  seed = 42 ensures the example is fully reproducible.</span></span>
+<span id="cb59-3"><a href="Section6.html#cb59-3" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">SimulateMultiBlock</span>(<span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="dv">2000</span>, <span class="at">n_sources =</span> <span class="dv">4</span>,</span>
+<span id="cb59-4"><a href="Section6.html#cb59-4" tabindex="-1"></a>                            <span class="at">noise =</span> <span class="fl">0.05</span>, <span class="at">n_blocks =</span> <span class="dv">2</span>, <span class="at">seed =</span> <span class="dv">42</span>)</span>
+<span id="cb59-5"><a href="Section6.html#cb59-5" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NAInfRemoveMultiBlock</span>(allMB, <span class="at">na.method =</span> <span class="st">&#39;none&#39;</span>, <span class="at">minfrac =</span> <span class="fl">0.2</span>)</span>
+<span id="cb59-6"><a href="Section6.html#cb59-6" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;norm&#39;</span>)</span>
+<span id="cb59-7"><a href="Section6.html#cb59-7" tabindex="-1"></a></span>
+<span id="cb59-8"><a href="Section6.html#cb59-8" tabindex="-1"></a><span class="co"># Default: exact SVD — accurate for any dataset size</span></span>
+<span id="cb59-9"><a href="Section6.html#cb59-9" tabindex="-1"></a>t_normal <span class="ot">&lt;-</span> <span class="fu">system.time</span>(</span>
+<span id="cb59-10"><a href="Section6.html#cb59-10" tabindex="-1"></a>  results_normal <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA</span>(allMB, <span class="at">ndim =</span> <span class="dv">4</span>, <span class="at">CompMethod =</span> <span class="st">&#39;Normal&#39;</span>)</span>
+<span id="cb59-11"><a href="Section6.html#cb59-11" tabindex="-1"></a>)</span>
+<span id="cb59-12"><a href="Section6.html#cb59-12" tabindex="-1"></a></span>
+<span id="cb59-13"><a href="Section6.html#cb59-13" tabindex="-1"></a><span class="co"># Kernel: build an n×n cross-product matrix — requires n &lt; p per block</span></span>
+<span id="cb59-14"><a href="Section6.html#cb59-14" tabindex="-1"></a><span class="co"># (here n = 500, p = 1 000 per block, so the condition is satisfied)</span></span>
+<span id="cb59-15"><a href="Section6.html#cb59-15" tabindex="-1"></a>t_kernel <span class="ot">&lt;-</span> <span class="fu">system.time</span>(</span>
+<span id="cb59-16"><a href="Section6.html#cb59-16" tabindex="-1"></a>  results_kernel <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA</span>(allMB, <span class="at">ndim =</span> <span class="dv">4</span>, <span class="at">CompMethod =</span> <span class="st">&#39;Kernel&#39;</span>)</span>
+<span id="cb59-17"><a href="Section6.html#cb59-17" tabindex="-1"></a>)</span>
+<span id="cb59-18"><a href="Section6.html#cb59-18" tabindex="-1"></a></span>
+<span id="cb59-19"><a href="Section6.html#cb59-19" tabindex="-1"></a><span class="co"># PCT: compress each block with PCA first, then run ComDim on the scores</span></span>
+<span id="cb59-20"><a href="Section6.html#cb59-20" tabindex="-1"></a>t_pct <span class="ot">&lt;-</span> <span class="fu">system.time</span>(</span>
+<span id="cb59-21"><a href="Section6.html#cb59-21" tabindex="-1"></a>  results_pct    <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA</span>(allMB, <span class="at">ndim =</span> <span class="dv">4</span>, <span class="at">CompMethod =</span> <span class="st">&#39;PCT&#39;</span>)</span>
+<span id="cb59-22"><a href="Section6.html#cb59-22" tabindex="-1"></a>)</span>
+<span id="cb59-23"><a href="Section6.html#cb59-23" tabindex="-1"></a></span>
+<span id="cb59-24"><a href="Section6.html#cb59-24" tabindex="-1"></a><span class="co"># Wide: partition the blocks column-wise; Partitions controls how many pieces</span></span>
+<span id="cb59-25"><a href="Section6.html#cb59-25" tabindex="-1"></a>t_wide <span class="ot">&lt;-</span> <span class="fu">system.time</span>(</span>
+<span id="cb59-26"><a href="Section6.html#cb59-26" tabindex="-1"></a>  results_wide   <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA</span>(allMB, <span class="at">ndim =</span> <span class="dv">4</span>,</span>
+<span id="cb59-27"><a href="Section6.html#cb59-27" tabindex="-1"></a>                               <span class="at">CompMethod =</span> <span class="st">&#39;Wide&#39;</span>, <span class="at">Partitions =</span> <span class="dv">3</span>)</span>
+<span id="cb59-28"><a href="Section6.html#cb59-28" tabindex="-1"></a>)</span>
+<span id="cb59-29"><a href="Section6.html#cb59-29" tabindex="-1"></a></span>
+<span id="cb59-30"><a href="Section6.html#cb59-30" tabindex="-1"></a><span class="co"># Tall: partition row-wise — only suitable when blocks are narrow (&lt; 1 000 vars)</span></span>
+<span id="cb59-31"><a href="Section6.html#cb59-31" tabindex="-1"></a>t_tall <span class="ot">&lt;-</span> <span class="fu">system.time</span>(</span>
+<span id="cb59-32"><a href="Section6.html#cb59-32" tabindex="-1"></a>  results_tall   <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA</span>(allMB, <span class="at">ndim =</span> <span class="dv">4</span>,</span>
+<span id="cb59-33"><a href="Section6.html#cb59-33" tabindex="-1"></a>                               <span class="at">CompMethod =</span> <span class="st">&#39;Tall&#39;</span>, <span class="at">Partitions =</span> <span class="dv">3</span>)</span>
+<span id="cb59-34"><a href="Section6.html#cb59-34" tabindex="-1"></a>)</span>
+<span id="cb59-35"><a href="Section6.html#cb59-35" tabindex="-1"></a></span>
+<span id="cb59-36"><a href="Section6.html#cb59-36" tabindex="-1"></a><span class="co"># Elapsed time per method</span></span>
+<span id="cb59-37"><a href="Section6.html#cb59-37" tabindex="-1"></a>timing_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb59-38"><a href="Section6.html#cb59-38" tabindex="-1"></a>  <span class="at">Method  =</span> <span class="fu">c</span>(<span class="st">&#39;Normal&#39;</span>, <span class="st">&#39;Kernel&#39;</span>, <span class="st">&#39;PCT&#39;</span>, <span class="st">&#39;Wide&#39;</span>, <span class="st">&#39;Tall&#39;</span>),</span>
+<span id="cb59-39"><a href="Section6.html#cb59-39" tabindex="-1"></a>  <span class="at">Seconds =</span> <span class="fu">c</span>(t_normal[<span class="st">&#39;elapsed&#39;</span>], t_kernel[<span class="st">&#39;elapsed&#39;</span>],</span>
+<span id="cb59-40"><a href="Section6.html#cb59-40" tabindex="-1"></a>              t_pct[<span class="st">&#39;elapsed&#39;</span>],    t_wide[<span class="st">&#39;elapsed&#39;</span>],</span>
+<span id="cb59-41"><a href="Section6.html#cb59-41" tabindex="-1"></a>              t_tall[<span class="st">&#39;elapsed&#39;</span>])</span>
+<span id="cb59-42"><a href="Section6.html#cb59-42" tabindex="-1"></a>)</span>
+<span id="cb59-43"><a href="Section6.html#cb59-43" tabindex="-1"></a><span class="fu">print</span>(timing_df)</span>
+<span id="cb59-44"><a href="Section6.html#cb59-44" tabindex="-1"></a></span>
+<span id="cb59-45"><a href="Section6.html#cb59-45" tabindex="-1"></a><span class="fu">ggplot</span>(timing_df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Method, Seconds), <span class="at">y =</span> Seconds, <span class="at">fill =</span> Method)) <span class="sc">+</span></span>
+<span id="cb59-46"><a href="Section6.html#cb59-46" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span></span>
+<span id="cb59-47"><a href="Section6.html#cb59-47" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb59-48"><a href="Section6.html#cb59-48" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb59-49"><a href="Section6.html#cb59-49" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>) <span class="sc">+</span></span>
+<span id="cb59-50"><a href="Section6.html#cb59-50" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim_PCA computation time by CompMethod&#39;</span>,</span>
+<span id="cb59-51"><a href="Section6.html#cb59-51" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;500 samples × 2 × 1 000 variables, 4 components&#39;</span>,</span>
+<span id="cb59-52"><a href="Section6.html#cb59-52" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;CompMethod&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Elapsed time (s)&#39;</span>)</span>
+<span id="cb59-53"><a href="Section6.html#cb59-53" tabindex="-1"></a></span>
+<span id="cb59-54"><a href="Section6.html#cb59-54" tabindex="-1"></a><span class="co"># All methods return equivalent results; compare saliences for CC1 as a check</span></span>
+<span id="cb59-55"><a href="Section6.html#cb59-55" tabindex="-1"></a>sal_compare <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb59-56"><a href="Section6.html#cb59-56" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(results_normal<span class="sc">@</span>Saliences) <span class="sc">%&gt;%</span></span>
+<span id="cb59-57"><a href="Section6.html#cb59-57" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.), <span class="at">method =</span> <span class="st">&#39;Normal&#39;</span>),</span>
+<span id="cb59-58"><a href="Section6.html#cb59-58" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(results_kernel<span class="sc">@</span>Saliences) <span class="sc">%&gt;%</span></span>
+<span id="cb59-59"><a href="Section6.html#cb59-59" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.), <span class="at">method =</span> <span class="st">&#39;Kernel&#39;</span>),</span>
+<span id="cb59-60"><a href="Section6.html#cb59-60" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(results_pct<span class="sc">@</span>Saliences) <span class="sc">%&gt;%</span></span>
+<span id="cb59-61"><a href="Section6.html#cb59-61" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.), <span class="at">method =</span> <span class="st">&#39;PCT&#39;</span>),</span>
+<span id="cb59-62"><a href="Section6.html#cb59-62" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(results_wide<span class="sc">@</span>Saliences) <span class="sc">%&gt;%</span></span>
+<span id="cb59-63"><a href="Section6.html#cb59-63" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.), <span class="at">method =</span> <span class="st">&#39;Wide&#39;</span>),</span>
+<span id="cb59-64"><a href="Section6.html#cb59-64" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(results_tall<span class="sc">@</span>Saliences) <span class="sc">%&gt;%</span></span>
+<span id="cb59-65"><a href="Section6.html#cb59-65" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.), <span class="at">method =</span> <span class="st">&#39;Tall&#39;</span>)</span>
+<span id="cb59-66"><a href="Section6.html#cb59-66" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb59-67"><a href="Section6.html#cb59-67" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&#39;CC&#39;</span>), <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>, <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>)</span>
+<span id="cb59-68"><a href="Section6.html#cb59-68" tabindex="-1"></a></span>
+<span id="cb59-69"><a href="Section6.html#cb59-69" tabindex="-1"></a><span class="fu">ggplot</span>(sal_compare <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CC <span class="sc">==</span> <span class="st">&#39;CC1&#39;</span>),</span>
+<span id="cb59-70"><a href="Section6.html#cb59-70" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> dataset, <span class="at">y =</span> Salience, <span class="at">fill =</span> method)) <span class="sc">+</span></span>
+<span id="cb59-71"><a href="Section6.html#cb59-71" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="sc">+</span></span>
+<span id="cb59-72"><a href="Section6.html#cb59-72" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb59-73"><a href="Section6.html#cb59-73" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb59-74"><a href="Section6.html#cb59-74" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Saliences CC1:</span><span class="sc">\n</span><span class="st">Comparison across CompMethods&#39;</span>,</span>
+<span id="cb59-75"><a href="Section6.html#cb59-75" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Block&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Salience&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_compmethod_time.png" alt="" width="60%" style="display: block; margin: auto;" />
+<img src="Figs/fig6_compmethod_sal.png" alt="" width="60%" style="display: block; margin: auto;" /></p>
+<p>All methods return identical (or near-identical) results; the choice only
+affects computation time and memory footprint.</p>
+<p>The same <code>CompMethod</code> and <code>Partitions</code> arguments are available in
+<code>ComDim_PLS()</code> and <code>ComDim_OPLS()</code>.</p>
 </div>
-<div id="Other" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Other extensions<a href="Section6.html#Other" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The functions <code>ComDim_Exploratory_MB()</code> and <code>ComDim_y_MB()</code> can be employed to
-use customized versions of Com-Dim for exploratory and regression/discriminant
-purposes. In both functions, the parameter <code>FUN</code> allows the user to run ComDim
-with their chemometric method of preference.</p>
-<div id="example-of-comdim-ica" class="section level3 hasAnchor" number="7.4.1">
-<h3><span class="header-section-number">7.4.1</span> Example of ComDim-ICA<a href="Section6.html#example-of-comdim-ica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="Other" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Other extensions<a href="Section6.html#Other" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>ComDim_Exploratory()</code> and <code>ComDim_y()</code> functions enable highly customized Com-Dim implementations for exploratory and regression/discriminant analysis. By utilizing the <code>FUN</code> parameter, you can integrate any chemometric method that performs bilinear decompositions into the Com-Dim core. This flexible approach generates method-specific scores alongside loadings and saliences, allowing you to simultaneously evaluate individual variable impacts and overall block contributions.</p>
+<div id="example-of-comdim-ica" class="section level3 hasAnchor" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> Example of ComDim-ICA<a href="Section6.html#example-of-comdim-ica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The function used to execute <strong>Independent Component Analysis (ICA)</strong> was
 <code>ica()</code> from the <code>ica</code> package.
-In order to make the <code>ComDim_Exploratory_MB()</code> function to understand the output
+In order for the <code>ComDim_Exploratory()</code> function to understand the output
 of <code>ica()</code>, we embedded it into another function that returns the source
 estimates (representative of the samples information, analogous to the PCA
 scores) named <code>fun.ICA</code>.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="Section6.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ica)</span>
-<span id="cb52-2"><a href="Section6.html#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-3"><a href="Section6.html#cb52-3" aria-hidden="true" tabindex="-1"></a>fun.ICA <span class="ot">&lt;-</span> <span class="cf">function</span>(W, ndim,...){</span>
-<span id="cb52-4"><a href="Section6.html#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># W is the concatenated MB.</span></span>
-<span id="cb52-5"><a href="Section6.html#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ndim is the number of components.</span></span>
-<span id="cb52-6"><a href="Section6.html#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># X and nc are the arguments of ica::ica.</span></span>
-<span id="cb52-7"><a href="Section6.html#cb52-7" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> ica<span class="sc">::</span><span class="fu">ica</span>(W, ndim)</span>
-<span id="cb52-8"><a href="Section6.html#cb52-8" aria-hidden="true" tabindex="-1"></a>  sources <span class="ot">&lt;-</span> result<span class="sc">$</span>S</span>
-<span id="cb52-9"><a href="Section6.html#cb52-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The function must return the source estimates</span></span>
-<span id="cb52-10"><a href="Section6.html#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The analogue to the PCA scores for ICA.</span></span>
-<span id="cb52-11"><a href="Section6.html#cb52-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(sources)</span>
-<span id="cb52-12"><a href="Section6.html#cb52-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb52-13"><a href="Section6.html#cb52-13" aria-hidden="true" tabindex="-1"></a>resultsICA <span class="ot">&lt;-</span> <span class="fu">ComDim_Exploratory_MB</span>(allMB, <span class="at">ndim =</span> <span class="dv">2</span>,</span>
-<span id="cb52-14"><a href="Section6.html#cb52-14" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">FUN =</span> fun.ICA,</span>
-<span id="cb52-15"><a href="Section6.html#cb52-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">method =</span> <span class="st">&#39;ICA&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="Section6.html#cb60-1" tabindex="-1"></a><span class="fu">library</span>(ica)</span>
+<span id="cb60-2"><a href="Section6.html#cb60-2" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="Section6.html#cb60-3" tabindex="-1"></a>fun.ICA <span class="ot">&lt;-</span> <span class="cf">function</span>(W, ndim,...){</span>
+<span id="cb60-4"><a href="Section6.html#cb60-4" tabindex="-1"></a>  <span class="co"># W is the concatenated MB.</span></span>
+<span id="cb60-5"><a href="Section6.html#cb60-5" tabindex="-1"></a>  <span class="co"># ndim is the number of components.</span></span>
+<span id="cb60-6"><a href="Section6.html#cb60-6" tabindex="-1"></a>  <span class="co"># X and nc are the arguments of ica::ica.</span></span>
+<span id="cb60-7"><a href="Section6.html#cb60-7" tabindex="-1"></a>  result <span class="ot">&lt;-</span> ica<span class="sc">::</span><span class="fu">ica</span>(W, ndim)</span>
+<span id="cb60-8"><a href="Section6.html#cb60-8" tabindex="-1"></a>  sources <span class="ot">&lt;-</span> result<span class="sc">$</span>S</span>
+<span id="cb60-9"><a href="Section6.html#cb60-9" tabindex="-1"></a>  <span class="co"># The function must return the source estimates</span></span>
+<span id="cb60-10"><a href="Section6.html#cb60-10" tabindex="-1"></a>  <span class="co"># The analogue to the PCA scores for ICA.</span></span>
+<span id="cb60-11"><a href="Section6.html#cb60-11" tabindex="-1"></a>  <span class="fu">return</span>(sources)</span>
+<span id="cb60-12"><a href="Section6.html#cb60-12" tabindex="-1"></a>}</span>
+<span id="cb60-13"><a href="Section6.html#cb60-13" tabindex="-1"></a></span>
+<span id="cb60-14"><a href="Section6.html#cb60-14" tabindex="-1"></a><span class="co"># Reload mouse_ds for this section (allMB was overwritten by compmethod)</span></span>
+<span id="cb60-15"><a href="Section6.html#cb60-15" tabindex="-1"></a><span class="fu">data</span>(mouse_ds)</span>
+<span id="cb60-16"><a href="Section6.html#cb60-16" tabindex="-1"></a>allMB_ica <span class="ot">&lt;-</span> <span class="fu">MultiBlock</span>(<span class="at">Data =</span> <span class="fu">list</span>(<span class="at">b1 =</span> RNAseq3, <span class="at">b2 =</span> lipids,</span>
+<span id="cb60-17"><a href="Section6.html#cb60-17" tabindex="-1"></a>                                    <span class="at">b3 =</span> intra,   <span class="at">b4 =</span> extra))</span>
+<span id="cb60-18"><a href="Section6.html#cb60-18" tabindex="-1"></a><span class="fu">blockNames</span>(allMB_ica) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;RNAseq&#39;</span>, <span class="st">&#39;lipids&#39;</span>, <span class="st">&#39;intra&#39;</span>, <span class="st">&#39;extra&#39;</span>)</span>
+<span id="cb60-19"><a href="Section6.html#cb60-19" tabindex="-1"></a>allMB_ica <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB_ica, <span class="at">blocks =</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
+<span id="cb60-20"><a href="Section6.html#cb60-20" tabindex="-1"></a>  <span class="at">FUN.SelectVars =</span> <span class="cf">function</span>(x) {<span class="fu">apply</span>(x,<span class="dv">2</span>,max) <span class="sc">&gt;</span> <span class="fu">max</span>(x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">*</span><span class="fl">0.001</span>})</span>
+<span id="cb60-21"><a href="Section6.html#cb60-21" tabindex="-1"></a>allMB_ica <span class="ot">&lt;-</span> <span class="fu">NAInfRemoveMultiBlock</span>(allMB_ica, <span class="at">blocks =</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
+<span id="cb60-22"><a href="Section6.html#cb60-22" tabindex="-1"></a>                                   <span class="at">na.method =</span> <span class="st">&#39;fixed.value.all&#39;</span>, <span class="at">constant =</span> <span class="dv">1</span>)</span>
+<span id="cb60-23"><a href="Section6.html#cb60-23" tabindex="-1"></a>allMB_ica <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB_ica, <span class="at">blocks =</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
+<span id="cb60-24"><a href="Section6.html#cb60-24" tabindex="-1"></a>                                <span class="at">FUN =</span> <span class="cf">function</span>(x){<span class="fu">t</span>(DESeq2<span class="sc">::</span><span class="fu">rlog</span>(<span class="fu">t</span>(x)))})</span>
+<span id="cb60-25"><a href="Section6.html#cb60-25" tabindex="-1"></a>allMB_ica <span class="ot">&lt;-</span> <span class="fu">NAInfRemoveMultiBlock</span>(allMB_ica, <span class="at">na.method =</span> <span class="st">&#39;random.noise&#39;</span>)</span>
+<span id="cb60-26"><a href="Section6.html#cb60-26" tabindex="-1"></a>allMB_ica <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB_ica, <span class="at">method =</span> <span class="st">&#39;norm&#39;</span>)</span>
+<span id="cb60-27"><a href="Section6.html#cb60-27" tabindex="-1"></a></span>
+<span id="cb60-28"><a href="Section6.html#cb60-28" tabindex="-1"></a>resultsICA <span class="ot">&lt;-</span> <span class="fu">ComDim_Exploratory</span>(allMB_ica, <span class="at">ndim =</span> <span class="dv">2</span>,</span>
+<span id="cb60-29"><a href="Section6.html#cb60-29" tabindex="-1"></a>                                 <span class="at">FUN =</span> fun.ICA,</span>
+<span id="cb60-30"><a href="Section6.html#cb60-30" tabindex="-1"></a>                                 <span class="at">method =</span> <span class="st">&#39;ICA&#39;</span>)</span>
+<span id="cb60-31"><a href="Section6.html#cb60-31" tabindex="-1"></a></span>
+<span id="cb60-32"><a href="Section6.html#cb60-32" tabindex="-1"></a><span class="co"># Plot saliences</span></span>
+<span id="cb60-33"><a href="Section6.html#cb60-33" tabindex="-1"></a>saliencesICA <span class="ot">&lt;-</span> resultsICA<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
+<span id="cb60-34"><a href="Section6.html#cb60-34" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb60-35"><a href="Section6.html#cb60-35" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb60-36"><a href="Section6.html#cb60-36" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;CC1&#39;</span>,<span class="st">&#39;CC2&#39;</span>), <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>, <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>)</span>
+<span id="cb60-37"><a href="Section6.html#cb60-37" tabindex="-1"></a></span>
+<span id="cb60-38"><a href="Section6.html#cb60-38" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> saliencesICA,</span>
+<span id="cb60-39"><a href="Section6.html#cb60-39" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CC, <span class="at">y =</span> Salience, <span class="at">group =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb60-40"><a href="Section6.html#cb60-40" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>, <span class="fu">aes</span>(<span class="at">fill =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb60-41"><a href="Section6.html#cb60-41" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb60-42"><a href="Section6.html#cb60-42" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim-ICA Saliences&#39;</span>)</span>
+<span id="cb60-43"><a href="Section6.html#cb60-43" tabindex="-1"></a></span>
+<span id="cb60-44"><a href="Section6.html#cb60-44" tabindex="-1"></a><span class="co"># Plot scores</span></span>
+<span id="cb60-45"><a href="Section6.html#cb60-45" tabindex="-1"></a>scoresICA <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsICA)</span>
+<span id="cb60-46"><a href="Section6.html#cb60-46" tabindex="-1"></a>scoresICA_wider <span class="ot">&lt;-</span> scoresICA <span class="sc">%&gt;%</span></span>
+<span id="cb60-47"><a href="Section6.html#cb60-47" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
+<span id="cb60-48"><a href="Section6.html#cb60-48" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>,  sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
+<span id="cb60-49"><a href="Section6.html#cb60-49" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb60-50"><a href="Section6.html#cb60-50" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, block.name, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
+<span id="cb60-51"><a href="Section6.html#cb60-51" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(sample.id, sample.type, scores.type.dim, block.name) <span class="sc">%&gt;%</span></span>
+<span id="cb60-52"><a href="Section6.html#cb60-52" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value)</span>
+<span id="cb60-53"><a href="Section6.html#cb60-53" tabindex="-1"></a></span>
+<span id="cb60-54"><a href="Section6.html#cb60-54" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> scoresICA_wider) <span class="sc">+</span></span>
+<span id="cb60-55"><a href="Section6.html#cb60-55" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> T.scores1, <span class="at">y =</span> T.scores2,</span>
+<span id="cb60-56"><a href="Section6.html#cb60-56" tabindex="-1"></a>                 <span class="at">color =</span> sample.type, <span class="at">shape =</span> block.name)) <span class="sc">+</span></span>
+<span id="cb60-57"><a href="Section6.html#cb60-57" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores2,</span>
+<span id="cb60-58"><a href="Section6.html#cb60-58" tabindex="-1"></a>                 <span class="at">fill =</span> sample.type),</span>
+<span id="cb60-59"><a href="Section6.html#cb60-59" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">24</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb60-60"><a href="Section6.html#cb60-60" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb60-61"><a href="Section6.html#cb60-61" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim-ICA scores&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_ica_sal.png" alt="" width="50%" style="display: block; margin: auto;" />
+<img src="Figs/fig6_ica_scores.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="example-of-comdim-pls-version-ropls" class="section level3 hasAnchor" number="7.4.2">
-<h3><span class="header-section-number">7.4.2</span> Example of ComDim-PLS (version ropls)<a href="Section6.html#example-of-comdim-pls-version-ropls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="example-of-comdim-pls-version-ropls" class="section level3 hasAnchor" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> Example of ComDim-PLS (version ropls)<a href="Section6.html#example-of-comdim-pls-version-ropls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The function used to execute <strong>PLS</strong> here was <code>opls()</code>, obtained from the
 <code>ropls</code> package.
 In this case, <code>fun.PLS</code> is used to capture the output from the PLS analysis
 (scores,P,W,U,Q,y).
 <code>type=regression</code> is set to calculate R2Y, Q2,… as with <code>ComDim_Pls_MB()</code>.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="Section6.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ropls) <span class="co"># From bioconductor</span></span>
-<span id="cb53-2"><a href="Section6.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;./R/ComDim_y_MB.R&#39;</span>)</span>
-<span id="cb53-3"><a href="Section6.html#cb53-3" aria-hidden="true" tabindex="-1"></a>fun.PLS <span class="ot">&lt;-</span> <span class="cf">function</span>(W, y, ndim,...){</span>
-<span id="cb53-4"><a href="Section6.html#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># W is the concatenated MB.</span></span>
-<span id="cb53-5"><a href="Section6.html#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ndim is the number of components.</span></span>
-<span id="cb53-6"><a href="Section6.html#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># X and nc are the arguments of ica::ica.</span></span>
-<span id="cb53-7"><a href="Section6.html#cb53-7" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb53-8"><a href="Section6.html#cb53-8" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> ropls<span class="sc">::</span><span class="fu">opls</span>(<span class="at">x =</span> W, <span class="at">y =</span> y, <span class="at">predI =</span> ndim,</span>
-<span id="cb53-9"><a href="Section6.html#cb53-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">fig.pdfC =</span> <span class="st">&#39;none&#39;</span>,</span>
-<span id="cb53-10"><a href="Section6.html#cb53-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">info.txtC =</span> <span class="st">&#39;none&#39;</span>)</span>
-<span id="cb53-11"><a href="Section6.html#cb53-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The returning object must be a list containing the following 6 elements:</span></span>
-<span id="cb53-12"><a href="Section6.html#cb53-12" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>scores <span class="ot">&lt;-</span> result<span class="sc">@</span>scoreMN[,<span class="dv">1</span>]</span>
-<span id="cb53-13"><a href="Section6.html#cb53-13" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>P <span class="ot">&lt;-</span> result<span class="sc">@</span>loadingMN[,<span class="dv">1</span>]</span>
-<span id="cb53-14"><a href="Section6.html#cb53-14" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>W <span class="ot">&lt;-</span> result<span class="sc">@</span>weightMN[,<span class="dv">1</span>]</span>
-<span id="cb53-15"><a href="Section6.html#cb53-15" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>U <span class="ot">&lt;-</span> result<span class="sc">@</span>uMN[,<span class="dv">1</span>]</span>
-<span id="cb53-16"><a href="Section6.html#cb53-16" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>Q <span class="ot">&lt;-</span> result<span class="sc">@</span>cMN[,<span class="dv">1</span>]</span>
-<span id="cb53-17"><a href="Section6.html#cb53-17" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>y <span class="ot">&lt;-</span> result<span class="sc">@</span>suppLs<span class="sc">$</span>yModelMN <span class="co"># To evaluate if y is transformed within opls. (it is!)</span></span>
-<span id="cb53-18"><a href="Section6.html#cb53-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output)</span>
-<span id="cb53-19"><a href="Section6.html#cb53-19" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb53-20"><a href="Section6.html#cb53-20" aria-hidden="true" tabindex="-1"></a>resultsPLS <span class="ot">&lt;-</span> <span class="fu">ComDim_y_MB</span>(allMB,</span>
-<span id="cb53-21"><a href="Section6.html#cb53-21" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="dv">5</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="dv">10</span>,<span class="dv">4</span>)),</span>
-<span id="cb53-22"><a href="Section6.html#cb53-22" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ndim =</span> <span class="dv">2</span>,</span>
-<span id="cb53-23"><a href="Section6.html#cb53-23" aria-hidden="true" tabindex="-1"></a>                          <span class="at">type =</span> <span class="st">&#39;regression&#39;</span>,</span>
-<span id="cb53-24"><a href="Section6.html#cb53-24" aria-hidden="true" tabindex="-1"></a>                          <span class="at">orthogonalization =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb53-25"><a href="Section6.html#cb53-25" aria-hidden="true" tabindex="-1"></a>                          <span class="at">FUN =</span> fun.PLS,</span>
-<span id="cb53-26"><a href="Section6.html#cb53-26" aria-hidden="true" tabindex="-1"></a>                          <span class="at">method =</span> <span class="st">&#39;PLS(ropls)&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="Section6.html#cb61-1" tabindex="-1"></a><span class="fu">library</span>(ropls) <span class="co"># From bioconductor</span></span>
+<span id="cb61-2"><a href="Section6.html#cb61-2" tabindex="-1"></a>fun.PLS <span class="ot">&lt;-</span> <span class="cf">function</span>(W, y, ndim,...){</span>
+<span id="cb61-3"><a href="Section6.html#cb61-3" tabindex="-1"></a>  <span class="co"># W is the concatenated MB.</span></span>
+<span id="cb61-4"><a href="Section6.html#cb61-4" tabindex="-1"></a>  <span class="co"># ndim is the number of components.</span></span>
+<span id="cb61-5"><a href="Section6.html#cb61-5" tabindex="-1"></a>  <span class="co"># X and nc are the arguments of ica::ica.</span></span>
+<span id="cb61-6"><a href="Section6.html#cb61-6" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb61-7"><a href="Section6.html#cb61-7" tabindex="-1"></a>  result <span class="ot">&lt;-</span> ropls<span class="sc">::</span><span class="fu">opls</span>(<span class="at">x =</span> W, <span class="at">y =</span> y, <span class="at">predI =</span> ndim,</span>
+<span id="cb61-8"><a href="Section6.html#cb61-8" tabindex="-1"></a>                        <span class="at">fig.pdfC =</span> <span class="st">&#39;none&#39;</span>,</span>
+<span id="cb61-9"><a href="Section6.html#cb61-9" tabindex="-1"></a>                        <span class="at">info.txtC =</span> <span class="st">&#39;none&#39;</span>)</span>
+<span id="cb61-10"><a href="Section6.html#cb61-10" tabindex="-1"></a>  <span class="co"># The returning object must be a list containing the following 6 elements:</span></span>
+<span id="cb61-11"><a href="Section6.html#cb61-11" tabindex="-1"></a>  output<span class="sc">$</span>scores <span class="ot">&lt;-</span> result<span class="sc">@</span>scoreMN[,<span class="dv">1</span>]</span>
+<span id="cb61-12"><a href="Section6.html#cb61-12" tabindex="-1"></a>  output<span class="sc">$</span>P <span class="ot">&lt;-</span> result<span class="sc">@</span>loadingMN[,<span class="dv">1</span>]</span>
+<span id="cb61-13"><a href="Section6.html#cb61-13" tabindex="-1"></a>  output<span class="sc">$</span>W <span class="ot">&lt;-</span> result<span class="sc">@</span>weightMN[,<span class="dv">1</span>]</span>
+<span id="cb61-14"><a href="Section6.html#cb61-14" tabindex="-1"></a>  output<span class="sc">$</span>U <span class="ot">&lt;-</span> result<span class="sc">@</span>uMN[,<span class="dv">1</span>]</span>
+<span id="cb61-15"><a href="Section6.html#cb61-15" tabindex="-1"></a>  output<span class="sc">$</span>Q <span class="ot">&lt;-</span> result<span class="sc">@</span>cMN[,<span class="dv">1</span>]</span>
+<span id="cb61-16"><a href="Section6.html#cb61-16" tabindex="-1"></a>  output<span class="sc">$</span>y <span class="ot">&lt;-</span> result<span class="sc">@</span>suppLs<span class="sc">$</span>yModelMN</span>
+<span id="cb61-17"><a href="Section6.html#cb61-17" tabindex="-1"></a>  <span class="fu">return</span>(output)</span>
+<span id="cb61-18"><a href="Section6.html#cb61-18" tabindex="-1"></a>}</span>
+<span id="cb61-19"><a href="Section6.html#cb61-19" tabindex="-1"></a>resultsPLS <span class="ot">&lt;-</span> <span class="fu">ComDim_y</span>(allMB_ica,</span>
+<span id="cb61-20"><a href="Section6.html#cb61-20" tabindex="-1"></a>                          <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">5</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">10</span>,<span class="dv">4</span>)),</span>
+<span id="cb61-21"><a href="Section6.html#cb61-21" tabindex="-1"></a>                          <span class="at">ndim =</span> <span class="dv">2</span>,</span>
+<span id="cb61-22"><a href="Section6.html#cb61-22" tabindex="-1"></a>                          <span class="at">type =</span> <span class="st">&#39;regression&#39;</span>,</span>
+<span id="cb61-23"><a href="Section6.html#cb61-23" tabindex="-1"></a>                          <span class="at">FUN =</span> fun.PLS,</span>
+<span id="cb61-24"><a href="Section6.html#cb61-24" tabindex="-1"></a>                          <span class="at">method =</span> <span class="st">&#39;PLS(ropls)&#39;</span>)</span>
+<span id="cb61-25"><a href="Section6.html#cb61-25" tabindex="-1"></a></span>
+<span id="cb61-26"><a href="Section6.html#cb61-26" tabindex="-1"></a>resultsPLS<span class="sc">@</span>R2X</span>
+<span id="cb61-27"><a href="Section6.html#cb61-27" tabindex="-1"></a>resultsPLS<span class="sc">@</span>R2Y</span>
+<span id="cb61-28"><a href="Section6.html#cb61-28" tabindex="-1"></a>resultsPLS<span class="sc">@</span>Q2</span>
+<span id="cb61-29"><a href="Section6.html#cb61-29" tabindex="-1"></a></span>
+<span id="cb61-30"><a href="Section6.html#cb61-30" tabindex="-1"></a><span class="co"># Plot saliences</span></span>
+<span id="cb61-31"><a href="Section6.html#cb61-31" tabindex="-1"></a>saliencesPLS_ropls <span class="ot">&lt;-</span> resultsPLS<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
+<span id="cb61-32"><a href="Section6.html#cb61-32" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb61-33"><a href="Section6.html#cb61-33" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb61-34"><a href="Section6.html#cb61-34" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;CC1&#39;</span>,<span class="st">&#39;CC2&#39;</span>), <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>, <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>)</span>
+<span id="cb61-35"><a href="Section6.html#cb61-35" tabindex="-1"></a></span>
+<span id="cb61-36"><a href="Section6.html#cb61-36" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> saliencesPLS_ropls,</span>
+<span id="cb61-37"><a href="Section6.html#cb61-37" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CC, <span class="at">y =</span> Salience, <span class="at">group =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb61-38"><a href="Section6.html#cb61-38" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>, <span class="fu">aes</span>(<span class="at">fill =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb61-39"><a href="Section6.html#cb61-39" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb61-40"><a href="Section6.html#cb61-40" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim-PLS (ropls) Saliences&#39;</span>)</span>
+<span id="cb61-41"><a href="Section6.html#cb61-41" tabindex="-1"></a></span>
+<span id="cb61-42"><a href="Section6.html#cb61-42" tabindex="-1"></a><span class="co"># Plot predicted vs actual Y</span></span>
+<span id="cb61-43"><a href="Section6.html#cb61-43" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">actual    =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">5</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="dv">10</span>,<span class="dv">4</span>)),</span>
+<span id="cb61-44"><a href="Section6.html#cb61-44" tabindex="-1"></a>                  <span class="at">predicted =</span> <span class="fu">as.vector</span>(resultsPLS<span class="sc">@</span>Prediction<span class="sc">$</span>Y.pred)),</span>
+<span id="cb61-45"><a href="Section6.html#cb61-45" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> actual, <span class="at">y =</span> predicted)) <span class="sc">+</span></span>
+<span id="cb61-46"><a href="Section6.html#cb61-46" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">&#39;steelblue&#39;</span>) <span class="sc">+</span></span>
+<span id="cb61-47"><a href="Section6.html#cb61-47" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">&#39;dashed&#39;</span>) <span class="sc">+</span></span>
+<span id="cb61-48"><a href="Section6.html#cb61-48" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb61-49"><a href="Section6.html#cb61-49" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;PLS (ropls): Predicted vs Actual&#39;</span>, <span class="at">x =</span> <span class="st">&#39;Actual Y&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Predicted Y&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_ropls_pls_sal.png" alt="" width="50%" style="display: block; margin: auto;" />
+<img src="Figs/fig6_ropls_pls_pred.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="example-of-comdim-plsda-version-ropls" class="section level3 hasAnchor" number="7.4.3">
-<h3><span class="header-section-number">7.4.3</span> Example of ComDim-PLSDA (version ropls)<a href="Section6.html#example-of-comdim-plsda-version-ropls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="example-of-comdim-plsda-version-ropls" class="section level3 hasAnchor" number="6.5.3">
+<h3><span class="header-section-number">6.5.3</span> Example of ComDim-PLSDA (version ropls)<a href="Section6.html#example-of-comdim-plsda-version-ropls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For ComDim-PLS-DA, we can use the same function <code>fun.PLS</code> as before, but we need
 to specify that the <code>type</code> of the method is <code>'discriminant'</code> and we need to
 provide the sample classes in <code>y</code>:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="Section6.html#cb54-1" aria-hidden="true" tabindex="-1"></a>resultsPLSDA <span class="ot">&lt;-</span> <span class="fu">ComDim_y_MB</span>(allMB,</span>
-<span id="cb54-2"><a href="Section6.html#cb54-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">y =</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;NI&#39;</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="st">&#39;DOX&#39;</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="st">&#39;OFF&#39;</span>,<span class="dv">4</span>)),</span>
-<span id="cb54-3"><a href="Section6.html#cb54-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ndim =</span> <span class="dv">2</span>,</span>
-<span id="cb54-4"><a href="Section6.html#cb54-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">type =</span> <span class="st">&#39;discriminant&#39;</span>,</span>
-<span id="cb54-5"><a href="Section6.html#cb54-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">orthogonalization =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb54-6"><a href="Section6.html#cb54-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">FUN =</span> fun.PLS,</span>
-<span id="cb54-7"><a href="Section6.html#cb54-7" aria-hidden="true" tabindex="-1"></a>                           <span class="at">method =</span> <span class="st">&#39;PLSDA(ropls)&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="Section6.html#cb62-1" tabindex="-1"></a>resultsPLSDA_ropls <span class="ot">&lt;-</span> <span class="fu">ComDim_y</span>(allMB_ica,</span>
+<span id="cb62-2"><a href="Section6.html#cb62-2" tabindex="-1"></a>                           <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;NI&#39;</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&#39;DOX&#39;</span>,<span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&#39;OFF&#39;</span>,<span class="dv">4</span>)),</span>
+<span id="cb62-3"><a href="Section6.html#cb62-3" tabindex="-1"></a>                           <span class="at">ndim =</span> <span class="dv">2</span>,</span>
+<span id="cb62-4"><a href="Section6.html#cb62-4" tabindex="-1"></a>                           <span class="at">type =</span> <span class="st">&#39;discriminant&#39;</span>,</span>
+<span id="cb62-5"><a href="Section6.html#cb62-5" tabindex="-1"></a>                           <span class="at">FUN =</span> fun.PLS,</span>
+<span id="cb62-6"><a href="Section6.html#cb62-6" tabindex="-1"></a>                           <span class="at">method =</span> <span class="st">&#39;PLSDA(ropls)&#39;</span>)</span>
+<span id="cb62-7"><a href="Section6.html#cb62-7" tabindex="-1"></a></span>
+<span id="cb62-8"><a href="Section6.html#cb62-8" tabindex="-1"></a>resultsPLSDA_ropls<span class="sc">@</span>R2X</span>
+<span id="cb62-9"><a href="Section6.html#cb62-9" tabindex="-1"></a>resultsPLSDA_ropls<span class="sc">@</span>R2Y</span>
+<span id="cb62-10"><a href="Section6.html#cb62-10" tabindex="-1"></a>resultsPLSDA_ropls<span class="sc">@</span>Q2</span>
+<span id="cb62-11"><a href="Section6.html#cb62-11" tabindex="-1"></a>resultsPLSDA_ropls<span class="sc">@</span>DQ2</span>
+<span id="cb62-12"><a href="Section6.html#cb62-12" tabindex="-1"></a></span>
+<span id="cb62-13"><a href="Section6.html#cb62-13" tabindex="-1"></a><span class="co"># Plot saliences</span></span>
+<span id="cb62-14"><a href="Section6.html#cb62-14" tabindex="-1"></a>saliencesPLSDA_ropls <span class="ot">&lt;-</span> resultsPLSDA_ropls<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
+<span id="cb62-15"><a href="Section6.html#cb62-15" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb62-16"><a href="Section6.html#cb62-16" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb62-17"><a href="Section6.html#cb62-17" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;CC1&#39;</span>,<span class="st">&#39;CC2&#39;</span>), <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>, <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>)</span>
+<span id="cb62-18"><a href="Section6.html#cb62-18" tabindex="-1"></a></span>
+<span id="cb62-19"><a href="Section6.html#cb62-19" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> saliencesPLSDA_ropls,</span>
+<span id="cb62-20"><a href="Section6.html#cb62-20" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CC, <span class="at">y =</span> Salience, <span class="at">group =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb62-21"><a href="Section6.html#cb62-21" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>, <span class="fu">aes</span>(<span class="at">fill =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb62-22"><a href="Section6.html#cb62-22" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb62-23"><a href="Section6.html#cb62-23" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim-PLSDA (ropls) Saliences&#39;</span>)</span>
+<span id="cb62-24"><a href="Section6.html#cb62-24" tabindex="-1"></a></span>
+<span id="cb62-25"><a href="Section6.html#cb62-25" tabindex="-1"></a><span class="co"># Plot scores</span></span>
+<span id="cb62-26"><a href="Section6.html#cb62-26" tabindex="-1"></a>scoresTable_ropls <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsPLSDA_ropls)</span>
+<span id="cb62-27"><a href="Section6.html#cb62-27" tabindex="-1"></a>scoresTable_ropls_wider <span class="ot">&lt;-</span> scoresTable_ropls <span class="sc">%&gt;%</span></span>
+<span id="cb62-28"><a href="Section6.html#cb62-28" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
+<span id="cb62-29"><a href="Section6.html#cb62-29" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>,  sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
+<span id="cb62-30"><a href="Section6.html#cb62-30" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb62-31"><a href="Section6.html#cb62-31" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, block.name, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
+<span id="cb62-32"><a href="Section6.html#cb62-32" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(sample.id, sample.type, scores.type.dim, block.name) <span class="sc">%&gt;%</span></span>
+<span id="cb62-33"><a href="Section6.html#cb62-33" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value)</span>
+<span id="cb62-34"><a href="Section6.html#cb62-34" tabindex="-1"></a></span>
+<span id="cb62-35"><a href="Section6.html#cb62-35" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> scoresTable_ropls_wider) <span class="sc">+</span></span>
+<span id="cb62-36"><a href="Section6.html#cb62-36" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> T.scores1, <span class="at">y =</span> T.scores2,</span>
+<span id="cb62-37"><a href="Section6.html#cb62-37" tabindex="-1"></a>                 <span class="at">color =</span> sample.type, <span class="at">shape =</span> block.name)) <span class="sc">+</span></span>
+<span id="cb62-38"><a href="Section6.html#cb62-38" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores2,</span>
+<span id="cb62-39"><a href="Section6.html#cb62-39" tabindex="-1"></a>                 <span class="at">fill =</span> sample.type),</span>
+<span id="cb62-40"><a href="Section6.html#cb62-40" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">24</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb62-41"><a href="Section6.html#cb62-41" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb62-42"><a href="Section6.html#cb62-42" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim-PLSDA (ropls) scores&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_ropls_plsda_sal.png" alt="" width="50%" style="display: block; margin: auto;" />
+<img src="Figs/fig6_ropls_plsda_scores.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="example-of-comdim-oplsda-version-ropls" class="section level3 hasAnchor" number="7.4.4">
-<h3><span class="header-section-number">7.4.4</span> Example of ComDim-OPLSDA (version ropls)<a href="Section6.html#example-of-comdim-oplsda-version-ropls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>For ComDim-OPLSDA, the function in <code>FUN</code> needs to capture additional outputs
-related to the orthogonal components. See the example below:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="Section6.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We will apply ComDim-OPLSDA on a subset with 2 classes only.</span></span>
-<span id="cb55-2"><a href="Section6.html#cb55-2" aria-hidden="true" tabindex="-1"></a>allMB_small <span class="ot">&lt;-</span> <span class="fu">FilterSamples_MB</span>(allMB,</span>
-<span id="cb55-3"><a href="Section6.html#cb55-3" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">getSampleNames</span>(allMB)[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="dv">9</span><span class="sc">:</span><span class="dv">12</span>)])</span>
-<span id="cb55-4"><a href="Section6.html#cb55-4" aria-hidden="true" tabindex="-1"></a>fun.OPLSDA <span class="ot">&lt;-</span> <span class="cf">function</span>(W, y, ndim,...){</span>
-<span id="cb55-5"><a href="Section6.html#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># W is the concatenated MB.</span></span>
-<span id="cb55-6"><a href="Section6.html#cb55-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ndim is the number of components.</span></span>
-<span id="cb55-7"><a href="Section6.html#cb55-7" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb55-8"><a href="Section6.html#cb55-8" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)[<span class="fu">apply</span>(y, <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="fu">match</span>(<span class="dv">1</span>,x))]</span>
-<span id="cb55-9"><a href="Section6.html#cb55-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Y must be a vector for ropls</span></span>
-<span id="cb55-10"><a href="Section6.html#cb55-10" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> ropls<span class="sc">::</span><span class="fu">opls</span>(<span class="at">x =</span> W, <span class="at">y =</span> Y,</span>
-<span id="cb55-11"><a href="Section6.html#cb55-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">predI =</span> <span class="dv">1</span>,</span>
-<span id="cb55-12"><a href="Section6.html#cb55-12" aria-hidden="true" tabindex="-1"></a>                        <span class="at">orthoI =</span> <span class="cn">NA</span>, <span class="co"># The number of orthogonal components</span></span>
-<span id="cb55-13"><a href="Section6.html#cb55-13" aria-hidden="true" tabindex="-1"></a>                                     <span class="co"># is optimized for every block.</span></span>
-<span id="cb55-14"><a href="Section6.html#cb55-14" aria-hidden="true" tabindex="-1"></a>                        <span class="at">fig.pdfC =</span> <span class="st">&#39;none&#39;</span>,</span>
-<span id="cb55-15"><a href="Section6.html#cb55-15" aria-hidden="true" tabindex="-1"></a>                        <span class="at">info.txtC =</span> <span class="st">&#39;none&#39;</span>)</span>
-<span id="cb55-16"><a href="Section6.html#cb55-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The returning object must be a list containing the following 9 elements:</span></span>
-<span id="cb55-17"><a href="Section6.html#cb55-17" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>scores <span class="ot">&lt;-</span> result<span class="sc">@</span>scoreMN[,<span class="dv">1</span>]</span>
-<span id="cb55-18"><a href="Section6.html#cb55-18" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>P <span class="ot">&lt;-</span> result<span class="sc">@</span>loadingMN[,<span class="dv">1</span>]</span>
-<span id="cb55-19"><a href="Section6.html#cb55-19" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>W <span class="ot">&lt;-</span> result<span class="sc">@</span>weightMN[,<span class="dv">1</span>]</span>
-<span id="cb55-20"><a href="Section6.html#cb55-20" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>U <span class="ot">&lt;-</span> result<span class="sc">@</span>uMN[,<span class="dv">1</span>]</span>
-<span id="cb55-21"><a href="Section6.html#cb55-21" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>Q <span class="ot">&lt;-</span> result<span class="sc">@</span>cMN[,<span class="dv">1</span>]</span>
-<span id="cb55-22"><a href="Section6.html#cb55-22" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>Q <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span>output<span class="sc">$</span>Q,output<span class="sc">$</span>Q)</span>
-<span id="cb55-23"><a href="Section6.html#cb55-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Y has two columns (one per class): -1 and 1.</span></span>
-<span id="cb55-24"><a href="Section6.html#cb55-24" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>y <span class="ot">&lt;-</span> result<span class="sc">@</span>suppLs<span class="sc">$</span>yModelMN</span>
-<span id="cb55-25"><a href="Section6.html#cb55-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># To evaluate if y is transformed within opls. (it is!)</span></span>
-<span id="cb55-26"><a href="Section6.html#cb55-26" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>orthoscores <span class="ot">&lt;-</span> result<span class="sc">@</span>orthoScoreMN</span>
-<span id="cb55-27"><a href="Section6.html#cb55-27" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>orthoP <span class="ot">&lt;-</span> result<span class="sc">@</span>orthoLoadingMN</span>
-<span id="cb55-28"><a href="Section6.html#cb55-28" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>ort <span class="ot">&lt;-</span> result<span class="sc">@</span>summaryDF<span class="sc">$</span>ort <span class="co"># Number of orthogonal components</span></span>
-<span id="cb55-29"><a href="Section6.html#cb55-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output)</span>
-<span id="cb55-30"><a href="Section6.html#cb55-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb55-31"><a href="Section6.html#cb55-31" aria-hidden="true" tabindex="-1"></a>resultsOPLSDA <span class="ot">&lt;-</span> <span class="fu">ComDim_y_MB</span>(allMB_small,</span>
-<span id="cb55-32"><a href="Section6.html#cb55-32" aria-hidden="true" tabindex="-1"></a>                            <span class="at">y =</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;NI&#39;</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="st">&#39;OFF&#39;</span>,<span class="dv">4</span>)),</span>
-<span id="cb55-33"><a href="Section6.html#cb55-33" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ndim =</span> <span class="dv">1</span>,</span>
-<span id="cb55-34"><a href="Section6.html#cb55-34" aria-hidden="true" tabindex="-1"></a>                            <span class="at">type =</span> <span class="st">&#39;discriminant&#39;</span>,</span>
-<span id="cb55-35"><a href="Section6.html#cb55-35" aria-hidden="true" tabindex="-1"></a>                            <span class="at">orthogonalization =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb55-36"><a href="Section6.html#cb55-36" aria-hidden="true" tabindex="-1"></a>                            <span class="at">FUN =</span> fun.OPLSDA,</span>
-<span id="cb55-37"><a href="Section6.html#cb55-37" aria-hidden="true" tabindex="-1"></a>                            <span class="at">method =</span> <span class="st">&#39;OPLSDA(ropls)&#39;</span>)</span></code></pre></div>
+<div id="example-of-comdim-oplsda-version-ropls" class="section level3 hasAnchor" number="6.5.4">
+<h3><span class="header-section-number">6.5.4</span> Example of ComDim-OPLSDA (version ropls)<a href="Section6.html#example-of-comdim-oplsda-version-ropls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To implement O-PLS as the core of Com-Dim, we follow the same procedure used for ComDim-PLS-DA, but this time the function passed through the <code>FUN</code> parameter returns
+in addition the orthogonal scores (<code>orthoscores</code>).</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="Section6.html#cb63-1" tabindex="-1"></a><span class="co"># Apply ComDim-OPLSDA on a 2-class subset (NI vs OFF).</span></span>
+<span id="cb63-2"><a href="Section6.html#cb63-2" tabindex="-1"></a>allMB_small <span class="ot">&lt;-</span> <span class="fu">FilterSamplesMultiBlock</span>(allMB_ica,</span>
+<span id="cb63-3"><a href="Section6.html#cb63-3" tabindex="-1"></a>                                       <span class="fu">sampleNames</span>(allMB_ica)[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">9</span><span class="sc">:</span><span class="dv">12</span>)])</span>
+<span id="cb63-4"><a href="Section6.html#cb63-4" tabindex="-1"></a></span>
+<span id="cb63-5"><a href="Section6.html#cb63-5" tabindex="-1"></a><span class="co"># OPLS-DA wrapper around ropls::opls.</span></span>
+<span id="cb63-6"><a href="Section6.html#cb63-6" tabindex="-1"></a>fun.OPLSDA <span class="ot">&lt;-</span> <span class="cf">function</span>(W, y, ndim, ...) {</span>
+<span id="cb63-7"><a href="Section6.html#cb63-7" tabindex="-1"></a>  <span class="co"># ropls requires a -1/+1 vector for binary DA (not a dummy matrix).</span></span>
+<span id="cb63-8"><a href="Section6.html#cb63-8" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)[<span class="fu">apply</span>(y, <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="fu">match</span>(<span class="dv">1</span>, x))]</span>
+<span id="cb63-9"><a href="Section6.html#cb63-9" tabindex="-1"></a></span>
+<span id="cb63-10"><a href="Section6.html#cb63-10" tabindex="-1"></a>  <span class="co"># Ort phase: ropls finds 1 predictive + 1 orthogonal component.</span></span>
+<span id="cb63-11"><a href="Section6.html#cb63-11" tabindex="-1"></a>  result <span class="ot">&lt;-</span> ropls<span class="sc">::</span><span class="fu">opls</span>(<span class="at">x =</span> W, <span class="at">y =</span> Y, <span class="at">predI =</span> <span class="dv">1</span>, <span class="at">orthoI =</span> <span class="dv">1</span>,</span>
+<span id="cb63-12"><a href="Section6.html#cb63-12" tabindex="-1"></a>                <span class="at">fig.pdfC =</span> <span class="st">&quot;none&quot;</span>, <span class="at">info.txtC =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb63-13"><a href="Section6.html#cb63-13" tabindex="-1"></a></span>
+<span id="cb63-14"><a href="Section6.html#cb63-14" tabindex="-1"></a>  <span class="co"># Expand ropls&#39;s 1-element Y-loading to the 2-column dummy-matrix format.</span></span>
+<span id="cb63-15"><a href="Section6.html#cb63-15" tabindex="-1"></a>  <span class="co"># class 1 (encoded -1) gets -cMN, class 2 (encoded +1) gets +cMN.</span></span>
+<span id="cb63-16"><a href="Section6.html#cb63-16" tabindex="-1"></a>  Q_expanded <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span>result<span class="sc">@</span>cMN[, <span class="dv">1</span>], result<span class="sc">@</span>cMN[, <span class="dv">1</span>])</span>
+<span id="cb63-17"><a href="Section6.html#cb63-17" tabindex="-1"></a></span>
+<span id="cb63-18"><a href="Section6.html#cb63-18" tabindex="-1"></a>  <span class="co"># Orthoscores</span></span>
+<span id="cb63-19"><a href="Section6.html#cb63-19" tabindex="-1"></a>  ort_scores <span class="ot">&lt;-</span> result<span class="sc">@</span>orthoScoreMN </span>
+<span id="cb63-20"><a href="Section6.html#cb63-20" tabindex="-1"></a></span>
+<span id="cb63-21"><a href="Section6.html#cb63-21" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb63-22"><a href="Section6.html#cb63-22" tabindex="-1"></a>    <span class="at">scores      =</span> result<span class="sc">@</span>scoreMN[, <span class="dv">1</span>],</span>
+<span id="cb63-23"><a href="Section6.html#cb63-23" tabindex="-1"></a>    <span class="at">P           =</span> result<span class="sc">@</span>loadingMN[, <span class="dv">1</span>],</span>
+<span id="cb63-24"><a href="Section6.html#cb63-24" tabindex="-1"></a>    <span class="at">W           =</span> result<span class="sc">@</span>weightMN[, <span class="dv">1</span>],</span>
+<span id="cb63-25"><a href="Section6.html#cb63-25" tabindex="-1"></a>    <span class="at">U           =</span> result<span class="sc">@</span>uMN[, <span class="dv">1</span>],</span>
+<span id="cb63-26"><a href="Section6.html#cb63-26" tabindex="-1"></a>    <span class="at">Q           =</span> Q_expanded,</span>
+<span id="cb63-27"><a href="Section6.html#cb63-27" tabindex="-1"></a>    <span class="at">y           =</span> result<span class="sc">@</span>suppLs<span class="sc">$</span>yModelMN,</span>
+<span id="cb63-28"><a href="Section6.html#cb63-28" tabindex="-1"></a>    <span class="at">orthoscores =</span> ort_scores</span>
+<span id="cb63-29"><a href="Section6.html#cb63-29" tabindex="-1"></a>  )</span>
+<span id="cb63-30"><a href="Section6.html#cb63-30" tabindex="-1"></a>}</span>
+<span id="cb63-31"><a href="Section6.html#cb63-31" tabindex="-1"></a></span>
+<span id="cb63-32"><a href="Section6.html#cb63-32" tabindex="-1"></a>resultsOPLSDA_ropls <span class="ot">&lt;-</span> <span class="fu">ComDim_y</span>(allMB_small,</span>
+<span id="cb63-33"><a href="Section6.html#cb63-33" tabindex="-1"></a>                                <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;NI&quot;</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&quot;OFF&quot;</span>, <span class="dv">4</span>)),</span>
+<span id="cb63-34"><a href="Section6.html#cb63-34" tabindex="-1"></a>                                <span class="at">ndim =</span> <span class="dv">1</span>,</span>
+<span id="cb63-35"><a href="Section6.html#cb63-35" tabindex="-1"></a>                                <span class="at">nort =</span> <span class="dv">1</span>,</span>
+<span id="cb63-36"><a href="Section6.html#cb63-36" tabindex="-1"></a>                                <span class="at">type =</span> <span class="st">&quot;discriminant&quot;</span>,</span>
+<span id="cb63-37"><a href="Section6.html#cb63-37" tabindex="-1"></a>                                <span class="at">FUN =</span> fun.OPLSDA,</span>
+<span id="cb63-38"><a href="Section6.html#cb63-38" tabindex="-1"></a>                                <span class="at">method =</span> <span class="st">&quot;OPLSDA(ropls)&quot;</span>,</span>
+<span id="cb63-39"><a href="Section6.html#cb63-39" tabindex="-1"></a>                                <span class="at">cv.k =</span> <span class="dv">0</span>)</span>
+<span id="cb63-40"><a href="Section6.html#cb63-40" tabindex="-1"></a></span>
+<span id="cb63-41"><a href="Section6.html#cb63-41" tabindex="-1"></a><span class="co"># Figures of merit</span></span>
+<span id="cb63-42"><a href="Section6.html#cb63-42" tabindex="-1"></a>resultsOPLSDA_ropls<span class="sc">@</span>R2X</span>
+<span id="cb63-43"><a href="Section6.html#cb63-43" tabindex="-1"></a>resultsOPLSDA_ropls<span class="sc">@</span>R2Y</span>
+<span id="cb63-44"><a href="Section6.html#cb63-44" tabindex="-1"></a>resultsOPLSDA_ropls<span class="sc">@</span>Q2</span>
+<span id="cb63-45"><a href="Section6.html#cb63-45" tabindex="-1"></a></span>
+<span id="cb63-46"><a href="Section6.html#cb63-46" tabindex="-1"></a><span class="co"># Plot predictive vs orthogonal scores</span></span>
+<span id="cb63-47"><a href="Section6.html#cb63-47" tabindex="-1"></a>scoresOPLS_ropls <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsOPLSDA_ropls,</span>
+<span id="cb63-48"><a href="Section6.html#cb63-48" tabindex="-1"></a>                                          <span class="at">include =</span> <span class="fu">c</span>(<span class="st">&quot;Q.scores&quot;</span>, <span class="st">&quot;Q.scores.ort&quot;</span>))</span>
+<span id="cb63-49"><a href="Section6.html#cb63-49" tabindex="-1"></a></span>
+<span id="cb63-50"><a href="Section6.html#cb63-50" tabindex="-1"></a>scoresOPLS_ropls_wider <span class="ot">&lt;-</span> scoresOPLS_ropls <span class="sc">%&gt;%</span></span>
+<span id="cb63-51"><a href="Section6.html#cb63-51" tabindex="-1"></a>  <span class="fu">filter</span>(block.name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Global&quot;</span>, <span class="st">&quot;Global.ort&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb63-52"><a href="Section6.html#cb63-52" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&quot;NI&quot;</span>,  sample.id) <span class="sc">~</span> <span class="st">&quot;NI&quot;</span>,</span>
+<span id="cb63-53"><a href="Section6.html#cb63-53" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&quot;OFF&quot;</span>, sample.id) <span class="sc">~</span> <span class="st">&quot;OFF&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb63-54"><a href="Section6.html#cb63-54" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
+<span id="cb63-55"><a href="Section6.html#cb63-55" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value)</span>
+<span id="cb63-56"><a href="Section6.html#cb63-56" tabindex="-1"></a></span>
+<span id="cb63-57"><a href="Section6.html#cb63-57" tabindex="-1"></a><span class="fu">ggplot</span>(scoresOPLS_ropls_wider,</span>
+<span id="cb63-58"><a href="Section6.html#cb63-58" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores.ort1, <span class="at">color =</span> sample.type)) <span class="sc">+</span></span>
+<span id="cb63-59"><a href="Section6.html#cb63-59" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb63-60"><a href="Section6.html#cb63-60" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb63-61"><a href="Section6.html#cb63-61" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;ComDim-OPLSDA (ropls) scores&quot;</span>,</span>
+<span id="cb63-62"><a href="Section6.html#cb63-62" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Predictive CC1&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Orthogonal CC1&quot;</span>)</span></code></pre></div>
+<p><img src="Figs/fig6_ropls_oplsda_scores.png" alt="" width="50%" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
@@ -446,8 +1083,8 @@ related to the orthogonal components. See the example below:</p>
           </div>
         </div>
       </div>
-<a href="Section5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="Section5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Section7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -461,42 +1098,42 @@ related to the orthogonal components. See the example below:</p>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/f-puig/R.ComDim.Docs/edit/master/06-Other-ComDim-methods.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["_main.pdf", "_main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/f-puig/R.ComDim.Docs/edit/master/06-Other-ComDim-methods.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

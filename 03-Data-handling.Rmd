@@ -19,39 +19,49 @@ b3 = MultiBlock(Samples = 1:10,
                 Data = list(s1 = b1, s2 = b2),
                 Variables = list(s1 = 1:ncol(b1),
                                 s2 = 1:ncol(b2)))
-MB <- BuildMultiBlock(b1,b2,b3,ignore.names = TRUE)
+MB <- MultiBlock(Data = c(list(b1 = b1, b2 = b2), b3@Data),
+                 ignore.names = TRUE)
 ```
 
 # MultiBlock data handling {#handling}
 
 ## Inspecting the data
 
-We can easily read the content of a MultiBlock object with the following
-functions:
+The slots of a `MultiBlock` object can be accessed directly with `@`. The five
+slots are `@Samples`, `@Data`, `@Variables`, `@Batch`, and `@Metadata`.
 
 ```{r handling, echo = TRUE, eval = TRUE}
-getSampleNames(MB)
-getVariableNames(MB)
-getVariableNames(MB, block = 2)
-getBlockNames(MB)
-getBlockNames(MB, "Batch")
-getBlockNames(MB, "Metadata")
-ncolMultiBlock(MB)
-nrowMultiBlock(MB)
-MB2<- FilterSamplesMultiBlock(MB, c(1:9)) # To create a MultiBlock with 
+MB@Samples            # Sample names (vector, or list when blocks differ)
+MB@Variables          # Variable names for all blocks (named list)
+MB@Variables[[2]]     # Variable names for the second block
+MB@Variables[["s2"]]  # Variable names for a block by name
+names(MB@Data)        # Block names
+names(MB@Batch)       # Blocks that have batch labels
+names(MB@Metadata)    # Blocks that have metadata
+ncol(MB)
+nrow(MB)
+MB2 <- FilterSamplesMultiBlock(MB, c(1:9)) # To create a MultiBlock with
  # a sample subset. In this case, we selected samples 1-9.
 ```
 
 Or we can simply see all the content with `str()` function.
 
-If needed, everything in the MB can be renamed.
-```{r rename, echo = TRUE, eval = FALSE}
-MB <- setBlockNames(MB, paste("X", 1:4, sep = '')) # The blocks
-getBlockNames(MB)
-MB <- setSampleNames(MB, LETTERS[1:10]) # The samples
-getSampleNames(MB)
-MB <- setVariableNames(MB, paste("vars", 1:50, sep = ''), 1)
-getVariableNames(MB, 1)
+If needed, everything in the `MultiBlock` can be renamed by direct slot
+assignment.
+
+```{r rename, echo = TRUE, eval = TRUE}
+# Rename blocks (update @Data and @Variables names together)
+names(MB@Data)      <- paste("X", 1:4, sep = '')
+names(MB@Variables) <- paste("X", 1:4, sep = '')
+names(MB@Data)
+
+# Rename samples
+MB@Samples <- LETTERS[1:10]
+MB@Samples
+
+# Rename variables in a specific block
+MB@Variables[["X1"]] <- paste("vars", 1:50, sep = '')
+MB@Variables[["X1"]]
 ```
 
 ## Data pre-processing {#processing}
@@ -59,11 +69,11 @@ getVariableNames(MB, 1)
 The `R.ComDim` package contains functions to easily apply some data
 transformations. This can result in handy since we there is no need to build
  the `MultiBlock` every time a new data transformation is tested.
-```{r processing1, echo = TRUE, eval = FALSE}
+```{r processing1, echo = TRUE, eval = TRUE}
 ## NA removal
-# We first add some NAs to the MultiBlock.
-MB@Data$X2[c(2,3,5),c(1,2,3)] <- NA # Add some NAs
-allMB <- NARemoveMultiBlock(MB, method = 'none', minfrac = 0.2)
+# Block names are X1–X4 after the renaming step above.
+MB@Data$X2[c(2,3,5),c(1,2,3)] <- NA # Add some NAs to block X2
+allMB <- NAInfRemoveMultiBlock(MB, na.method = 'none', minfrac = 0.2)
 # Variables containing more than 20% of NAs will be discarded
 
 ## Data normalization
@@ -71,15 +81,111 @@ allMB <- NormalizeMultiBlock(allMB, method = 'norm')
 # MB is normalized (mean-center and divided by the block norm)
 ```
 
-The `R.ComDim` package has been writted with the idea to result very flexible 
-and, as such, it allows the user to apply custom data transformations. For 
-instance, in the code below, all variables with values lower than the 5% of the 
-most intense value are discarded.
+The `R.ComDim` package has been designed with flexibility in mind, and allows
+the user to apply custom data transformations. For instance, in the code below,
+all variables with values lower than 5% of the most intense value are discarded.
 
-```{r processing2, echo = TRUE, eval = FALSE}
+```{r processing2, echo = TRUE, eval = TRUE}
 # MB is converted to matrix to calculate the max value.
-maxMB <- max(MultiBlock2matrix(allMB), na.rm = TRUE) 
+maxMB <- max(MultiBlock2Matrix(allMB), na.rm = TRUE)
 # Variables are filtered with the ProcessMultiBlock() function.
 allMB <- ProcessMultiBlock(allMB,
   FUN.SelectVars = function(x) {apply(x,2,max) > maxMB * 0.05})
+```
+
+`ProcessMultiBlock()` can also apply a custom transformation to the data (`FUN`),
+or remove entire blocks based on a criterion (`FUN.SelectBlocks`). The three
+arguments can be combined; when they are, the order of execution is
+`FUN` → `FUN.SelectVars` → `FUN.SelectBlocks`. The `blocks` argument restricts
+processing to a subset of blocks, while `vars` allows explicit variable
+selection per block.
+
+```{r processing3, echo = TRUE, eval = TRUE}
+# Apply a custom transformation: express each block as a percentage of its maximum.
+BY100 <- function(x) { 100 * (x / max(x, na.rm = TRUE)) }
+allMB <- ProcessMultiBlock(allMB, FUN = BY100)
+
+# Process only specific blocks (by name or by index):
+allMB <- ProcessMultiBlock(allMB, blocks = c('X1', 'X2'), FUN = BY100)
+
+# Keep only a specific set of variables in each processed block.
+# 'vars' must be a list with one element per block listed in 'blocks'.
+allMB <- ProcessMultiBlock(allMB,
+  blocks = c('X1', 'X2'),
+  vars   = list(1:20, 1:40))   # first 20 vars of X1, first 40 vars of X2
+
+# Remove blocks whose Frobenius norm is below a threshold
+# (FUN.SelectBlocks should return TRUE to indicate the block passes the criterion;
+#  blocks for which it returns FALSE are removed):
+norm_threshold <- function(x) { norm(x, type = 'F') > 50 }
+allMB <- ProcessMultiBlock(allMB, FUN.SelectBlocks = norm_threshold)
+```
+
+### Normalization methods {#normalization}
+
+`NormalizeMultiBlock()` provides several normalization strategies. The default
+(`'norm'`) mean-centers each block and divides by its Frobenius norm — this is
+the standard preparation before running ComDim. Other methods are available for
+exploratory work or when a specific pre-processing is required.
+
+```{r processing4, echo = TRUE, eval = TRUE}
+# Reset to NA-removed, un-normalized data so each method is applied independently.
+allMB <- NAInfRemoveMultiBlock(MB, na.method = 'zero', minfrac = 0.2)
+
+# 'norm' (default): mean-center + divide by Frobenius norm. Recommended for ComDim.
+allMB_norm    <- NormalizeMultiBlock(allMB, method = 'norm')
+
+# 'auto': autoscaling (mean-center + divide by SD per variable, i.e. unit variance).
+allMB_auto    <- NormalizeMultiBlock(allMB, method = 'auto')
+
+# 'mean': mean-centering only (no scaling).
+allMB_mean    <- NormalizeMultiBlock(allMB, method = 'mean')
+
+# 'pareto': mean-center + divide by sqrt(SD) per variable.
+allMB_pareto  <- NormalizeMultiBlock(allMB, method = 'pareto')
+
+# 'geometric': all values must be positive after the constant shift.
+#   Random (or mean-centered) data can be negative, so shift each block to
+#   make it strictly positive before calling NormalizeMultiBlock.
+allMB_pos  <- ProcessMultiBlock(allMB, FUN = function(x) x - min(x, na.rm = TRUE) + 1)
+allMB_geo  <- NormalizeMultiBlock(allMB_pos, method = 'geometric')
+
+# 'ranknorm': rank-based inverse normal transform (Blom transform by default).
+allMB_rn      <- NormalizeMultiBlock(allMB, method = 'ranknorm')
+
+# 'none': no transformation (still converts Inf to NA when infinite.as.NA = TRUE).
+allMB_none    <- NormalizeMultiBlock(allMB, method = 'none', infinite.as.NA = TRUE)
+
+# Normalize only selected blocks:
+allMB         <- NormalizeMultiBlock(allMB, blocks = c('X1', 'X3'), method = 'auto')
+```
+
+### Adding batch and metadata information {#metadata}
+
+Batch labels and per-sample metadata can be attached to any block with
+`AddMetadata()`. This information is used by `SplitRW()` (Chapter \@ref(splitRW))
+and is preserved throughout the ComDim workflow.
+
+```{r processing5, echo = TRUE, eval = TRUE}
+b1 <- matrix(rnorm(500), 10, 50)   # 10 samples, 50 variables
+b2 <- matrix(rnorm(800), 10, 80)   # 10 samples, 80 variables
+mb <- MultiBlock(Data = list(b1 = b1, b2 = b2))
+
+# Add batch labels (must be a numeric vector, one value per sample):
+batch_labels <- c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3)
+mb <- AddMetadata(mb, block = 'b1', batches = batch_labels)
+mb <- AddMetadata(mb, block = 'b2', batches = batch_labels)
+
+# Add sample metadata (must be a data.frame with one row per sample):
+meta <- data.frame(
+  condition = rep(c('Control', 'Treatment'), 5),
+  time      = c(0, 0, 6, 6, 12, 12, 24, 24, 48, 48)
+)
+mb <- AddMetadata(mb, block = 'b1', metadata = meta)
+
+# Batch labels and metadata can be set together in one call:
+mb <- AddMetadata(mb, block = 'b2', batches = batch_labels, metadata = meta)
+
+# Multiple blocks can be updated at once if they share the same labels:
+mb <- AddMetadata(mb, block = c('b1', 'b2'), batches = batch_labels)
 ```

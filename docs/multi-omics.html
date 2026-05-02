@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Multi-omics amd Multi-blocks | R.ComDim (a tutorial)</title>
+  <title>Chapter 4 Multi-omics and Multi-blocks | R.ComDim (a tutorial)</title>
   <meta name="description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
 the chemometric method ComDim.</p>" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Multi-omics amd Multi-blocks | R.ComDim (a tutorial)" />
+  <meta property="og:title" content="Chapter 4 Multi-omics and Multi-blocks | R.ComDim (a tutorial)" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
@@ -17,7 +17,7 @@ the chemometric method ComDim.</p>" />
   <meta name="github-repo" content="f-puig/R.ComDim.Docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Multi-omics amd Multi-blocks | R.ComDim (a tutorial)" />
+  <meta name="twitter:title" content="Chapter 4 Multi-omics and Multi-blocks | R.ComDim (a tutorial)" />
   
   <meta name="twitter:description" content="<p>R.ComDim is an R-package used for the analysis of multi-block datasets with
 the chemometric method ComDim.</p>" />
@@ -26,7 +26,7 @@ the chemometric method ComDim.</p>" />
 <meta name="author" content="Francesc Puig Castellví" />
 
 
-<meta name="date" content="2022-10-23" />
+<meta name="date" content="2026-04-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -122,6 +122,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -139,57 +143,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R.ComDim (a tutorial)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>2.1</b> The ComDim method</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>2.2</b> Why should I use ComDim?</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>2.3</b> Some functions to get started</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>2.4</b> Install and load R.ComDim package</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>2.5</b> References</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#ComDim"><i class="fa fa-check"></i><b>1.1</b> The ComDim method</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#why"><i class="fa fa-check"></i><b>1.2</b> Why should I use ComDim?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#functions"><i class="fa fa-check"></i><b>1.3</b> Some functions to get started</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#install"><i class="fa fa-check"></i><b>1.4</b> Install and load R.ComDim package</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i><b>1.5</b> References</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#notes"><i class="fa fa-check"></i><b>1.6</b> Notes</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>3</b> Create a MultiBlock</a>
+<li class="chapter" data-level="2" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>2</b> Create a MultiBlock</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="create.html"><a href="create.html#option1"><i class="fa fa-check"></i><b>3.1</b> Option 1: for small MultiBlocks</a></li>
-<li class="chapter" data-level="3.2" data-path="create.html"><a href="create.html#option2"><i class="fa fa-check"></i><b>3.2</b> Option 2: for large MultiBlocks</a></li>
-<li class="chapter" data-level="3.3" data-path="create.html"><a href="create.html#option3"><i class="fa fa-check"></i><b>3.3</b> Option 3: from SummarizedExperiment or MultiAssayExperiment objects.</a></li>
-<li class="chapter" data-level="3.4" data-path="create.html"><a href="create.html#correspondence"><i class="fa fa-check"></i><b>3.4</b> Sample correspondence across blocks</a></li>
-<li class="chapter" data-level="3.5" data-path="create.html"><a href="create.html#splitRW"><i class="fa fa-check"></i><b>3.5</b> Splitting blocks by the Batch criterion.</a></li>
+<li class="chapter" data-level="2.1" data-path="create.html"><a href="create.html#option1"><i class="fa fa-check"></i><b>2.1</b> Option 1: for small MultiBlocks</a></li>
+<li class="chapter" data-level="2.2" data-path="create.html"><a href="create.html#option2"><i class="fa fa-check"></i><b>2.2</b> Option 2: for large MultiBlocks</a></li>
+<li class="chapter" data-level="2.3" data-path="create.html"><a href="create.html#option3"><i class="fa fa-check"></i><b>2.3</b> Option 3: from SummarizedExperiment or MultiAssayExperiment objects.</a></li>
+<li class="chapter" data-level="2.4" data-path="create.html"><a href="create.html#correspondence"><i class="fa fa-check"></i><b>2.4</b> Sample correspondence across blocks</a></li>
+<li class="chapter" data-level="2.5" data-path="create.html"><a href="create.html#splitRW"><i class="fa fa-check"></i><b>2.5</b> Splitting blocks by the Batch criterion.</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i><b>4</b> MultiBlock data handling</a>
+<li class="chapter" data-level="3" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i><b>3</b> MultiBlock data handling</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="handling.html"><a href="handling.html#inspecting-the-data"><i class="fa fa-check"></i><b>4.1</b> Inspecting the data</a></li>
-<li class="chapter" data-level="4.2" data-path="handling.html"><a href="handling.html#processing"><i class="fa fa-check"></i><b>4.2</b> Data pre-processing</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="multi-omics.html"><a href="multi-omics.html"><i class="fa fa-check"></i><b>5</b> Multi-omics amd Multi-blocks</a>
+<li class="chapter" data-level="3.1" data-path="handling.html"><a href="handling.html#inspecting-the-data"><i class="fa fa-check"></i><b>3.1</b> Inspecting the data</a></li>
+<li class="chapter" data-level="3.2" data-path="handling.html"><a href="handling.html#processing"><i class="fa fa-check"></i><b>3.2</b> Data pre-processing</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>5.1</b> Data processing</a></li>
-<li class="chapter" data-level="5.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>5.2</b> Data analysis</a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="multi-omics.html"><a href="multi-omics.html#saliences"><i class="fa fa-check"></i><b>5.2.1</b> Saliences</a></li>
-<li class="chapter" data-level="5.2.2" data-path="multi-omics.html"><a href="multi-omics.html#scores"><i class="fa fa-check"></i><b>5.2.2</b> Scores</a></li>
-<li class="chapter" data-level="5.2.3" data-path="multi-omics.html"><a href="multi-omics.html#loadings"><i class="fa fa-check"></i><b>5.2.3</b> Loadings</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>5.3</b> Data prediction</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="Section5.html"><a href="Section5.html"><i class="fa fa-check"></i><b>6</b> Data from a single omics data are multi-blocks</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="Section5.html"><a href="Section5.html#molecular-functions"><i class="fa fa-check"></i><b>6.1</b> Molecular functions</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-patwhays"><i class="fa fa-check"></i><b>6.1.1</b> The molecular patwhays</a></li>
+<li class="chapter" data-level="3.2.1" data-path="handling.html"><a href="handling.html#normalization"><i class="fa fa-check"></i><b>3.2.1</b> Normalization methods</a></li>
+<li class="chapter" data-level="3.2.2" data-path="handling.html"><a href="handling.html#metadata"><i class="fa fa-check"></i><b>3.2.2</b> Adding batch and metadata information</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>7</b> Other ComDim methods</a>
+<li class="chapter" data-level="4" data-path="multi-omics.html"><a href="multi-omics.html"><i class="fa fa-check"></i><b>4</b> Multi-omics and Multi-blocks</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>7.1</b> ComDim-Partial Least Squares (ComDim-PLS)</a></li>
-<li class="chapter" data-level="7.2" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>7.2</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a></li>
-<li class="chapter" data-level="7.3" data-path="Section6.html"><a href="Section6.html#KOPLS"><i class="fa fa-check"></i><b>7.3</b> ComDim-kernel-OPLS</a></li>
-<li class="chapter" data-level="7.4" data-path="Section6.html"><a href="Section6.html#Other"><i class="fa fa-check"></i><b>7.4</b> Other extensions</a>
+<li class="chapter" data-level="4.1" data-path="multi-omics.html"><a href="multi-omics.html#PART1"><i class="fa fa-check"></i><b>4.1</b> Data processing</a></li>
+<li class="chapter" data-level="4.2" data-path="multi-omics.html"><a href="multi-omics.html#PART2"><i class="fa fa-check"></i><b>4.2</b> Data analysis</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="Section6.html"><a href="Section6.html#example-of-comdim-ica"><i class="fa fa-check"></i><b>7.4.1</b> Example of ComDim-ICA</a></li>
-<li class="chapter" data-level="7.4.2" data-path="Section6.html"><a href="Section6.html#example-of-comdim-pls-version-ropls"><i class="fa fa-check"></i><b>7.4.2</b> Example of ComDim-PLS (version ropls)</a></li>
-<li class="chapter" data-level="7.4.3" data-path="Section6.html"><a href="Section6.html#example-of-comdim-plsda-version-ropls"><i class="fa fa-check"></i><b>7.4.3</b> Example of ComDim-PLSDA (version ropls)</a></li>
-<li class="chapter" data-level="7.4.4" data-path="Section6.html"><a href="Section6.html#example-of-comdim-oplsda-version-ropls"><i class="fa fa-check"></i><b>7.4.4</b> Example of ComDim-OPLSDA (version ropls)</a></li>
+<li class="chapter" data-level="4.2.1" data-path="multi-omics.html"><a href="multi-omics.html#saliences"><i class="fa fa-check"></i><b>4.2.1</b> Saliences</a></li>
+<li class="chapter" data-level="4.2.2" data-path="multi-omics.html"><a href="multi-omics.html#scores"><i class="fa fa-check"></i><b>4.2.2</b> Scores</a></li>
+<li class="chapter" data-level="4.2.3" data-path="multi-omics.html"><a href="multi-omics.html#loadings"><i class="fa fa-check"></i><b>4.2.3</b> Loadings</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="multi-omics.html"><a href="multi-omics.html#PART3"><i class="fa fa-check"></i><b>4.3</b> Data prediction</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Section5.html"><a href="Section5.html"><i class="fa fa-check"></i><b>5</b> Data from a single omics data are multi-blocks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Section5.html"><a href="Section5.html#molecular-functions"><i class="fa fa-check"></i><b>5.1</b> Molecular functions</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="Section5.html"><a href="Section5.html#the-molecular-pathways"><i class="fa fa-check"></i><b>5.1.1</b> The molecular pathways</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Section6.html"><a href="Section6.html"><i class="fa fa-check"></i><b>6</b> Other ComDim methods</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Section6.html"><a href="Section6.html#PLS-DA"><i class="fa fa-check"></i><b>6.1</b> ComDim-Partial Least Squares Discriminant Analysis (ComDim-PLSDA)</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="Section6.html"><a href="Section6.html#predicting-new-samples-with-comdim-plsda"><i class="fa fa-check"></i><b>6.1.1</b> Predicting new samples with ComDim-PLSDA</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="Section6.html"><a href="Section6.html#PLS"><i class="fa fa-check"></i><b>6.2</b> ComDim-Partial Least Squares Regression (ComDim-PLSR)</a></li>
+<li class="chapter" data-level="6.3" data-path="Section6.html"><a href="Section6.html#OPLS"><i class="fa fa-check"></i><b>6.3</b> ComDim-Orthogonal PLS (ComDim-OPLS)</a></li>
+<li class="chapter" data-level="6.4" data-path="Section6.html"><a href="Section6.html#compmethod"><i class="fa fa-check"></i><b>6.4</b> Computation strategies: <code>CompMethod</code> and <code>Partitions</code></a></li>
+<li class="chapter" data-level="6.5" data-path="Section6.html"><a href="Section6.html#Other"><i class="fa fa-check"></i><b>6.5</b> Other extensions</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Section6.html"><a href="Section6.html#example-of-comdim-ica"><i class="fa fa-check"></i><b>6.5.1</b> Example of ComDim-ICA</a></li>
+<li class="chapter" data-level="6.5.2" data-path="Section6.html"><a href="Section6.html#example-of-comdim-pls-version-ropls"><i class="fa fa-check"></i><b>6.5.2</b> Example of ComDim-PLS (version ropls)</a></li>
+<li class="chapter" data-level="6.5.3" data-path="Section6.html"><a href="Section6.html#example-of-comdim-plsda-version-ropls"><i class="fa fa-check"></i><b>6.5.3</b> Example of ComDim-PLSDA (version ropls)</a></li>
+<li class="chapter" data-level="6.5.4" data-path="Section6.html"><a href="Section6.html#example-of-comdim-oplsda-version-ropls"><i class="fa fa-check"></i><b>6.5.4</b> Example of ComDim-OPLSDA (version ropls)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Section7.html"><a href="Section7.html"><i class="fa fa-check"></i><b>7</b> Replicate-Wise (RW) analysis</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Section7.html"><a href="Section7.html#dataset3"><i class="fa fa-check"></i><b>7.1</b> Data</a></li>
+<li class="chapter" data-level="7.2" data-path="Section7.html"><a href="Section7.html#build-rw"><i class="fa fa-check"></i><b>7.2</b> Building the MultiBlock with batch information</a></li>
+<li class="chapter" data-level="7.3" data-path="Section7.html"><a href="Section7.html#splitRW-replicate"><i class="fa fa-check"></i><b>7.3</b> Splitting the MultiBlock into RW blocks</a></li>
+<li class="chapter" data-level="7.4" data-path="Section7.html"><a href="Section7.html#rw-pca"><i class="fa fa-check"></i><b>7.4</b> ComDim-PCA on the RW multi-block</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="Section7.html"><a href="Section7.html#rw-saliences"><i class="fa fa-check"></i><b>7.4.1</b> Saliences</a></li>
+<li class="chapter" data-level="7.4.2" data-path="Section7.html"><a href="Section7.html#rw-qscores"><i class="fa fa-check"></i><b>7.4.2</b> Global scores</a></li>
+<li class="chapter" data-level="7.4.3" data-path="Section7.html"><a href="Section7.html#rw-tscores"><i class="fa fa-check"></i><b>7.4.3</b> Comparing local and global scores</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="Section7.html"><a href="Section7.html#rw-pls"><i class="fa fa-check"></i><b>7.5</b> ComDim-PLS on the RW multi-block</a></li>
+<li class="chapter" data-level="7.6" data-path="Section7.html"><a href="Section7.html#rw-features"><i class="fa fa-check"></i><b>7.6</b> Selecting the most significant variables</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="Section7.html"><a href="Section7.html#splot"><i class="fa fa-check"></i><b>7.6.1</b> Principle of the S-plot</a></li>
+<li class="chapter" data-level="7.6.2" data-path="Section7.html"><a href="Section7.html#rw-mirna"><i class="fa fa-check"></i><b>7.6.2</b> Feature selection on the mirnaseq blocks</a></li>
+<li class="chapter" data-level="7.6.3" data-path="Section7.html"><a href="Section7.html#rw-thresholds"><i class="fa fa-check"></i><b>7.6.3</b> Adjusting the selection thresholds</a></li>
+<li class="chapter" data-level="7.6.4" data-path="Section7.html"><a href="Section7.html#rw-features-pls"><i class="fa fa-check"></i><b>7.6.4</b> Feature selection after ComDim-PLSDA</a></li>
+<li class="chapter" data-level="7.6.5" data-path="Section7.html"><a href="Section7.html#rw-features-vis"><i class="fa fa-check"></i><b>7.6.5</b> Visualising selected features</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -212,9 +246,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="multi-omics" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Multi-omics amd Multi-blocks<a href="multi-omics.html#multi-omics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This section will be explained with a multi-omics dataset from an exposition
+<div id="multi-omics" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Multi-omics and Multi-blocks<a href="multi-omics.html#multi-omics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This section will be explained with a multi-omics dataset from an exposure
 experiment on normal and tumoral cells. The dataset contains 4 different types
 of data (RNAseq, lipidomics, intracellular and extracellular metabolites).
 The studied samples can be classified into 3 groups:</p>
@@ -227,115 +261,113 @@ The studied samples can be classified into 3 groups:</p>
 downloaded from Metabolights
 <a href="https://www.ebi.ac.uk/metabolights/MTBLS1507"><strong>MTBLS1507</strong></a>
 while the RNAseq data was obtained from ARRAYEXPRESS <a href="https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-8834/"><strong>E-MTAB-8834</strong></a>.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="multi-omics.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mouse_ds)</span>
-<span id="cb34-2"><a href="multi-omics.html#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="multi-omics.html#cb34-3" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">BuildMultiBlock</span>(<span class="fu">t</span>(RNAseq3[,<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>]), <span class="fu">t</span>(lipids), <span class="fu">t</span>(intra), <span class="fu">t</span>(extra))</span>
-<span id="cb34-4"><a href="multi-omics.html#cb34-4" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">setBlockNames</span>(allMB, <span class="fu">c</span>(<span class="st">&#39;RNAseq&#39;</span>, <span class="st">&#39;lipids&#39;</span>,<span class="st">&#39;intra&#39;</span>,<span class="st">&#39;extra&#39;</span>))</span></code></pre></div>
-<div id="PART1" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Data processing<a href="multi-omics.html#PART1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="multi-omics.html#cb2-1" tabindex="-1"></a><span class="fu">data</span>(mouse_ds)</span>
+<span id="cb2-2"><a href="multi-omics.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="multi-omics.html#cb2-3" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">MultiBlock</span>(<span class="at">Data =</span> <span class="fu">list</span>(<span class="at">b1 =</span> <span class="fu">t</span>(RNAseq3[,<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>]),</span>
+<span id="cb2-4"><a href="multi-omics.html#cb2-4" tabindex="-1"></a>                                <span class="at">b2 =</span> <span class="fu">t</span>(lipids),</span>
+<span id="cb2-5"><a href="multi-omics.html#cb2-5" tabindex="-1"></a>                                <span class="at">b3 =</span> <span class="fu">t</span>(intra),</span>
+<span id="cb2-6"><a href="multi-omics.html#cb2-6" tabindex="-1"></a>                                <span class="at">b4 =</span> <span class="fu">t</span>(extra)))</span>
+<span id="cb2-7"><a href="multi-omics.html#cb2-7" tabindex="-1"></a><span class="fu">blockNames</span>(allMB) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;RNAseq&#39;</span>, <span class="st">&#39;lipids&#39;</span>, <span class="st">&#39;intra&#39;</span>, <span class="st">&#39;extra&#39;</span>)</span></code></pre></div>
+<div id="PART1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Data processing<a href="multi-omics.html#PART1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This is an example of a possible data processing:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="multi-omics.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Exclude normalized variables with max intensity reported below 0.1% of the</span></span>
-<span id="cb35-2"><a href="multi-omics.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    max from all RNAseq blocks.</span></span>
-<span id="cb35-3"><a href="multi-omics.html#cb35-3" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(</span>
-<span id="cb35-4"><a href="multi-omics.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  allMB,</span>
-<span id="cb35-5"><a href="multi-omics.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">blocks =</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
-<span id="cb35-6"><a href="multi-omics.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">FUN.SelectVars =</span> <span class="cf">function</span>(x) {<span class="fu">apply</span>(x,<span class="dv">2</span>,max) <span class="sc">&gt;</span> <span class="fu">max</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fl">0.001</span>})</span>
-<span id="cb35-7"><a href="multi-omics.html#cb35-7" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NARemoveMultiBlock</span>(allMB, <span class="at">blocks =</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
-<span id="cb35-8"><a href="multi-omics.html#cb35-8" aria-hidden="true" tabindex="-1"></a>                             <span class="at">method =</span> <span class="st">&#39;fixed.value.all&#39;</span>, <span class="at">constant =</span> <span class="dv">1</span>)</span>
-<span id="cb35-9"><a href="multi-omics.html#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-10"><a href="multi-omics.html#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Do rlog transform of the RNAseq data (rlog assumes samples in columns)</span></span>
-<span id="cb35-11"><a href="multi-omics.html#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="co">#    The rlog transform function is obtained from the DESeq2 R-package.</span></span>
-<span id="cb35-12"><a href="multi-omics.html#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DESeq2)</span>
-<span id="cb35-13"><a href="multi-omics.html#cb35-13" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB, <span class="at">blocks =</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
-<span id="cb35-14"><a href="multi-omics.html#cb35-14" aria-hidden="true" tabindex="-1"></a>                            <span class="at">FUN =</span> <span class="cf">function</span>(x){<span class="fu">t</span>(DESeq2<span class="sc">::</span><span class="fu">rlog</span>(<span class="fu">t</span>(x)))})</span>
-<span id="cb35-15"><a href="multi-omics.html#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Replace NAs by random noise</span></span>
-<span id="cb35-16"><a href="multi-omics.html#cb35-16" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NARemoveMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;random.noise&#39;</span>)</span>
-<span id="cb35-17"><a href="multi-omics.html#cb35-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-18"><a href="multi-omics.html#cb35-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) Normalize (mean-center and divided by each block-norm)</span></span>
-<span id="cb35-19"><a href="multi-omics.html#cb35-19" aria-hidden="true" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;norm&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="multi-omics.html#cb3-1" tabindex="-1"></a><span class="co"># 1) Exclude normalized variables with max intensity reported below 0.1% of the</span></span>
+<span id="cb3-2"><a href="multi-omics.html#cb3-2" tabindex="-1"></a><span class="co">#    max from all RNAseq blocks.</span></span>
+<span id="cb3-3"><a href="multi-omics.html#cb3-3" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(</span>
+<span id="cb3-4"><a href="multi-omics.html#cb3-4" tabindex="-1"></a>  allMB,</span>
+<span id="cb3-5"><a href="multi-omics.html#cb3-5" tabindex="-1"></a>  <span class="at">blocks =</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
+<span id="cb3-6"><a href="multi-omics.html#cb3-6" tabindex="-1"></a>  <span class="at">FUN.SelectVars =</span> <span class="cf">function</span>(x) {<span class="fu">apply</span>(x,<span class="dv">2</span>,max) <span class="sc">&gt;</span> <span class="fu">max</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fl">0.001</span>})</span>
+<span id="cb3-7"><a href="multi-omics.html#cb3-7" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NAInfRemoveMultiBlock</span>(allMB, <span class="at">blocks =</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
+<span id="cb3-8"><a href="multi-omics.html#cb3-8" tabindex="-1"></a>                               <span class="at">na.method =</span> <span class="st">&#39;fixed.value.all&#39;</span>, <span class="at">constant =</span> <span class="dv">1</span>)</span>
+<span id="cb3-9"><a href="multi-omics.html#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="multi-omics.html#cb3-10" tabindex="-1"></a><span class="co"># 2) Do rlog transform of the RNAseq data (rlog assumes samples in columns)</span></span>
+<span id="cb3-11"><a href="multi-omics.html#cb3-11" tabindex="-1"></a><span class="co">#    The rlog transform function is obtained from the DESeq2 R-package.</span></span>
+<span id="cb3-12"><a href="multi-omics.html#cb3-12" tabindex="-1"></a><span class="fu">library</span>(DESeq2)</span>
+<span id="cb3-13"><a href="multi-omics.html#cb3-13" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">ProcessMultiBlock</span>(allMB, <span class="at">blocks =</span> <span class="st">&#39;RNAseq&#39;</span>,</span>
+<span id="cb3-14"><a href="multi-omics.html#cb3-14" tabindex="-1"></a>                            <span class="at">FUN =</span> <span class="cf">function</span>(x){<span class="fu">t</span>(DESeq2<span class="sc">::</span><span class="fu">rlog</span>(<span class="fu">t</span>(x)))})</span>
+<span id="cb3-15"><a href="multi-omics.html#cb3-15" tabindex="-1"></a><span class="co"># 3) Replace NAs by random noise</span></span>
+<span id="cb3-16"><a href="multi-omics.html#cb3-16" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NAInfRemoveMultiBlock</span>(allMB, <span class="at">na.method =</span> <span class="st">&#39;random.noise&#39;</span>)</span>
+<span id="cb3-17"><a href="multi-omics.html#cb3-17" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="multi-omics.html#cb3-18" tabindex="-1"></a><span class="co"># 4) Normalize (mean-center and divided by each block-norm)</span></span>
+<span id="cb3-19"><a href="multi-omics.html#cb3-19" tabindex="-1"></a>allMB <span class="ot">&lt;-</span> <span class="fu">NormalizeMultiBlock</span>(allMB, <span class="at">method =</span> <span class="st">&#39;norm&#39;</span>)</span></code></pre></div>
 </div>
-<div id="PART2" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Data analysis<a href="multi-omics.html#PART2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="PART2" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Data analysis<a href="multi-omics.html#PART2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We use in this example ComDim-PCA, which is intended for exploratory purposes.
 The ComDim analysis is run with 2 components.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="multi-omics.html#cb36-1" aria-hidden="true" tabindex="-1"></a>resultsPCA <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA_MB</span>(allMB, <span class="at">ndim =</span> <span class="dv">2</span>) <span class="co"># 2 Components.</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="multi-omics.html#cb4-1" tabindex="-1"></a>resultsPCA <span class="ot">&lt;-</span> <span class="fu">ComDim_PCA</span>(allMB, <span class="at">ndim =</span> <span class="dv">2</span>) <span class="co"># 2 Components.</span></span></code></pre></div>
 <p><code>resultsPCA</code> is an object of class <code>ComDim</code>.
 Let’s proceed now to inspect some of the results from this analysis.</p>
-<div id="saliences" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Saliences<a href="multi-omics.html#saliences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="saliences" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Saliences<a href="multi-omics.html#saliences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can start by looking at the saliences, which show the contribution of each
 block for every component.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="multi-omics.html#cb37-1" aria-hidden="true" tabindex="-1"></a>saliences <span class="ot">&lt;-</span> resultsPCA<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
-<span id="cb37-2"><a href="multi-omics.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb37-3"><a href="multi-omics.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
-<span id="cb37-4"><a href="multi-omics.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;CC1&#39;</span>,<span class="st">&#39;CC2&#39;</span>),</span>
-<span id="cb37-5"><a href="multi-omics.html#cb37-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>,</span>
-<span id="cb37-6"><a href="multi-omics.html#cb37-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>)</span>
-<span id="cb37-7"><a href="multi-omics.html#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-8"><a href="multi-omics.html#cb37-8" aria-hidden="true" tabindex="-1"></a>saliences <span class="co"># The salience values.</span></span>
-<span id="cb37-9"><a href="multi-omics.html#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-10"><a href="multi-omics.html#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> saliences,</span>
-<span id="cb37-11"><a href="multi-omics.html#cb37-11" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CC, <span class="at">y =</span> Salience, <span class="at">group =</span> dataset )) <span class="sc">+</span></span>
-<span id="cb37-12"><a href="multi-omics.html#cb37-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>,</span>
-<span id="cb37-13"><a href="multi-omics.html#cb37-13" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">fill =</span> dataset)) <span class="sc">+</span></span>
-<span id="cb37-14"><a href="multi-omics.html#cb37-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb37-15"><a href="multi-omics.html#cb37-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim Saliences&#39;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="multi-omics.html#cb5-1" tabindex="-1"></a>saliences <span class="ot">&lt;-</span> resultsPCA<span class="sc">@</span>Saliences <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="multi-omics.html#cb5-2" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="multi-omics.html#cb5-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">rownames</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="multi-omics.html#cb5-4" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&#39;CC1&#39;</span>,<span class="st">&#39;CC2&#39;</span>),</span>
+<span id="cb5-5"><a href="multi-omics.html#cb5-5" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&#39;CC&#39;</span>,</span>
+<span id="cb5-6"><a href="multi-omics.html#cb5-6" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;Salience&#39;</span>)</span>
+<span id="cb5-7"><a href="multi-omics.html#cb5-7" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="multi-omics.html#cb5-8" tabindex="-1"></a>saliences <span class="co"># The salience values.</span></span>
+<span id="cb5-9"><a href="multi-omics.html#cb5-9" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="multi-omics.html#cb5-10" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> saliences,</span>
+<span id="cb5-11"><a href="multi-omics.html#cb5-11" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CC, <span class="at">y =</span> Salience, <span class="at">group =</span> dataset )) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="multi-omics.html#cb5-12" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>,</span>
+<span id="cb5-13"><a href="multi-omics.html#cb5-13" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">fill =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="multi-omics.html#cb5-14" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-15"><a href="multi-omics.html#cb5-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim Saliences&#39;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="Figs/fig1.png" alt="Saliences" width="50%" />
 <p class="caption">
-Figure 5.1: Saliences
+Figure 4.1: Saliences
 </p>
 </div>
 </div>
-<div id="scores" class="section level3 hasAnchor" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Scores<a href="multi-omics.html#scores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="scores" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Scores<a href="multi-omics.html#scores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The scores give the contribution of each sample. There are two types of scores,
 <strong>Global</strong> (Q.scores) and <strong>Local</strong> (T.scores). <strong>Global scores</strong> show the
 contribution for the total model (all blocks) while the <strong>Local scores</strong> give
 the contribution for each of the blocks.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="multi-omics.html#cb38-1" aria-hidden="true" tabindex="-1"></a>scoresTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsPCA)</span>
-<span id="cb38-2"><a href="multi-omics.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="multi-omics.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(scoresTable) <span class="co"># The 6 first rows of the scores table</span></span>
-<span id="cb38-4"><a href="multi-omics.html#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-5"><a href="multi-omics.html#cb38-5" aria-hidden="true" tabindex="-1"></a>scoresTable_wider <span class="ot">&lt;-</span> scoresTable <span class="sc">%&gt;%</span></span>
-<span id="cb38-6"><a href="multi-omics.html#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
-<span id="cb38-7"><a href="multi-omics.html#cb38-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
-<span id="cb38-8"><a href="multi-omics.html#cb38-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb38-9"><a href="multi-omics.html#cb38-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, block.name, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
-<span id="cb38-10"><a href="multi-omics.html#cb38-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(sample.id, sample.type, scores.type.dim, block.name) <span class="sc">%&gt;%</span></span>
-<span id="cb38-11"><a href="multi-omics.html#cb38-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value)</span>
-<span id="cb38-12"><a href="multi-omics.html#cb38-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-13"><a href="multi-omics.html#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> scoresTable_wider) <span class="sc">+</span></span>
-<span id="cb38-14"><a href="multi-omics.html#cb38-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> T.scores1, <span class="at">y =</span> T.scores2, <span class="at">color =</span> sample.type,</span>
-<span id="cb38-15"><a href="multi-omics.html#cb38-15" aria-hidden="true" tabindex="-1"></a>                 <span class="at">shape =</span> block.name)) <span class="sc">+</span></span>
-<span id="cb38-16"><a href="multi-omics.html#cb38-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores2,</span>
-<span id="cb38-17"><a href="multi-omics.html#cb38-17" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> sample.type, <span class="at">shape =</span> block.name),</span>
-<span id="cb38-18"><a href="multi-omics.html#cb38-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">24</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
-<span id="cb38-19"><a href="multi-omics.html#cb38-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb38-20"><a href="multi-omics.html#cb38-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim scores&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span>
-<span id="cb38-21"><a href="multi-omics.html#cb38-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># OFF samples are very different than DOX and NI by their lipid content.</span></span>
-<span id="cb38-22"><a href="multi-omics.html#cb38-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extracellular metabolites are not very different</span></span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
-<img src="Figs/fig4_2.png" alt="Scores" width="50%" />
-<p class="caption">
-Figure 5.2: Scores
-</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="multi-omics.html#cb6-1" tabindex="-1"></a>scoresTable <span class="ot">&lt;-</span> <span class="fu">MakeComDimScoresTable</span>(<span class="at">model =</span> resultsPCA)</span>
+<span id="cb6-2"><a href="multi-omics.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="multi-omics.html#cb6-3" tabindex="-1"></a><span class="fu">head</span>(scoresTable) <span class="co"># The 6 first rows of the scores table</span></span>
+<span id="cb6-4"><a href="multi-omics.html#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="multi-omics.html#cb6-5" tabindex="-1"></a>scoresTable_wider <span class="ot">&lt;-</span> scoresTable <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="multi-omics.html#cb6-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample.type =</span> <span class="fu">case_when</span>(<span class="fu">grepl</span>(<span class="st">&#39;DOX&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;DOX&#39;</span>,</span>
+<span id="cb6-7"><a href="multi-omics.html#cb6-7" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;NI&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;NI&#39;</span>,</span>
+<span id="cb6-8"><a href="multi-omics.html#cb6-8" tabindex="-1"></a>                                 <span class="fu">grepl</span>(<span class="st">&#39;OFF&#39;</span>, sample.id) <span class="sc">~</span> <span class="st">&#39;OFF&#39;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="multi-omics.html#cb6-9" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sample.id, sample.type, block.name, scores.type.dim, value) <span class="sc">%&gt;%</span></span>
+<span id="cb6-10"><a href="multi-omics.html#cb6-10" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(sample.id, sample.type, scores.type.dim, block.name) <span class="sc">%&gt;%</span></span>
+<span id="cb6-11"><a href="multi-omics.html#cb6-11" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> scores.type.dim, <span class="at">values_from =</span> value)</span>
+<span id="cb6-12"><a href="multi-omics.html#cb6-12" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="multi-omics.html#cb6-13" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> scoresTable_wider) <span class="sc">+</span></span>
+<span id="cb6-14"><a href="multi-omics.html#cb6-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> T.scores1, <span class="at">y =</span> T.scores2, <span class="at">color =</span> sample.type,</span>
+<span id="cb6-15"><a href="multi-omics.html#cb6-15" tabindex="-1"></a>                 <span class="at">shape =</span> block.name)) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="multi-omics.html#cb6-16" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Q.scores1, <span class="at">y =</span> Q.scores2, <span class="at">color =</span> sample.type,</span>
+<span id="cb6-17"><a href="multi-omics.html#cb6-17" tabindex="-1"></a>                 <span class="at">fill =</span> sample.type, <span class="at">shape =</span> block.name),</span>
+<span id="cb6-18"><a href="multi-omics.html#cb6-18" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">24</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb6-19"><a href="multi-omics.html#cb6-19" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-20"><a href="multi-omics.html#cb6-20" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;ComDim scores&#39;</span>, <span class="at">x =</span> <span class="st">&#39;CC1&#39;</span>, <span class="at">y =</span> <span class="st">&#39;CC2&#39;</span>)</span>
+<span id="cb6-21"><a href="multi-omics.html#cb6-21" tabindex="-1"></a>  <span class="co"># OFF samples are very different than DOX and NI by their lipid content.</span></span>
+<span id="cb6-22"><a href="multi-omics.html#cb6-22" tabindex="-1"></a>  <span class="co"># Extracellular metabolites are not very different</span></span></code></pre></div>
+<p><img src="Figs/fig4_2b.png" alt="" width="632" style="display: block; margin: auto;" /></p>
 </div>
-</div>
-<div id="loadings" class="section level3 hasAnchor" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> Loadings<a href="multi-omics.html#loadings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="loadings" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Loadings<a href="multi-omics.html#loadings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>loadings</strong> give the contribution of each variable in the model.
-And example of how to use the loadings is presented in <a href="https://f-puig.github.io/R.ComDim.Docs/Section5.html"><strong>CHAPTER6</strong></a>.</p>
+An example of how to use the loadings is presented in <a href="https://f-puig.github.io/R.ComDim.Docs/Section5.html"><strong>CHAPTER6</strong></a>.</p>
 </div>
 </div>
-<div id="PART3" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Data prediction<a href="multi-omics.html#PART3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="PART3" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Data prediction<a href="multi-omics.html#PART3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The built model can be used to investigate new samples if available.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="multi-omics.html#cb39-1" aria-hidden="true" tabindex="-1"></a>pred.resultsPCA <span class="ot">&lt;-</span> <span class="fu">Predict_MB</span>(<span class="at">MB =</span> allMB, <span class="at">model =</span> resultsPCA)</span>
-<span id="cb39-2"><a href="multi-omics.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">original =</span> resultsPCA<span class="sc">@</span>T.scores[[<span class="dv">2</span>]][,<span class="dv">1</span>],</span>
-<span id="cb39-3"><a href="multi-omics.html#cb39-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">predicted =</span> pred.resultsPCA<span class="sc">@</span>T.scores[[<span class="dv">2</span>]][,<span class="dv">1</span>])</span>
-<span id="cb39-4"><a href="multi-omics.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">original =</span> resultsPCA<span class="sc">@</span>Q.scores[,<span class="dv">2</span>],</span>
-<span id="cb39-5"><a href="multi-omics.html#cb39-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">predicted =</span> resultsPCA<span class="sc">@</span>Q.scores[,<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="multi-omics.html#cb7-1" tabindex="-1"></a>pred.resultsPCA <span class="ot">&lt;-</span> <span class="fu">PredictMultiBlock</span>(<span class="at">MB =</span> allMB, <span class="at">model =</span> resultsPCA)</span>
+<span id="cb7-2"><a href="multi-omics.html#cb7-2" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">original =</span> resultsPCA<span class="sc">@</span>T.scores[[<span class="dv">2</span>]][,<span class="dv">1</span>],</span>
+<span id="cb7-3"><a href="multi-omics.html#cb7-3" tabindex="-1"></a>           <span class="at">predicted =</span> pred.resultsPCA<span class="sc">@</span>T.scores[[<span class="dv">2</span>]][,<span class="dv">1</span>])</span>
+<span id="cb7-4"><a href="multi-omics.html#cb7-4" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">original =</span> resultsPCA<span class="sc">@</span>Q.scores[,<span class="dv">2</span>],</span>
+<span id="cb7-5"><a href="multi-omics.html#cb7-5" tabindex="-1"></a>           <span class="at">predicted =</span> resultsPCA<span class="sc">@</span>Q.scores[,<span class="dv">2</span>])</span></code></pre></div>
 <p>In this example, the original and predicted scores are identical because the
 new samples are the same as the original ones.</p>
 
@@ -361,42 +393,42 @@ new samples are the same as the original ones.</p>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/f-puig/R.ComDim.Docs/edit/master/04-Multi-omics-overview.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["_main.pdf", "_main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/f-puig/R.ComDim.Docs/edit/master/04-Multi-omics-overview.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

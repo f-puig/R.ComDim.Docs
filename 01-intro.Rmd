@@ -1,6 +1,5 @@
 # Introduction
 
-
 ## The ComDim method {#ComDim}
 
 ComDim (also known as CCSWA) is an unsupervised multi-block method that aims to 
@@ -20,8 +19,8 @@ common to all the blocks.
 
 ## Why should I use ComDim? {#why}
 
-* To analyze __different types of data__ (ex. multi-omics) and see how they are 
-untangled.
+* To analyze __different types of data__ (ex. multi-omics) and understand how
+the information is distributed across them.
 * To extract the common profiles of __related variables__ (ex. metabolites 
 detected in the same pathway).
 * To deal with __unbalanced multi-block__ datasets (ex. different number of 
@@ -40,16 +39,15 @@ To successfully extract all the potential of the ComDim method, several
 functions coded in R are proposed. Some of them are listed below:
 
 - `MultiBlock()`: To initialize a `MultiBlock` object with the first data-block(s). 
-- `BuildMultiBlock()`: To combine several single data-blocks into a `MultiBlock`
-object, containing some of them metadata information.
-- `ExpandMultiBlock()`: To reorganize the blocks from a MultiBlock based on a metadata information (i.e. taxonomy, molecular functions).
-`MultiBlock` object, containing some of them metadata information. 
+- `ExpandMultiBlock()`: To split a single data block into multiple blocks
+according to a metadata grouping (e.g. metabolic pathways, gene ontology terms),
+allowing variables to appear in more than one block simultaneously.
 - `NormalizeMultiBlock()`: To normalize (some or all) the data-blocks of the 
 `MultiBlock` object.
 - `ProcessMultiBlock()`: To apply customized data transformation to (some or 
 all) the data-blocks of the `MultiBlock` object.
-- `ComDim_PCA_MB()`: This function applies the ComDim-PCA algorithm on the 
-`MultiBlock` object resulting from `BuildMultiBlock()` or `ExpandMultiBlock()`.
+- `ComDim_PCA()`: This function applies the ComDim-PCA algorithm on a
+`MultiBlock` object.
 
 For more information on the usage of these functions, please consult the 
 next chapters and the help (`?`).
@@ -76,10 +74,29 @@ Chemom. Intell. Lab. Syst. 2021, 18 (104422). [**(DOI)**](https://doi.org/10.101
 * Qannari, E. M.; Courcoux, P.; Vigneau, E. Common Components and Specific 
 Weights Analysis Performed on Preference Data. Food Qual. Prefer. 2001, 12 
 (5–7), 365–368.[**(DOI)**](https://doi.org/10.1016/S0950-3293(01)00026-X)
-* Mazerolles, G.; Hanafi, M.; Dufour, E.; Bertrand, D.; Qannari, E. M. Common 
+* Mazerolles, G.; Hanafi, M.; Dufour, E.; Bertrand, D.; Qannari, E. M. Common
 Components and Specific Weights Analysis: A Chemometric Method for Dealing with
 Complexity of Food Products. Chemom. Intell. Lab. Syst. 2006, 81 (1), 41–49. [**(DOI)**](https://doi.org/10.1016/J.CHEMOLAB.2005.09.004)
 * Claeys-Bruno, M.; Béal, A.; Rutledge, D. N.; Sergent, M. Use of the Common
 Components and Specific Weights Analysis to Interpret Supersaturated Designs.
-Chemom. Intell. Lab. Syst. 2016, 152, 97–106. 
+Chemom. Intell. Lab. Syst. 2016, 152, 97–106.
 [**(DOI)**](https://doi.org/10.1016/j.chemolab.2016.01.014)
+
+
+## Notes {#notes}
+> **Note on package version (April 2026).** This book accompanies an updated
+> version of the R.ComDim package that supersedes the original release from 2021
+> (available at <https://github.com/f-puig/R.ComDim>). The two most important
+> changes introduced in this update are:
+>
+> - **`MultiBlock()` is now the sole constructor** — `BuildMultiBlock()` has
+>   been deprecated and removed. The `MultiBlock()` constructor has been
+>   extended with new parameters (`ignore.names`, `ignore.size`) to better
+>   handle unbalanced designs. The accessor API has also been overhauled: the
+>   old `getBlockNames()` / `setBlockNames()` style functions are replaced by
+>   S4 generics with assignment forms (`blockNames()`, `blockNames<-()`,
+>   `sampleNames()`, `sampleNames<-()`, `variableNames()`,
+>   `variableNames<-()`) and standard `nrow()` / `ncol()`.
+> - **`ComDim_OPLS()`** — A new OPLS variant of the ComDim algorithm has
+>   been added, complementing the existing `ComDim_PLS()`.
+
